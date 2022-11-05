@@ -1,0 +1,65 @@
+/* Todas las propiedades del footer */
+
+.footer {
+    background: rgb(34,34,34);
+    display: flex;
+    justify-content: space-evenly;
+    color: #fff;
+    flex-wrap: wrap;
+}
+
+.footer div {
+    margin: 4rem 3.5rem;
+}
+
+.footer h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0 4rem;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    margin: 1.5rem 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.footer .icon {
+    font-size: 3rem;
+    transition: transform .5s;
+}
+
+.footer .icon:hover {
+    transform: translateY(-5px);
+}
+
+.footer__social-networks {
+    text-align: center;
+}
+
+.footer__social-networks ul {
+    display: flex;
+}
+
+.footer__social-networks li {
+    margin: 0 1rem;
+}
+
+.footer__programador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__data-fiscal {
+    width: 70px;
+    margin-top: 3rem;
+}

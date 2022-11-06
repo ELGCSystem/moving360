@@ -1,5 +1,4 @@
 import express from 'express';
-import data from './data.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './src/routes/userRouter.js';
@@ -15,8 +14,6 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
-
-  //Soy un comentario
 
 const app = express();
 

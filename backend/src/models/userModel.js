@@ -14,7 +14,6 @@ const userSchema = new mongoose.Schema(
 
 const adminSchema = new mongoose.Schema({
   name: { type: String, trim: true, required: true },
-  secondName: { type: String, trim: true, required: true },
   email: { type: String, trim: true, required: true, unique: true },
   password: { type: String, trim: true, required: true },
   dni: { type: String, trim: true, required: true },
@@ -26,19 +25,18 @@ const admin = mongoose.model('admin', adminSchema);
 
 const ownerSchema = new mongoose.Schema({
   name: { type: String, trim: true, required: true },
-  secondName: { type: String, trim: true, required: true },
   email: { type: String, trim: true, required: true, unique: true },
   password: { type: String, trim: true, required: true },
   dni: { type: String, trim: true, required: true },
   tel: { type: String, trim: true, required: true },
   mobile: { type: String, required: true },
+  isAdmin: {type: Boolean, required: true},
 });
 
 const owner = mongoose.model('owner', ownerSchema);
 
 const buyerSchema = new mongoose.Schema({
   name: { type: String, trim: true, required: true },
-  secondName: { type: String, trim: true, required: true },
   email: { type: String, trim: true, required: true, unique: true },
   password: { type: String, trim: true, required: true },
   dni: { type: String, trim: true, required: true },

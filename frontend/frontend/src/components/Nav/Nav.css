@@ -1,0 +1,131 @@
+nav {
+    display: flex;
+    width: 100%;
+    min-height: 10rem;
+    background-color: var(--white);
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.desktop__bar, .nav__account {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+}
+
+.nav__item {
+    margin: 1.25rem;
+    transition: border-bottom .3s;
+}
+
+.nav__logo {
+    display: flex;
+    margin: 2rem;
+    padding: 0;
+    border: none;
+}
+
+.nav__logo:hover {
+    border: none;
+}
+
+.nav__logo img {
+    width: 70px;
+    margin: 0 1rem;
+    object-fit: contain;
+}
+
+.nav__link, .nav__logo {
+    text-decoration: none;
+    color: var(--black);
+    font-family: var(--paragraphs);
+    font-size: 1.7rem;
+    transition: color 0.2s;
+}
+
+.nav__account a {
+    border: none;
+    padding: 1rem 2rem;
+}
+
+.nav__account a:hover {
+    border: none;
+}
+
+.mobile__bar {
+    display: none;
+}
+
+.nav__btn {
+    display: none;
+}
+
+
+@media screen and (max-width: 1070px) {
+    .desktop__bar,
+    .nav__account {
+        display: none;
+    }
+
+    .nav__logo {
+        margin: 0;
+    }
+
+    .mobile__bar {
+        display: flex;
+        margin-left: -200%;
+        background-color: var(--d-gray);
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        list-style: none;
+        position: absolute;
+        top: 85px;
+        width: 100%;
+        transition: margin 0.5s;
+    }
+
+    .mobile__bar--active {
+        margin-left: 0
+    }
+
+    .nav__item,
+    .nav__item:hover,
+    .nav__item--active  {
+        border: none;
+    }
+
+    .nav__item {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .nav__link {
+        width: 100%;
+        display: block;
+        padding: 2rem 0;
+        width: 100%;
+    }
+
+    .nav__btn {
+        display: inline-block;
+        font-size: 5rem;
+        color: var(--black);
+        padding: 1rem;
+        transition: transform 0.5s;
+    }
+
+    .nav__btn--active {
+        transform: rotate(90deg);
+        
+    }
+}

@@ -1,0 +1,127 @@
+.body-register {
+    background: rgb(183,193,255);
+    background: linear-gradient(180deg, rgba(183,193,255,1) 0%, rgba(183,193,255,1) 80%, rgba(255,255,255,1) 100%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register__title {
+    padding: 5rem 1rem;
+    color: #000;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.register__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.register__subtitle {
+    padding-bottom: 3.5rem;
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.register__input-container {
+    width: 50rem;
+    height: 9rem;
+}
+
+.register__submit {
+    margin-top: 1.5rem;
+}
+
+.ad {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(238,238,238,1) 100%);
+    padding: 7rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.ad__title {
+    font-size: 2.5rem;
+    color: #000;
+    grid-column: 1/4;
+}
+
+.ad__description {
+    margin: 2rem 0 5rem;
+    grid-column: 1/4;
+    font-size: 1.6rem;
+}
+
+.ad__benefit {
+    width: 80%;
+}
+
+.ad__subtitle {
+    font-size: 2rem;
+    color: #222d65;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.fa-solid {
+    font-weight: 900;
+}
+
+.ad__text {
+    font-size: 1.6rem;
+    color: #000;
+
+}
+
+.support {
+    background: rgb(238,238,238);
+    background: linear-gradient(180deg, rgba(238,238,238,1) 0%, rgba(238,238,238,1) 50%, rgba(238,238,238,1) 100%);
+    padding: 7rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.support__title {
+    font-size: 2.5rem;
+    color: #000;
+    grid-column: 1/4;
+    font-weight: bold;
+}
+
+.support__description {
+    margin: 2rem 0 5rem;
+    grid-column: 1/4;
+    font-size: 1.6rem;
+    color: #000;
+}
+
+.support__item {
+    width: 80%;
+}
+
+.support__subtitle {
+    font-size: 2rem;
+    color: #222d65;
+    margin-bottom: 1rem;    
+    font-weight: bold;
+}
+
+.support__text {
+    font-size: 1.6rem;
+    font-family: var(--parrafos);
+    color: #000;
+}
+
+.support__link {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #000;
+}

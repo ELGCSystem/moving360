@@ -1,0 +1,10 @@
+.compartir-comision {
+    display: flex;
+    flex-direction: column;
+    height: 15rem;
+    justify-content: space-around;
+}
+
+.compartir-comision h2 {
+    margin-bottom: 2rem;
+}

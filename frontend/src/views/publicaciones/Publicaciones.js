@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
+import Filtros from './Filtros.jsx';
 import './Publicaciones.css';
 import SearchItem from './SearchItem.js'
 
 const Publicaciones = () => {
   useEffect(() => {
-    document.title = 'Moving360 - Publicaciones';
+    document.title = 'Publicaciones - Moving360';
   }, []);
 
   return (
+
+
     <div className="list">
       <div className="list__container">
         <div className="container__wrapper">
@@ -16,7 +19,8 @@ const Publicaciones = () => {
             <label className="item__title">Ubicación</label>
             <div className="search__item">
               <div className="item">
-                <input className='input__box' type={'radio'} />
+                <input className='input__box' type='range' />
+                <input className='input__box' type='radio' />
                 <p className="item__subtitle">Argentina</p>
               </div>
               <div className="item">

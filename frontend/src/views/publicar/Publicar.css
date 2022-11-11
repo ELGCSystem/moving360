@@ -1,0 +1,49 @@
+.procedimiento {
+    width: clamp(30%, 1000px, 90%);
+    min-height: 52rem;
+    margin: 0 auto;
+}
+
+/*.procedimiento div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.procedimiento div .button {
+    margin: 1rem;
+    align-self: flex-end;
+}
+
+.procedimiento div label {
+    align-self: flex-start;
+}*/
+
+.procedimiento p {
+    color: var(--gray);
+    font-size: 1.5rem;
+    font-family: var(--paragraphs);
+}
+
+.procedimiento h2 {
+    text-align: left;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--b-gray);
+    font-size: 3rem;
+}
+
+.procedimiento h3 {
+    color: var(--black);
+    font-size: 2rem;
+    font-family: var(--titles);
+}
+
+.procedimiento h4 {
+    color: var(--black);
+    font-size: 1.7rem;
+    font-family: var(--titles);
+}
+
+.procedimiento section {
+    margin: 8rem 0;
+}

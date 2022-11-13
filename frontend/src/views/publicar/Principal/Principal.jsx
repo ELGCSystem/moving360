@@ -10,29 +10,21 @@ import { Button } from '../../../components/index.js';
 
 
 const Principal = () =>  (
+    <>
+        <Basicos />
+        <Comision />
+        <Ubicacion />
+        <Multimedia />
+        <Caracteristicas />
+        <Extras />
 
-        <>
-            <Basicos />
-            <Comision />
-            <Ubicacion />
-            <Multimedia />
-            <Caracteristicas />
-            <Extras />
-
-            <Button to="/" onClick={window.scroll(0, 0)}>
-                Atras
-            </Button>
-            <Button to="/publicar/contacto" onClick={window.scroll(0, 0)}>
-                Continuar
-            </Button>
-        </>
-
-    /*<Routes>
-        <Route path='/' element={<Operaciones />} />
-        <Route path='/principal/operaciones' element={<Operaciones />} />
-        <Route path='/principal/ubicacion' element={<Ubicacion />} />
-        <Route path='/principal/caracteristicas' element={<Caracteristicas />} />
-    </Routes>*/
+        <Button to="/" onClick={window.scroll(0, 0)}>
+            Atras
+        </Button>
+        <Button to="/publicar/contacto" onClick={window.scroll(0, 0)}>
+            Continuar
+        </Button>
+    </>
 );
 
 export default Principal;

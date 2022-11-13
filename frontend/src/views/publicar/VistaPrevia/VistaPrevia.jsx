@@ -7,7 +7,7 @@ import { faHouseChimneyUser } from '@fortawesome/free-solid-svg-icons';
 import './VistaPrevia.css';
 
 const VistaPrevia = () => (
-    <section>
+    <section className='vista-previa'>
         <div>
             <h2>Vista Previa</h2>
             <p>Así se verá tu aviso.</p>
@@ -30,8 +30,9 @@ const VistaPrevia = () => (
             <Card
                 icon={faHouseChimneyUser}
                 title='Nombre Cliente'
-                text='Celular / Telefono'
-                className='card-contacto'
+                text='Celular'
+                text2='Telefono'
+                className='datos-contacto'
             />
             <p>
                 Luego de publicar, podes modificar tus datos de contacto entrando a "Mi Cuenta".

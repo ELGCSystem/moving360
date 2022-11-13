@@ -22,8 +22,6 @@
     object-fit: cover;
 }
 
-
-
 .publicacion__ubicacion,
 .publicacion__ciudad {
     grid-column: 3;

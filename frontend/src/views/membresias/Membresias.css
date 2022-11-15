@@ -1,0 +1,66 @@
+.membresias {
+    display: grid;
+    grid-template-columns: 28% 28% 28%;
+    column-gap: 8%;
+}
+
+.membresias h2,
+.membresias__subtitle {
+    grid-column: 1/4;
+    border: none;
+    text-align: center;
+}
+
+.membresias h2 {
+    margin-bottom: 7rem;
+}
+
+.membresias__subtitle {
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.membresias h2 span {
+    color: var(--main-color-alt);
+}
+
+.membresia-card {
+    height: 40rem;
+    background-color: var(--main-lighter-color);
+    border-radius: 20px;
+    box-shadow: 0 0 100px #2226;
+}
+
+.membresia-card__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.membresia-card__title {
+    margin-top: 3rem;
+}
+
+.membresia-card h4,
+.membresia-card h3 {
+    font-size: 2.5rem;
+}
+
+.membresia-card__list {
+    font-family: var(--paragraphs);
+    font-size: 1.4rem;
+    list-style: '✔️';
+    padding: 0 3rem;
+    color: var(--black);
+}
+
+.membresia-card__list li {
+    margin-bottom: 2rem;
+}
+
+.membresia-card a {
+    margin-bottom: 2rem;
+}

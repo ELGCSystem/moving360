@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Card } from '../../../components/index.js';
-import Publicacion from '../../../components/Publicacion/Publicacion.jsx';
+import { Button, Card, Publicacion } from '../../../components/index.js';
 import imagenPrincipal from './casa-ejemplo.jpg';
 import inmobiliaria from './remax.jpg';
 import { faHouseChimneyUser } from '@fortawesome/free-solid-svg-icons';

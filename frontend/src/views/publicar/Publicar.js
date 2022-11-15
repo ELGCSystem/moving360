@@ -12,7 +12,7 @@ const Publicar = () => {
   }, []);
 
   return (
-    <div className='procedimiento'>
+    <div className='publicar'>
       <form>
         <Routes>
           <Route path='*' element={<Navigate to='principal' />} />

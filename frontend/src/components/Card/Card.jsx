@@ -2,18 +2,22 @@ import React from 'react';
 import { Button } from '../../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Card = ({ title, image, icon, text, text2, url, button, buttonType, className }) => (
-  <div className={`${className}-card`}>
-    <img className={`${className}-card__img`} src={image} alt='' />
-    {icon ? <FontAwesomeIcon className={`${className}-card__icon`} icon={icon} /> : null}
-    <div className={`${className}-card__body`}>
-      <h3 className={`${className}-card__title`}>{title}</h3>
-      <p className={`${className}-card__text`}>{text}</p>
-      {text2 ? <p className={`${className}-card__text`}>{text2}</p> : null}
-      <Button to={url ? url : "/"} type={buttonType}>
-        {button}
+const Card = (props) => (
+  <div className={`${props.className}-card`}>
+    {props.image ? <img className={`${props.className}-card__img`} src={props.image} alt='' /> : null}
+    {props.icon ? <FontAwesomeIcon className={`${props.className}-card__icon`} icon={props.icon} /> : null}
+    
+    <div className={`${props.className}-card__body`}>
+      <h3 className={`${props.className}-card__title`}>{props.title}</h3>
+      {props.subtitle ? <h4 className={`${props.className}-card__subtitle`}>{props.subtitle}</h4> : null}
+      {props.text ? <p className={`${props.className}-card__text`}>{props.text}</p> : null}
+      {props.text2 ? <p className={`${props.className}-card__text`}>{props.text2}</p> : null}
+      {props.list ? <ul className={`${props.className}-card__list`}>{props.list}</ul> : null}
+      <Button to={props.url ? props.url : "/"} type={props.buttonType}>
+        {props.button}
       </Button>
-    </div>      
+    </div>
+
   </div>
 );
 

@@ -1,0 +1,52 @@
+.informacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.informacion h3 {
+    margin: 4rem 0;
+}
+
+.informacion h3 span {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.informacion h4 {
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+.informacion__benefits {
+    font-family: var(--paragraphs);
+    font-size: 1.5rem;
+    list-style: '✔️';
+    padding: 0 2rem;
+    color: var(--black);
+}
+
+.informacion__benefits li {
+    margin-bottom: 2rem;
+}
+
+.informacion p {
+    color: var(--black);
+    font-family: var(--paragraphs);
+    font-size: 1.5rem;
+    margin: 3rem 0;
+}
+
+.informacion__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+
+.informacion a {
+    text-decoration: none;
+}
+
+.informacion p a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+.solicitud-registro {
+    width: clamp(30%, 1000px, 90%);
+    min-height: 52rem;
+    margin: 4rem auto 0;
+}
+
+.solicitud-registro p {
+    color: var(--gray);
+    font-size: 1.5rem;
+    font-family: var(--paragraphs);
+    margin: 3rem 0;
+}
+
+.solicitud-registro h2 {
+    text-align: left;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--b-gray);
+    font-size: 3rem;
+}
+
+.solicitud-registro form {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-template-rows: 7rem 7rem 7rem 10rem;
+    column-gap: 2%;
+    row-gap: 1rem;
+}
+
+.solicitud-registro__nombre {
+    grid-column: 1/3;
+}
+
+.solicitud-registro a {
+    grid-column: 1/3;
+    align-self: center;
+}

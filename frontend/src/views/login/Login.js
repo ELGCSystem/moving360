@@ -12,7 +12,7 @@ const Login = () => {
                 <FontAwesomeIcon icon={faTimes}/>
             </Button>
             <div className="login">
-                <h2 className="login__title">Iniciar Sesión</h2>
+                <h2 className="login__title">Iniciar sesión</h2>
                 <form className="login__form" action="">
                 <Input
                     displayName="Nombre de usuario"
@@ -24,12 +24,12 @@ const Login = () => {
                     name="contrasena"
                     type="password"
                 />
-                <Button to="/" type="blue">
+                <Button to="/" type="blue" className="login__button">
                     Ingresar
                 </Button>
                 </form>
                 <p>
-                    ¿No tenes una cuenta? <Link to="/registrarse">Creá una.</Link>
+                    ¿No tenes una cuenta? <Link to="/registrarse">Creá una</Link>.
                 </p>
             </div>
         </section>

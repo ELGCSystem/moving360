@@ -1,0 +1,26 @@
+.detalles-compra {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalles-compra li {
+    color: var(--black);
+    font-family: var(--paragraphs);
+    font-size: 1.5rem;
+    padding: 2rem 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detalles-compra li:nth-child(2) {
+    border-bottom: 2px solid var(--b-gray);
+}
+
+.detalles-compra li:nth-child(3) {
+    font-weight: 700;
+}
+
+.detalles-compra p span {
+    text-align: right;
+}

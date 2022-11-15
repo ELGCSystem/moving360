@@ -8,7 +8,16 @@ import "./css/App.css";
 
 // Implementción de páginas para viajar a lo largo de Moving360
 
-import { Inicio, Publicaciones, Publicar, Registrarse, Login } from "./views/index.js";
+import { 
+  Inicio,
+  Publicaciones,
+  Publicar,
+  RegistroInmobiliario,
+  Membresias,
+  Registrarse,
+  SolicitudRegistro,
+  Login
+} from "./views/index.js";
 
 //Componente principal, contiene "Header", "Main" y "Footer"
 
@@ -26,6 +35,9 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" exact element={<Inicio />} />
+          <Route path="/membresias" exact element={<Membresias />} />
+          <Route path="/solicitud-registro" exact element={<SolicitudRegistro />} />
+          <Route path="/registro-inmobiliario/*" element={<RegistroInmobiliario />} />
           <Route path="/iniciar-sesion" exact element={<Login />} />
           <Route path="/alquilar-temporada" exact element={<Publicaciones />} />
           <Route path="/alquilar" exact element={<Publicaciones />} />

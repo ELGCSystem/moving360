@@ -34,7 +34,7 @@ export const navAccountLinks = [
     {
         id: 1,
         content: "Publicá",
-        to: "/publicar",
+        to: "/solicitud-registro",
         type: "darker nav__item"
     },
     {
@@ -64,7 +64,7 @@ export const navLinks = [
     {
         id: 4,
         content: "Publicá",
-        to: "/publicar"
+        to: "/solicitud-registro"
     },
     {
         id: 5,

@@ -26,7 +26,7 @@
 }
 
 .login__title {
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     font-size: 3rem;
 }
 
@@ -37,4 +37,25 @@
 
 .login a {
     align-self: center;
+    text-decoration: none;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+
+.login .login__button:hover {
+    text-decoration: none;
+}
+
+.login__button {
+    margin-top: 4rem;
+}
+
+.login p {
+    color: var(--black);
+    font-size: 1.5rem;
+    font-family: var(--paragraphs);
+    margin: 3rem 0;
+    text-align: center;
 }

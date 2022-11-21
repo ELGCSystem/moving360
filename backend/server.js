@@ -1,7 +1,12 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import userRouter from './src/routes/userRouter.js';
+import adminRouter from './src/routes/adminRouter.js';
+import buyerRouter from './src/routes/buyerRouter.js';
+import ownerRouter from './src/routes/ownerRouter.js';
+import traditionalRouter from './src/routes/realEstates/traditionalRouter.js';
+import decentralizedRouter from './src/routes/realEstates/decentralizedFranchiseRouter.js';
+import centralizedRouter from './src/routes/realEstates/centralizedFranchiseRouter.js';
 import cors from 'cors'
 
 dotenv.config();
@@ -22,7 +27,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/users', userRouter);
+app.use('/api/admin', adminRouter);
+app.use('/api/buyer', buyerRouter);
+app.use('/api/owner', ownerRouter);
+app.use('/api/traditional', traditionalRouter);
+app.use('/api/decentralized', decentralizedRouter);
+app.use('/api/centralized', centralizedRouter);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

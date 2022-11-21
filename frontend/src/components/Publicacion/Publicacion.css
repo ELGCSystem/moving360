@@ -1,0 +1,80 @@
+.publicacion {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 28.5% 18.5% 28.5% 18.5%;
+    grid-template-rows: 5rem 2rem 4rem 2rem 5rem 7rem;
+    row-gap: 1rem;
+    column-gap: 2%;
+    align-items: center;
+    border: 2px solid var(--d-gray);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.publicacion * {
+    grid-column: 2;
+}
+
+.publicacion__img {
+    grid-row: 1/7;
+    grid-column: 1/2;
+    height: 100%;
+    object-fit: cover;
+}
+
+.publicacion__ubicacion,
+.publicacion__ciudad {
+    grid-column: 3;
+}
+
+.publicacion__ubicacion {
+    grid-row: 1;
+}
+
+.publicacion__ciudad {
+    grid-row: 2;
+}
+
+.publicacion__tipo {
+    grid-row: 1;
+    grid-column: 4;
+    border: 2px solid var(--d-gray);
+    border-radius: 30px;
+    justify-self: center;
+    padding: 0 5px;
+}
+
+.publicacion ul {
+    list-style: none;
+    color: var(--black);
+    font-family: var(--paragraphs);
+    font-size: 1.5rem;
+    display: flex;
+    grid-column: 2/4;
+    justify-content: space-around;
+}
+
+.publicacion__descripcion,
+.publicacion h5 {
+    grid-column: 2/5;
+}
+
+.publicacion h5 {
+    margin-top: 1rem;
+}
+
+.publicacion__descripcion {
+    border-bottom: 2px solid var(--d-gray);
+    padding: 1.5rem 0;
+    margin-right: 1.5rem;
+}
+
+.publicacion__inmobiliaria {
+    height: 80%;
+}
+
+.publicacion__buttons {
+    grid-column: 3/5;
+    display: flex;
+    justify-content: space-around;
+}

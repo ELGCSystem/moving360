@@ -1,8 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
-* {
-  font-family: "Roboto", sans-serif;
+:root {
+
+  /*La paleta de colores que se usara en toda la página*/
+
+  --white: #fff;
+  --d-gray: #ddd;
+  --bg: #eee;
+  --b-gray: #bbb;
+  --gray: #888;
+  --black: #222;
+
+  --main-color: #263a7f;
+  --main-lighter-color: #b7c1ff;
+  --main-darker-color: #222d65;
+  --main-color-alt: #24aaf7;
+  --main-darker-color-alt: #24aaf7;
+
+  --titles: 'Roboto', sans-serif;
+  --buttons: 'Roboto', sans-serif;
+  --paragraphs: 'Roboto', sans-serif;
+
+  --whatsapp: #0df053;
+
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .App {
@@ -10,10 +35,26 @@
   background: linear-gradient(360deg, rgba(255,255,255,1) 0%, rgba(183,193,255,1) 15%, rgba(183,193,255,1) 100%);
 }
 
+h2, h3 {
+    font-size: 3.5rem;
+    color: var(--black);
+    text-align: center;
+    font-family: var(--titles);
+}
 
-.App-title {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  padding-top: 50px;
+h3 {
+    font-size: 2.5rem;
+}
+
+h5 {
+  color: var(--black);
+    font-size: 1.4rem;
+    font-family: var(--titles);
+}
+
+
+@media screen and (max-width: 1400px) {
+  :root {
+    font-size: 55%;
+  }
 }

@@ -1,0 +1,31 @@
+.select-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.select {
+    width: 100%;
+    font-size: 1.7rem;
+    padding: 1.1rem;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--bg);
+    font-family: var(--paragraphs);
+}
+
+.select__label {
+    font-size: 1.7rem;
+    font-family: var(--paragraphs);
+    position: absolute;
+    padding: 1.2rem;
+    transition: font-size, .3s;
+    pointer-events: none;
+    color: var(--gray);
+}
+
+.select:hover,
+.select:focus {
+    outline: 1px solid var(--main-color);
+}

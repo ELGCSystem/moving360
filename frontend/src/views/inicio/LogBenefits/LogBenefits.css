@@ -1,0 +1,30 @@
+.log-benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7rem 0;
+}
+
+.log-benefits__title {
+    margin-bottom: 5rem;
+}
+
+.log-benefits__subtitle {
+    margin-bottom: 3rem;
+}
+
+.benefits-list {
+    color: var(--black);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: var(--paragraphs);
+    margin-bottom: 5rem;
+    padding: 0 3rem;
+}
+
+.benefit {
+    line-height: 2em;
+    font-size: 2rem;
+}

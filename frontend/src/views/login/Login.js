@@ -29,7 +29,7 @@ const Login = () => {
                 </Button>
                 </form>
                 <p>
-                    ¿No tenes una cuenta? <Link to="/registrarse">Creá una</Link>.
+                    ¿No tenes una cuenta? <Link to="/tipo-registro">Creá una</Link>.
                 </p>
             </div>
         </section>

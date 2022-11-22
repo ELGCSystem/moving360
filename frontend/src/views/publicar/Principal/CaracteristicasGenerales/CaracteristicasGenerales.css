@@ -1,0 +1,20 @@
+.caracteristicas-generales {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 7rem 4rem repeat(3, 5rem 7rem);
+    grid-template-columns: repeat(5, 18.3%);
+    row-gap: 1rem;
+    column-gap: 2%;
+    align-items: center;
+}
+
+.caracteristicas-generales h2,
+.caracteristicas-generales p {
+    grid-column: 1/6;
+}
+
+.caracteristicas-generales h3 {
+    grid-column: 1/6;
+    text-align: left;
+    margin-top: 2rem;
+}

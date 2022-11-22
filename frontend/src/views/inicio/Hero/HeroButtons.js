@@ -3,18 +3,20 @@ export const heroButtons = [
         id: "1",
         text: "Comprar",
         url: "/comprar",
-        type: "wider"
+        type: "wider",
+        class: "hero__button--first"
     },
     {
         id: "2",
         text: "Alquilar",
         url: "/alquilar",
-        type: "wider"
+        type: "wider",
+        class: "hero__button--second"
     },
     {
         id: "3",
-        text: "Temporal",
-        url: "/alquilar-temporada",
+        text: "Countries",
+        url: "/countries",
         type: "wider"
     },
     {
@@ -25,8 +27,14 @@ export const heroButtons = [
     },
     {
         id: "5",
-        text: "Countries",
-        url: "/countries",
+        text: "Oportunidades",
+        url: "/oportunidades",
         type: "wider"
-    }
+    },
+    {
+        id: "6",
+        text: "Tiempo compartido",
+        url: "/tiempo-compartido",
+        type: "wider"
+    },
 ];

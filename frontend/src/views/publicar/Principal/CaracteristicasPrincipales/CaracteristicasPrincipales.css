@@ -1,0 +1,27 @@
+.caracteristicas-principales {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 7rem 4rem 20rem repeat(3, 15rem) repeat(2, 4rem 12rem);
+    grid-template-columns: repeat(5, 18.3%);
+    row-gap: 1rem;
+    column-gap: 2%;
+    align-items: center;
+}
+
+.caracteristicas-principales h2,
+.caracteristicas-principales p {
+    grid-column: 1/6;
+}
+
+.caracteristicas-principales h3 {
+    text-align: left;
+    grid-column: 1/6;
+}
+
+.antiguedad__subtitle {
+    margin-top: 4rem;
+}
+
+.caracteristicas__descripcion {
+    grid-column: 1/6;
+}

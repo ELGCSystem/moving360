@@ -5,4 +5,6 @@ export { default as Registrarse } from './registrarse/Registrarse.js';
 export { default as Membresias } from './membresias/Membresias.js';
 export { default as RegistroInmobiliario } from './registro-inmobiliario/RegistroInmobiliario.js';
 export { default as SolicitudRegistro } from './solicitud-registro/SolicitudRegistro.js';
+export { default as TipoRegistro } from './tipo-registro/TipoRegistro.js';
+export { default as GestionInmobiliaria } from './gestion-inmobiliaria/GestionInmobiliaria.js';
 export { default as Login } from './login/Login.js';

@@ -11,7 +11,6 @@ const adminSchema = new mongoose.Schema(
     isAdmin: { type: Boolean, required: true, default: false },
     isBuyer: { type: Boolean, required: true, default: false },
     isOwner: { type: Boolean, required: true, default: false },
-    isSeller: { type: Boolean, required: true, default: false },
   }],
   {
     timestamps: true,

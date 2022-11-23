@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
 import './Registrarse.css';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { register } from '../../actions/userActions.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChartBar,
@@ -10,44 +7,43 @@ import {
   faEnvelope,
   faClock,
 } from '@fortawesome/free-solid-svg-icons';
-import LoadingBox from '../../components/LoadingBox.js';
-import MessageBox from '../../components/MessageBox.js';
+import Axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  useEffect(() => {
-    document.title = 'Registrarse - Moving360';
-  }, []);
+  const [data, setData] = useState({
+    email: '',
+    password: '',
+    name: '',
+    dni: '',
+    tel: '',
+    mobile: '',
+  });
 
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, [input.name]: [input.value] });
+  };
+
+  const [error, setError] = useState('');
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [name, setName] = useState('');
-  const [dni, setDni] = useState('');
-  const [tel, setTel] = useState('');
-  const [mobile, setMobile] = useState('');
 
-  const { search } = useLocation();
-  const redirectInUrl = new URLSearchParams(search).get('redirect');
-  const redirect = redirectInUrl ? redirectInUrl : '/';
-
-  const userRegister = useSelector((state) => state.userRegister);
-  const { userInfo, loading, error } = userRegister;
-
-  const dispatch = useDispatch();
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert('Password and confirm password are not match');
-    } else {
-      dispatch(register(email, password, name, dni, tel, mobile));
+    try {
+      const url = 'http://localhost:4000/api/admin';
+      const { data: res } = await Axios.post(url, data);
+      navigate('/login');
+      console.log(res.message);
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
     }
   };
-  useEffect(() => {
-    if (userInfo) {
-      navigate(redirect);
-    }
-  }, [navigate, redirect, userInfo]);
 
   return (
     <>
@@ -55,9 +51,7 @@ const Register = () => {
         <h2 className="register__title">
           Ingresá los datos para crear tu usuario
         </h2>
-        <form onSubmit={handleSubmit} className="register__form">
-          {loading && <LoadingBox></LoadingBox>}
-          {error && <MessageBox variant="danger">{error}</MessageBox>}
+        <form className="register__form" onSubmit={handleSubmit}>
           <h3 className="register__subtitle">Datos principales</h3>
           <div className="register__input-container">
             <input
@@ -66,7 +60,8 @@ const Register = () => {
               id="email"
               className="input"
               required
-              onChange={(e) => setEmail(e.target.value)}
+              value={data.email}
+              onChange={handleChange}
             />
             <label htmlFor="email" className="register__label">
               Email:
@@ -79,7 +74,8 @@ const Register = () => {
               id="password"
               className="input"
               required
-              onChange={(e) => setPassword(e.target.value)}
+              value={data.password}
+              onChange={handleChange}
             />
             <label htmlFor="password" className="register__label">
               Contraseña:
@@ -92,7 +88,6 @@ const Register = () => {
               id="confirmPassword"
               className="input"
               required
-              onChange={(e) => setConfirmPassword(e.target.value)}
             />
             <label htmlFor="password" className="register__label">
               Confirmar Contraseña:
@@ -106,8 +101,8 @@ const Register = () => {
               id="name"
               className="input"
               required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={data.name}
+              onChange={handleChange}
             />
             <label htmlFor="name" className="register__label">
               Nombre Completo:
@@ -120,7 +115,8 @@ const Register = () => {
               id="dni"
               className="input"
               required
-              onChange={(e) => setDni(e.target.value)}
+              value={data.dni}
+              onChange={handleChange}
             />
             <label htmlFor="dni" className="register__label">
               DNI:
@@ -133,7 +129,8 @@ const Register = () => {
               id="tel"
               className="input"
               required
-              onChange={(e) => setTel(e.target.value)}
+              value={data.number}
+              onChange={handleChange}
             />
             <label htmlFor="tel" className="register__label">
               Teléfono:
@@ -146,17 +143,21 @@ const Register = () => {
               id="mobile"
               className="input"
               required
-              onChange={(e) => setMobile(e.target.value)}
+              value={data.mobile}
+              onChange={handleChange}
             />
             <label htmlFor="mobile" className="register__label">
               Teléfono Celular:
             </label>
           </div>
-          <input
+          {error && <div>{error}</div>}
+          <button
             type="submit"
             value="Registrarse"
             className="register__submit button btn btn-primary"
-          />
+          >
+            Registrarse
+          </button>
         </form>
       </div>
       <div className="ad">

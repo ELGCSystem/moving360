@@ -15,6 +15,32 @@ adminRouter.get(
   })
 );
 
+//Inicio de Sesión de Usuarios Administradores
+adminRouter.post(
+  '/signin',
+  expressAsyncHandler(async (req, res) => {
+    const admin = await Admin.findOne({ email: req.body.email });
+    if (admin) {
+      if (bcrypt.compareSync(req.body.password, admin.password)) {
+        res.send({
+          _id: admin._id,
+          name: admin.name,
+          email: admin.email,
+          dni: admin.dni,
+          tel: admin.tel,
+          mobile: admin.mobile,
+          isAdmin: admin.isAdmin,
+          isBuyer: admin.isBuyer,
+          isOwner: admin.isOwner,
+          token: generateToken(admin),
+        });
+        return;
+      }
+    }
+    res.status(401).send({ message: 'Email o Contraseña incorrectos' });
+  })
+);
+
 //Registro de Usuarios Administradores
 adminRouter.post(
   '/signup',
@@ -29,7 +55,6 @@ adminRouter.post(
       isAdmin: req.body.isAdmin,
       isBuyer: req.body.isBuyer,
       isOwner: req.body.isOwner,
-      isSeller: req.body.isSeller,
     });
     const createdAdmin = await admin.save();
     res.send({
@@ -42,7 +67,6 @@ adminRouter.post(
       isAdmin: createdAdmin.isAdmin,
       isBuyer: createdAdmin.isBuyer,
       isOwner: createdAdmin.isOwner,
-      isSeller: createdAdmin.isSeller,
       token: generateToken(createdAdmin),
     });
   })

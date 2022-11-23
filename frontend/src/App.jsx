@@ -23,9 +23,6 @@ import {
 
 const App = () => {
 
-  
-
-
   return (
     <>
       <header>

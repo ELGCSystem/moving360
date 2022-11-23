@@ -1,40 +1,8 @@
-.login__form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  padding: 1rem 0;
-}
-
-.form__label {
-  font-size: 2rem;
-  color: #000;
-  position: relative;
-  padding: 1.5rem;
-  transition: top, font-size, 0.3s;
-  pointer-events: none;
-}
-
-.form__input {
-  width: 25%;
-  font-size: 1.8rem;
-  padding: 1rem;
-  margin: 1rem 0;
-  outline: none;
-  border-radius: 10px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
-
-.form__submit {
-  margin-top: 2rem;
-}
-
 .apis {
-  display: flex;
+  display: block;
   flex-direction: row;
   align-items: center;
+  font-family: var(--paragraphs);
 }
 
 .center {
@@ -43,6 +11,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  font-family: var(--paragraphs);
 }
 
 .or {
@@ -56,7 +25,6 @@
 }
 
 .line {
-
   height: 0.5px;
   width: 50vw;
   background-color: #d3d3d3;
@@ -66,7 +34,7 @@
 }
 
 .apis__loginButton {
-  width: 250px;
+  width: 100%;
   padding: 15px 25px;
   border-radius: 5px;
   color: #fff;
@@ -76,29 +44,32 @@
   margin-right: 20px;
   font-size: 20px;
   margin-top: 15px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   cursor: pointer;
 }
 
 .google {
   background-color: #fff;
   color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.google:hover {
+  background-color: #bbb;
 }
 
 .facebook {
   background-color: #3d5a98;
+  transition: all 0.3s ease-in-out;
 }
 
-.apple {
-  background-color: #000;
+.facebook:hover {
+  background-color: #133c96;
 }
 
 .loginButton__icon {
-  width: 30px!important;
+  width: 30px;
   margin-right: 10px;
   z-index: 1;
-}
-
-.scroll {
-  overflow-y: hidden;
 }

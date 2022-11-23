@@ -59,3 +59,27 @@
     margin: 3rem 0;
     text-align: center;
 }
+
+/* Diseño de botón login */
+
+.button {
+    background-color: var(--white);
+    color: var(--main-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.7rem;
+    font-family: var(--buttons);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color .4s;
+}
+
+.button--blue {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+.button--blue:hover {
+    background-color: var(--main-darker-color);
+}

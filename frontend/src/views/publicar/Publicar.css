@@ -32,3 +32,13 @@
 .publicar section {
     margin: 4rem 0 8rem;
 }
+
+.publicar form  {
+    margin-bottom: 6rem;
+}
+
+.publicar .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

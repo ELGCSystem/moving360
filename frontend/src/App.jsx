@@ -16,6 +16,8 @@ import {
   Membresias,
   Registrarse,
   SolicitudRegistro,
+  TipoRegistro,
+  GestionInmobiliaria,
   Login
 } from "./views/index.js";
 
@@ -33,6 +35,7 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Inicio />} />
           <Route path="/membresias" exact element={<Membresias />} />
+          <Route path="/tipo-registro" exact element={<TipoRegistro />} />
           <Route path="/solicitud-registro" exact element={<SolicitudRegistro />} />
           <Route path="/registro-inmobiliario/*" element={<RegistroInmobiliario />} />
           <Route path="/iniciar-sesion" exact element={<Login />} />
@@ -40,6 +43,7 @@ const App = () => {
           <Route path="/alquilar" exact element={<Publicaciones />} />
           <Route path="/comprar" exact element={<Publicaciones />} />
           <Route path="/publicar/*" element={<Publicar />} />
+          <Route path="/gestion-inmobiliaria/*" element={<GestionInmobiliaria />} />
           <Route path="/registrarse" exact element={<Registrarse />} />
         </Routes>
       </main>

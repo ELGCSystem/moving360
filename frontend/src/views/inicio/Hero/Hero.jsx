@@ -13,6 +13,7 @@ const Hero = () => (
           <Button
             to={button.url}
             type={button.type}
+            className={button.class}
           >
             {button.text}
           </Button>

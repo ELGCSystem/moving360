@@ -13,9 +13,12 @@ const Card = (props) => (
       {props.text ? <p className={`${props.className}-card__text`}>{props.text}</p> : null}
       {props.text2 ? <p className={`${props.className}-card__text`}>{props.text2}</p> : null}
       {props.list ? <ul className={`${props.className}-card__list`}>{props.list}</ul> : null}
-      <Button to={props.url ? props.url : "/"} type={props.buttonType}>
-        {props.button}
-      </Button>
+      {props.button ?
+        <Button to={props.url ? props.url : "/"} type={props.buttonType}>
+          {props.button}
+        </Button>  
+      : null
+      }
     </div>
 
   </div>

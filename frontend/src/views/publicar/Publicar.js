@@ -15,7 +15,7 @@ const Publicar = () => {
     <div className='publicar'>
       <form>
         <Routes>
-          <Route path='*' element={<Navigate to='principal' />} />
+          <Route path='/' element={<Navigate to='principal' />} />
           <Route path='principal' element={<Principal />} />
           <Route path='contacto' element={<Contacto />} />
           <Route path='vista-previa' element={<VistaPrevia />} />

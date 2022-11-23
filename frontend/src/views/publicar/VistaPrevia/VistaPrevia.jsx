@@ -3,6 +3,7 @@ import { Button, Card, Publicacion } from '../../../components/index.js';
 import imagenPrincipal from './casa-ejemplo.jpg';
 import inmobiliaria from './remax.jpg';
 import { faHouseChimneyUser } from '@fortawesome/free-solid-svg-icons';
+import { FaAngleLeft, FaUpload } from 'react-icons/fa';
 import './VistaPrevia.css';
 
 const VistaPrevia = () => (
@@ -28,22 +29,30 @@ const VistaPrevia = () => (
             />
             <Card
                 icon={faHouseChimneyUser}
-                title='Nombre Cliente'
+                title='Nombre Dueño'
                 text='Celular'
                 text2='Telefono'
                 className='datos-contacto'
             />
             <p>
-                Luego de publicar, podes modificar tus datos de contacto entrando a "Mi Cuenta".
+                Luego de publicar, podes modificar los datos de contacto entrando a "Ver publicaciones" y a "Editar publicación".
             </p>
         </div>
 
-        <Button to="/publicar/contacto" onClick={window.scroll(0, 0)}>
-            Atras
-        </Button>
-        <Button to="/">
-            Publicar
-        </Button>
+        <div className="buttons">
+            <Button
+                to="/publicar/contacto"
+                onClick={window.scroll(0, 0)}
+            >
+                <FaAngleLeft /> Atras
+            </Button>
+            <Button 
+                to="/"
+                type="blue"
+            >
+                <FaUpload /> Publicar
+            </Button>
+        </div>
     </section>
 );
 

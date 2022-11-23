@@ -1,5 +1,3 @@
-import { faUser, faUserPlus, faHouse } from '@fortawesome/free-solid-svg-icons';
-
 // The contents of the links used in the nav.
 
 export const navBarLinks = [
@@ -15,26 +13,26 @@ export const navBarLinks = [
     },
     {
         id: 3,
-        content: "Temporal",
-        to: "/alquilar-temporada"
+        content: "Countries",
+        to: "/countries"
     },
     {
         id: 4,
         content: "Emprendimientos",
-        to: "/"
+        to: "/emprendimientos"
     },
     {
         id: 5,
         content: "Servicios",
-        to: "/"
+        to: "/servicios"
     },
 ];
 
 export const navAccountLinks = [
     {
         id: 1,
-        content: "Publicá",
-        to: "/solicitud-registro",
+        content: "Registrarse",
+        to: "/tipo-registro",
         type: "darker nav__item"
     },
     {
@@ -58,27 +56,27 @@ export const navLinks = [
     },
     {
         id: 3,
-        content: "Temporal",
-        to: "/alquilar-temporada"
+        content: "Countries",
+        to: "/countries"
     },
     {
         id: 4,
-        content: "Publicá",
-        to: "/solicitud-registro"
-    },
-    {
-        id: 5,
-        content: "Inicia Sesión",
-        to: "/iniciar-sesion"
-    },
-    {
-        id: 6,
         content: "Emprendimientos",
         to: "/emprendimientos"
     },
     {
+        id: 5,
+        content: "Servicios",
+        to: "/servicios"
+    },
+    {
         id: 7,
-        content: "Countries",
-        to: "/countries"
+        content: "Registrarse",
+        to: "/tipo-registro"
+    },
+    {
+        id: 8,
+        content: "Inicia Sesión",
+        to: "/iniciar-sesion"
     }
 ];

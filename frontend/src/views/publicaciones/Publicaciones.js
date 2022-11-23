@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { inmuebles } from './Inmuebles.js';
-import { Publicacion } from '../../components/index.js';
+import { Publicacion, Contador } from '../../components/index.js';
 import Filtros from './Filtros.jsx';
 import './Publicaciones.css';
+import Filtro from '../../components/Filtro/Filtro.jsx';
 
 const Publicaciones = () => {
   useEffect(() => {
@@ -11,6 +12,15 @@ const Publicaciones = () => {
 
   return (
     <section className='publicaciones'>
+
+
+    <div className='filtros'>
+      <Filtro name="pileta"/>
+      <Filtro name="quincho"/>
+      <Filtro name="patio"/>
+      <Filtro name="ascensor"/>
+    </div>
+
       {
         inmuebles.map((inmueble) => (
           <Publicacion

@@ -57,6 +57,28 @@ const Basicos = () => (
 
         <p>Máximo 100 caracteres. Ej: Vendo Depto. Excelente estado.</p>
         
+        <h3>Compartir comisión</h3>
+
+        <Input
+            displayName="Compartir 50%"
+            name="porcentaje-compartir"
+            type="radio"
+            className="porcentaje-compartir"
+        />
+
+        <Input
+            displayName="Compartir 30%"
+            name="porcentaje-compartir"
+            type="radio"
+            className="porcentaje-compartir"
+        />
+
+        <Input
+            displayName="No compartir"
+            name="porcentaje-compartir"
+            type="radio"
+            className="porcentaje-compartir"
+        />
     </section>
 );
 

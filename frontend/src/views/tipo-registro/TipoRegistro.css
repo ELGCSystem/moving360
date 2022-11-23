@@ -1,0 +1,49 @@
+.tipo-registro {
+    width: clamp(30%, 1000px, 90%);
+    min-height: 52rem;
+    margin: 4rem auto 7rem;
+}
+
+.tipo-registro__cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 5rem 0;
+    flex-wrap: wrap;
+}
+
+.tipo-registro-card {
+    width: clamp(10rem, 35rem, 95%);
+    height: 40rem;
+    margin: 2.5rem 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: var(--main-color);
+    color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 0 100px #2228;
+}
+
+.tipo-registro-card__icon {
+    font-size: 7rem;
+}
+
+.tipo-registro-card__body {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tipo-registro-card__title {
+    color: var(--white);
+}
+
+.tipo-registro-card__text {
+    font-family: var(--paragraphs);
+    text-align: center;
+    font-size: 1.7rem;
+    padding: 1.5rem;
+    line-height: 1.4;
+}

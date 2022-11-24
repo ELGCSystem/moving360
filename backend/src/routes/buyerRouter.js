@@ -29,7 +29,6 @@ buyerRouter.post(
       isAdmin: req.body.isAdmin,
       isBuyer: req.body.isBuyer,
       isOwner: req.body.isOwner,
-      isSeller: req.body.isSeller,
     });
     const createdBuyer = await buyer.save();
     res.send({
@@ -42,7 +41,6 @@ buyerRouter.post(
       isAdmin: createdBuyer.isAdmin,
       isBuyer: createdBuyer.isBuyer,
       isOwner: createdBuyer.isOwner,
-      isSeller: createBuyern.isSeller,
       token: generateToken(createdBuyer),
     });
   })

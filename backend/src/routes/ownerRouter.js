@@ -29,7 +29,6 @@ ownerRouter.post(
       isAdmin: req.body.isAdmin,
       isBuyer: req.body.isBuyer,
       isOwner: req.body.isOwner,
-      isSeller: req.body.isSeller,
     });
     const createdOwner = await owner.save();
     res.send({
@@ -42,7 +41,6 @@ ownerRouter.post(
       isAdmin: createdOwner.isAdmin,
       isBuyer: createdOwner.isBuyer,
       isOwner: createdOwner.isOwner,
-      isSeller: createdOwner.isSeller,
       token: generateToken(createdOwner),
     });
   })

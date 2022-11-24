@@ -1,38 +1,38 @@
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
-import Admin from '../models/adminModel.js';
+import Post from '../models/postModel.js'
 import { generateToken } from '../../utils/utilsAdmin.js';
 
-const adminRouter = express.Router();
+const postRouter = express.Router();
 
 //Mostrar Registro completo de Usuarios Administradores
-adminRouter.get(
+postRouter.get(
   '/getAll',
   expressAsyncHandler(async (req, res) => {
-    const admin = await Admin.find();
-    res.send(admin);
+    const post = await Admin.find();
+    res.send(post);
   })
 );
 
 //Inicio de Sesión de Usuarios Administradores
-adminRouter.post(
+postRouter.post(
   '/signin',
   expressAsyncHandler(async (req, res) => {
-    const admin = await Admin.findOne({ email: req.body.email });
-    if (admin) {
+    const post = await Admin.findOne({ email: req.body.email });
+    if (post) {
       if (bcrypt.compareSync(req.body.password, admin.password)) {
         res.send({
-          _id: admin._id,
-          name: admin.name,
-          email: admin.email,
-          dni: admin.dni,
-          tel: admin.tel,
-          mobile: admin.mobile,
-          isAdmin: admin.isAdmin,
+          _id: post._id,
+          name: post.name,
+          email: post.email,
+          dni: post.dni,
+          tel: post.tel,
+          mobile: post.mobile,
+          isAdmin: post.isAdmin,
           isBuyer: admin.isBuyer,
-          isOwner: admin.isOwner,
-          token: generateToken(admin),
+          isOwner: post.isOwner,
+          token: generateToken(post),
         });
         return;
       }
@@ -42,10 +42,10 @@ adminRouter.post(
 );
 
 //Registro de Usuarios Administradores
-adminRouter.post(
+postRouter.post(
   '/signup',
   expressAsyncHandler(async (req, res) => {
-    const admin = new Admin({
+    const post = new Admin({
       name: req.body.name,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 8),
@@ -56,7 +56,7 @@ adminRouter.post(
       isBuyer: req.body.isBuyer,
       isOwner: req.body.isOwner,
     });
-    const createdAdmin = await admin.save();
+    const createdAdmin = await post.save();
     res.send({
       _id: createdAdmin._id,
       name: createdAdmin.name,
@@ -73,24 +73,24 @@ adminRouter.post(
 );
 
 //Actualización de Usuarios
-adminRouter.put(
+postRouter.put(
   '/update/:_id',
   expressAsyncHandler(async (req, res) => {
     const { _id } = req.params;
     const { name, email, password, dni, tel, mobile } = req.body;
-    const adminUpdated = await Admin.findByIdAndUpdate(
+    const postUpdated = await Admin.findByIdAndUpdate(
       _id,
       {
         $set: { name, email, password, dni, tel, mobile },
       },
       { useFindAndModify: false }
     );
-    res.send(`${adminUpdated.name} updated`);
+    res.send(`${postUpdated.name} updated`);
   })
 );
 
 //Eliminación de Usuarios Administradores
-adminRouter.delete(
+postRouter.delete(
   '/delete/:_id',
   expressAsyncHandler(async (req, res) => {
     const { _id } = req.params;

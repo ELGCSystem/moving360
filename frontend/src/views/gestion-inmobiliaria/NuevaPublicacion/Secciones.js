@@ -9,6 +9,34 @@ import {
 export const secciones = [
     {
         id: 1,
+        title: "General",
+        inmuebles: ["Casa", "Departamento", "Departamento tipo PH", "Cochera", "Oficina - Consultorio", "Local", "Galpón", "Fondo de comercio", "Campo", "Quinta", "Lote - Terreno", "Hotel", "Parcelas - Nichos - Bovedas", "Camas náuticas"]
+    },
+    {
+        id: 2,
+        title: "Countries",
+        inmuebles: ["Casa", "Departamento", "Departamento tipo PH", "Cochera", "Oficina - Consultorio", "Local", "Fondo de comercio", "Lote - Terreno", "Camas náuticas"]
+    },
+    {
+        id: 3,
+        title: "Emprendimientos",
+        inmuebles: ["Departamento", "Departamento tipo PH", "Cochera", "Local"]
+    },
+    {
+        id: 4,
+        title: "Oportunidades",
+        inmuebles: ["Casa", "Departamento", "Departamento tipo PH", "Cochera", "Oficina - Consultorio", "Local", "Galpón", "Fondo de comercio", "Campo", "Quinta", "Lote - Terreno", "Hotel", "Parcelas - Nichos - Bovedas", "Camas náuticas"]
+    },
+    {
+        id: 5,
+        title: "Tiempo compartido",
+        inmuebles: ["Casa", "Departamento", "Departamento tipo PH", "Quinta"]
+    },
+];
+
+export const seccionesView = [
+    {
+        id: 1,
         icon: faHouse,
         title: "General",
         text: "En General se publican todos los inmuebles para venta, alquiler o alquiler temporal.",

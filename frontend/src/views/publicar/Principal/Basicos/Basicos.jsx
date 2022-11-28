@@ -1,6 +1,5 @@
 import React from 'react';
 import { Select, Input } from '../../../../components';
-import { operaciones, propiedades } from './Operaciones';
 import './Basicos.css';
 
 const Basicos = () => (

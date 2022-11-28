@@ -1,4 +1,3 @@
-import React from 'react';
 import Basicos from './Basicos/Basicos.jsx';
 import Ubicacion from './Ubicacion/Ubicacion.jsx';
 import Multimedia from './Multimedia/Multimedia.jsx';
@@ -7,7 +6,10 @@ import CaracteristicasGenerales from './CaracteristicasGenerales/Caracteristicas
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 import { Button } from '../../../components/index.js';
 import Superficies from './Superficies/Superficies.jsx';
-
+import DemasAmbientes from './DemasAmbientes/DemasAmbientes.jsx';
+import Instalaciones from './Instalaciones/Instalaciones.jsx';
+import Servicios from './Servicios/Servicios.jsx';
+import InformacionAdicional from './InformacionAdicional/InformacionAdicional.jsx';
 
 const Principal = () =>  (
     <>
@@ -24,7 +26,11 @@ const Principal = () =>  (
         <Ubicacion />
         <CaracteristicasPrincipales />
         <CaracteristicasGenerales />
+        <DemasAmbientes />
+        <Instalaciones />
+        <Servicios />
         <Multimedia />
+        <InformacionAdicional />
 
         <Button 
             to="/publicar/contacto"

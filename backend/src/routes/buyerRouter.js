@@ -2,7 +2,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
 import Buyer from '../models/buyerModel.js';
-import { generateToken } from '../../utils.js';
+import { generateToken } from '../../utils/utilsBuyer.js';
 
 const buyerRouter = express.Router();
 

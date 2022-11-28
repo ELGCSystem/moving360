@@ -2,7 +2,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
 import Centralized from '../../models/realEstates/centralizedFranchiseModel.js';
-import { generateToken } from '../../../utils.js';
+import { generateToken } from '../../../utils/realEstates/utilsCentralized.js';
 
 const centralizedRouter = express.Router();
 

@@ -2,7 +2,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
 import Owner from '../models/ownerModel.js';
-import { generateToken } from '../../utils.js';
+import { generateToken } from '../../utils/utilsOwner.js';
 
 const ownerRouter = express.Router();
 

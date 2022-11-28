@@ -2,7 +2,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
 import Traditional from '../../models/realEstates/traditionalModel.js';
-import { generateToken } from '../../../utils.js';
+import { generateToken } from '../../../utils/realEstates/utilsTraditional.js';
 
 const traditionalRouter = express.Router();
 

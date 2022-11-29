@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
-import './Registrarse.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faChartBar,
-  faCircleCheck,
-  faEnvelope,
-  faClock,
-} from '@fortawesome/free-solid-svg-icons';
-import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Input } from '../../components/index.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChartBar, faCircleCheck, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons';
+import Axios from 'axios';
+import './Registrarse.css';
 
 const Register = () => {
+
   const [data, setData] = useState({
     email: '',
     password: '',
     name: '',
     dni: '',
     tel: '',
-    mobile: '',
+    mobile: ''
   });
 
   const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: [input.value] });
+    setData({ ...data, [input.name]: input.value });
   };
 
   const [error, setError] = useState('');
@@ -30,9 +27,9 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = 'http://localhost:4000/api/admin';
+      const url = 'http://localhost:4000/api/admin/signup';
       const { data: res } = await Axios.post(url, data);
-      navigate('/login');
+      navigate('/iniciar-sesion');
       console.log(res.message);
     } catch (error) {
       if (
@@ -52,112 +49,83 @@ const Register = () => {
           Ingresá los datos para crear tu usuario
         </h2>
         <form className="register__form" onSubmit={handleSubmit}>
-          <h3 className="register__subtitle">Datos principales</h3>
-          <div className="register__input-container">
-            <input
-              type="email"
+
+          <div className='column'>
+            <h3 className="register__subtitle">Datos principales</h3>
+
+            <Input
+              displayName="Email: *"
               name="email"
-              id="email"
-              className="input"
-              required
+              type="email"
               value={data.email}
               onChange={handleChange}
+              className="register__input"
             />
-            <label htmlFor="email" className="register__label">
-              Email:
-            </label>
-          </div>
-          <div className="register__input-container">
-            <input
-              type="password"
+
+            <Input
+              displayName="Contraseña: *"
               name="password"
-              id="password"
-              className="input"
-              required
+              type="password"
               value={data.password}
               onChange={handleChange}
+              className="register__input"
             />
-            <label htmlFor="password" className="register__label">
-              Contraseña:
-            </label>
-          </div>
-          <div className="register__input-container">
-            <input
+
+            <Input
+              displayName="Confirmar contraseña: *"
+              name="confirm-password"
               type="password"
-              name="confirmPassword"
-              id="confirmPassword"
-              className="input"
-              required
+              className="register__input"
             />
-            <label htmlFor="password" className="register__label">
-              Confirmar Contraseña:
-            </label>
           </div>
-          <h3 className="register__subtitle">Datos del Usuario</h3>
-          <div className="register__input-container">
-            <input
-              type="text"
+
+          <div className='column'>
+            <h3 className="register__subtitle">Datos del Usuario</h3>
+
+            <Input
+              displayName="Nombre completo: *"
               name="name"
-              id="name"
-              className="input"
-              required
+              type="text"
               value={data.name}
               onChange={handleChange}
+              className="register__input"
             />
-            <label htmlFor="name" className="register__label">
-              Nombre Completo:
-            </label>
-          </div>
-          <div className="register__input-container">
-            <input
-              type="number"
+
+            <Input
+              displayName="N° de DNI: *"
               name="dni"
-              id="dni"
-              className="input"
-              required
+              type="number"
               value={data.dni}
               onChange={handleChange}
+              className="register__input"
             />
-            <label htmlFor="dni" className="register__label">
-              DNI:
-            </label>
-          </div>
-          <div className="register__input-container">
-            <input
-              type="number"
+
+            <Input
+              displayName="Teléfono: *"
               name="tel"
-              id="tel"
-              className="input"
-              required
-              value={data.number}
-              onChange={handleChange}
-            />
-            <label htmlFor="tel" className="register__label">
-              Teléfono:
-            </label>
-          </div>
-          <div className="register__input-container">
-            <input
               type="number"
+              value={data.tel}
+              onChange={handleChange}
+              className="register__input"
+            />
+
+            <Input
+              displayName="Celular: *"
               name="mobile"
-              id="mobile"
-              className="input"
-              required
+              type="number"
               value={data.mobile}
               onChange={handleChange}
+              className="register__input"
             />
-            <label htmlFor="mobile" className="register__label">
-              Teléfono Celular:
-            </label>
           </div>
-          {error && <div>{error}</div>}
+
           <button
             type="submit"
             value="Registrarse"
-            className="register__submit button btn btn-primary"
-          >
+            className="register__submit button button--blue">
             Registrarse
           </button>
+
         </form>
       </div>
       <div className="ad">

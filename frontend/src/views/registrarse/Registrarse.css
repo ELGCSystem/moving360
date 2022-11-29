@@ -9,33 +9,42 @@
 
 .register__title {
     padding: 5rem 1rem;
-    color: #000;
+    color: var(--black);
     font-size: 3rem;
-    font-weight: bold;
 }
 
 .register__form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 20% 15rem 20%;
+    grid-template-rows: auto 15rem;
     width: 100%;
     align-items: center;
+    justify-content: center;
     padding: 3rem 0;
 }
 
+.register__form .column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.register__form .column:nth-child(2) {
+    grid-column: 3;
+}
+
 .register__subtitle {
-    padding-bottom: 3.5rem;
-    color: #000;
+    color: var(--black);
     font-size: 2.5rem;
     font-weight: 400;
 }
 
-.register__input-container {
-    width: 50rem;
-    height: 9rem;
+.register__input {
+    margin: 1rem 0;
 }
 
 .register__submit {
-    margin-top: 1.5rem;
+    grid-column: 2/3;
 }
 
 .ad {

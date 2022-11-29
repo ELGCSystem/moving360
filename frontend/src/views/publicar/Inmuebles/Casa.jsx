@@ -18,7 +18,7 @@ import {
 const Casa = () => {
 
     let { seccion } = useParams();
-    let isCountries = seccion == "countries" ? true : false;
+    let isCountries = seccion == "countries";
 
     return (
         <>

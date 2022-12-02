@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const estateSchema = new mongoose.Schema(
+const houseSchema = new mongoose.Schema(
   {
     dataBasic: {
       typeUnit: { type: String, trim: true, required: true },
@@ -298,5 +298,5 @@ const estateSchema = new mongoose.Schema(
   }
 );
 
-const Post = mongoose.model('estates', estateSchema);
+const House = mongoose.model('houses', houseSchema);
 export default Post;

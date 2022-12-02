@@ -298,5 +298,5 @@ const estateSchema = new mongoose.Schema(
   }
 );
 
-const Post = mongoose.model('estates', ownerSchema);
+const Post = mongoose.model('estates', estateSchema);
 export default Post;

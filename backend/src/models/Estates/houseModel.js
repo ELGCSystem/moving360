@@ -292,6 +292,15 @@ const houseSchema = new mongoose.Schema(
       alternativeTelephone: { type: Number, trim: true, required: true },
       whatsApp: { type: Number, trim: true, required: true },
     },
+    statistics: {
+      views: { type: Number, trim: true, required: true },
+      queries: { type: Number, trim: true, required: true },
+      viewsTour: { type: Number, trim: true, required: true },
+      interested: { type: Number, trim: true, required: true },
+      offered: { type: Number, trim: true, required: true },
+      reserved: { type: Number, trim: true, required: true },
+      likes: { type: Number, trim: true, required: true },
+    },
   },
   {
     timestamps: true,

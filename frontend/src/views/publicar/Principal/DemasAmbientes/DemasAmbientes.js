@@ -7,12 +7,12 @@ export const demasAmbientes = [
     {
         id: 2,
         displayName: "Ante cocina",
-        name: "ante-cocina"
+        name: "anteCocina"
     },
     {
         id: 3,
         displayName: "Ante sala",
-        name: "ante-sala"
+        name: "anteSala"
     },
     {
         id: 4,
@@ -27,7 +27,7 @@ export const demasAmbientes = [
     {
         id: 6,
         displayName: "Balcón aterrazado",
-        name: "balcon-aterrazado"
+        name: "balconAterrazado"
     },
     {
         id: 7,
@@ -52,17 +52,17 @@ export const demasAmbientes = [
     {
         id: 11,
         displayName: "Cuarto de herramientas",
-        name: "cuarto-herramientas"
+        name: "cuartoHerramientas"
     },
     {
         id: 12,
         displayName: "Cuarto de planchar",
-        name: "cuarto-planchar"
+        name: "cuartoPlanchar"
     },
     {
         id: 13,
         displayName: "Entre piso",
-        name: "entre-piso"
+        name: "entrePiso"
     },
     {
         id: 14,
@@ -72,7 +72,7 @@ export const demasAmbientes = [
     {
         id: 15,
         displayName: "Family room",
-        name: "family-room"
+        name: "familyRoom"
     },
     {
         id: 16,
@@ -97,7 +97,7 @@ export const demasAmbientes = [
     {
         id: 20,
         displayName: "Fondo libre",
-        name: "fondo-libre"
+        name: "fondoLibre"
     },
     {
         id: 21,

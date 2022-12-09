@@ -14,11 +14,17 @@ import {
     Superficies,
     Ubicacion
 } from '../Principal';
+import { operaciones, casa } from '../Principal/Basicos/Basicos.js';
 
 const Casa = () => {
 
     let { seccion } = useParams();
-    let isCountries = seccion == "countries";
+    let isCountries = seccion === "countries";
+    let isTiempoCompartido = seccion === "tiempo-compartido";
+
+    let op = isTiempoCompartido ?
+            [operaciones[0], operaciones[1]] :
+            operaciones;
 
     return (
         <>
@@ -32,7 +38,10 @@ const Casa = () => {
                 <FaAngleLeft /> Atras
             </Button>
 
-            <Basicos />
+            <Basicos
+                tipoUnidad={casa}
+                operaciones={op}
+            />
             { isCountries ? <DatosCountry /> : null }
             <Superficies />
             <Ubicacion />

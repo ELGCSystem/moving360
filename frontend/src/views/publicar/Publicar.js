@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Contacto from './Contacto/Contacto.jsx';
 import VistaPrevia from './VistaPrevia/VistaPrevia.jsx';
 import './Publicar.css';

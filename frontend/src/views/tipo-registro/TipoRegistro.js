@@ -26,7 +26,7 @@ const TipoRegistro = () => {
                 <Card
                     className="tipo-registro"
                     icon={faUser}
-                    title="Usuario particular"
+                    title="Usuario"
                     text="Navega entre todas las propiedades del portal, dialogá con las inmobiliarias, encontrá tu lugar en el mundo."
                     button="Seleccionar"
                     url="/registrarse"

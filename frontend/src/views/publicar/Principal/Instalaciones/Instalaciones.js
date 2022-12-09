@@ -2,12 +2,12 @@ export const instalaciones = [
     {
         id: 1,
         displayName: "Agua cloaca",
-        name: "agua-cloaca"
+        name: "aguaCloaca"
     },
     {
         id: 2,
         displayName: "Aire caliente",
-        name: "aire-caliente"
+        name: "aireCaliente"
     },
     {
         id: 3,
@@ -17,7 +17,7 @@ export const instalaciones = [
     {
         id: 4,
         displayName: "Calefacción tiro balanceado",
-        name: "calefaccion-tiro-balanceado"
+        name: "calefaccionTiroBalanceado"
     },
     {
         id: 5,
@@ -27,12 +27,12 @@ export const instalaciones = [
     {
         id: 6,
         displayName: "Gas envasado",
-        name: "gas-envasado"
+        name: "gasEnvasado"
     },
     {
         id: 7,
         displayName: "Losa radiante",
-        name: "losa-radiante"
+        name: "losaRadiante"
     },
     {
         id: 8,
@@ -42,12 +42,12 @@ export const instalaciones = [
     {
         id: 9,
         displayName: "Piso radiante individual",
-        name: "piso-radiante-individual"
+        name: "pisoRadianteIndividual"
     },
     {
         id: 10,
         displayName: "Agua caliente",
-        name: "agua-caliente"
+        name: "aguaCaliente"
     },
     {
         id: 11,
@@ -57,7 +57,7 @@ export const instalaciones = [
     {
         id: 12,
         displayName: "Caja fuerte",
-        name: "caja-fuerte"
+        name: "cajaFuerte"
     },
     {
         id: 13,
@@ -72,12 +72,12 @@ export const instalaciones = [
     {
         id: 15,
         displayName: "Gas Natural",
-        name: "gas-natural"
+        name: "gasNatural"
     },
     {
         id: 16,
         displayName: "Muebles de cocina",
-        name: "muebles-cocina"
+        name: "mueblesCocina"
     },
     {
         id: 17,
@@ -87,42 +87,42 @@ export const instalaciones = [
     {
         id: 18,
         displayName: "Piso radiante central",
-        name: "piso-radiante-central"
+        name: "pisoRadianteCentral"
     },
     {
         id: 19,
         displayName: "Aire acondicionado central",
-        name: "aire-acondicionado-central"
+        name: "aireAcondicionadoCentral"
     },
     {
         id: 20,
         displayName: "Aire acondicionado individual",
-        name: "aire-acondicionado-individual"
+        name: "aireAcondicionadoIndividual"
     },
     {
         id: 21,
         displayName: "Artefactos de cocina",
-        name: "artefactos-cocina"
+        name: "artefactosCocina"
     },
     {
         id: 22,
         displayName: "Caldera individual",
-        name: "caldera-individual"
+        name: "calderaIndividual"
     },
     {
         id: 23,
         displayName: "Cancha de fútbol",
-        name: "cancha-futbol"
+        name: "canchaFutbol"
     },
     {
         id: 24,
         displayName: "Cancha de tenis",
-        name: "cancha-tenis"
+        name: "canchaTenis"
     },
     {
         id: 25,
         displayName: "Espacio vehicular",
-        name: "espacio-vehicular"
+        name: "espacioVehicular"
     },
     {
         id: 26,
@@ -132,7 +132,7 @@ export const instalaciones = [
     {
         id: 27,
         displayName: "Acceso movilidad reducida",
-        name: "acceso-movilidad-reducida"
+        name: "accesoMovilidadReducida"
     },
     {
         id: 28,
@@ -152,12 +152,12 @@ export const instalaciones = [
     {
         id: 31,
         displayName: "Extractor de aire",
-        name: "extractor-aire"
+        name: "extractorAire"
     },
     {
         id: 32,
         displayName: "Hogar a leña",
-        name: "hogar-leña"
+        name: "hogarLena"
     },
     {
         id: 33,
@@ -172,6 +172,6 @@ export const instalaciones = [
     {
         id: 35,
         displayName: "Riego por aspersión",
-        name: "riego-aspersion"
+        name: "riegoAspersion"
     },
 ] 

@@ -8,7 +8,7 @@ export const caracteristicasCheckboxes = [
     {
         id: 2,
         displayName: "Cocina integrada",
-        name: "cocina-integrada",
+        name: "cocinaIntegrada",
         className: "cocina-integrada"
     },
     {
@@ -20,7 +20,7 @@ export const caracteristicasCheckboxes = [
     {
         id: 4,
         displayName: "Comedor diario",
-        name: "comedor-diario",
+        name: "comedorDiario",
         className: "comedor-diario"
     },
     {
@@ -80,7 +80,41 @@ export const caracteristicasCheckboxes = [
     {
         id: 14,
         displayName: "Dependencia de servicio",
-        name: "dep-servicio",
-        className: "dep-servicio"
+        name: "dependenciaServicio",
+        className: "dependencia-servicio"
     }
 ];
+
+export const tipoCochera = [
+  {
+    id: 1,
+    title: "Fija"  
+  },
+  {
+    id: 2,
+    title: "Movil"  
+  },
+  {
+    id: 3,
+    title: "Espacio guarda coche"  
+  },
+  {
+    id: 4,
+    title: "Entrada de coche"  
+  }
+];
+
+export const coberturaCochera = [
+    {
+      id: 1,
+      title: "Cubierta"  
+    },
+    {
+      id: 2,
+      title: "Semi cubierta"  
+    },
+    {
+      id: 3,
+      title: "Descubierta"  
+    }
+  ];

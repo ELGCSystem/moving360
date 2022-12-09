@@ -151,88 +151,126 @@ export const partidosZonaSur = [
     }
 ];
 
-export const deportes = [
+export const zonas = [
     {
         id: 1,
-        name: "Basquet"
+        title: "Norte",
+        partidos: ["Campana", "Escobar", "Exaltación de la Cruz", "General San Martín", "José C. Paz", "Malvinas Argentinas", "Pilar", "San Fernando", "San Isidro", "San Miguel", "Tigre", "Vicente López", "Zarate"]
     },
     {
         id: 2,
-        name: "Equitación"
+        title: "Oeste",
+        partidos: ["Cañuelas", "General Rodríguez", "Hurlingham", "Ituzaingó", "La Matanza", "Luján", "Marcos Paz", "Merlo", "Moreno", "Tres de Febrero", "La Plata"]
     },
     {
         id: 3,
-        name: "Fútbol"
+        title: "Sur",
+        partidos: ["Almirante Brown", "Avellaneda", "Lanús", "Berazategui", "Lomas de Zamora", "Beriso", "Esteban Echeverría", "Ezeiza", "Florencio Varela", "Presidente Perón", "Quilmes", "San Vicente"]
+    }
+];
+
+export const deportes = [
+    {
+        id: 1,
+        displayName: "Basquet",
+        name: "basquet"
+    },
+    {
+        id: 2,
+        displayName: "Equitación",
+        name: "equitacion"
+    },
+    {
+        id: 3,
+        displayName: "Fútbol",
+        name: "futbol"
     },
     {
         id: 4,
-        name: "Golf"
+        displayName: "Golf",
+        name: "golf"
     },
     {
         id: 5,
-        name: "Hockey"
+        displayName: "Hockey",
+        name: "hockey"
     },
     {
         id: 6,
-        name: "Paddle"
+        displayName: "Paddle",
+        name: "paddle"
     },
     {
         id: 7,
-        name: "Polo"
+        displayName: "Polo",
+        name: "polo"
     },
     {
         id: 8,
-        name: "Rugby"
+        displayName: "Rugby",
+        name: "rugby"
     },
     {
         id: 9,
-        name: "Tenis"
+        displayName: "Tenis",
+        name: "tenis"
     },
     {
         id: 10,
-        name: "Voley"
+        displayName: "Voley",
+        name: "voley"
     }
 ];
 
 export const amenities = [
     {
         id: 1,
-        name: "Club House"
+        displayName: "Club House",
+        name: "clubHouse"
     },
     {
         id: 2,
-        name: "Gimnasio"
+        displayName: "Gimnasio",
+        name: "gimnasio"
     },
     {
         id: 3,
-        name: "Juegos"
+        displayName: "Juegos",
+        name: "juegos"
     },
     {
         id: 4,
-        name: "Laundry"
+        displayName: "Laundry",
+        name: "laundry"
     },
     {
         id: 5,
-        name: "Piscina"
+        displayName: "Piscina",
+        name: "piscina"
     },
     {
         id: 6,
+        displayName: "SUM",
         name: "SUM"
     },
     {
         id: 7,
-        name: "Caballeriza"
+        displayName: "Caballeriza",
+        name: "caballeriza"
     },
     {
         id: 8,
-        name: "Colegio"
+        displayName: "Colegio",
+        name: "colegio"
     },
     {
         id: 9,
-        name: "Bancos"
+        displayName: "Bancos",
+        name: "bancos"
     },
     {
         id: 10,
-        name: "Centro Comercial"
+        displayName: "Centro Comercial",
+        name: "centroComercial"
     }
 ];

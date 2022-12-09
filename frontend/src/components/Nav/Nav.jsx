@@ -43,7 +43,7 @@ const DesktopNavBar = () => {
                 {
                     userInfo ? (
                         <>
-                            <Button to="/">
+                            <Button to="/gestion-inmobiliaria">
                                 {userInfo.name}
                             </Button>
                             <Button to="/iniciar-sesion" onClick={signoutHandler} type="blue">

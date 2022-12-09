@@ -2,7 +2,7 @@ export const servicios = [
     {
         id: 1,
         displayName: "Impuesto municipal",
-        name: "impuesto-municipal"
+        name: "impuestoMunicipal"
     },
     {
         id: 2,
@@ -27,12 +27,12 @@ export const servicios = [
     {
         id: 6,
         displayName: "Agua corriente",
-        name: "agua-corriente"
+        name: "aguaCorriente"
     },
     {
         id: 7,
         displayName: "Gas envasado",
-        name: "gas-envasado"
+        name: "gasEnvasado"
     },
     {
         id: 8,
@@ -52,12 +52,12 @@ export const servicios = [
     {
         id: 11,
         displayName: "Gas natural",
-        name: "gas-natural"
+        name: "gasNatural"
     },
     {
         id: 12,
         displayName: "Impuesto inmobiliario",
-        name: "impuesto-inmobiliario"
+        name: "impuestoInmobiliario"
     },
     {
         id: 13,
@@ -77,11 +77,11 @@ export const servicios = [
     {
         id: 16,
         displayName: "Ropa de cama",
-        name: "ropa-cama"
+        name: "ropaCama"
     },
     {
         id: 17,
         displayName: "Video cable",
-        name: "video-cable"
+        name: "videoCable"
     },
 ];

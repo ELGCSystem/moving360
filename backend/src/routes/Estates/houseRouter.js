@@ -31,6 +31,7 @@ houseRouter.post(
       multimedia: req.body.multimedia,
       additionalInformation: req.body.additionalInformation,
       contactOwner: req.body.contactOwner,
+      statistics: req.body.statistics
     });
     const createdHouse = await house.save();
     res.send({
@@ -46,6 +47,7 @@ houseRouter.post(
       multimedia: createdHouse.multimedia,
       additionalInformation: createdHouse.additionalInformation,
       contactOwner: createdHouse.contactOwner,
+      statistics: createdHouse.statistics,
     });
   })
 );
@@ -67,6 +69,7 @@ houseRouter.put(
       multimedia,
       additionalInformation,
       contactOwner,
+      statistics
     } = req.body;
     const houseUpdated = await House.findByIdAndUpdate(
       _id,
@@ -83,6 +86,7 @@ houseRouter.put(
           multimedia,
           additionalInformation,
           contactOwner,
+          statistics
         },
       },
       { useFindAndModify: false }

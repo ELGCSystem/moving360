@@ -7,18 +7,15 @@ const houseSchema = new mongoose.Schema(
         typeUnit: { type: String, trim: true, required: true },
         typeOperation: { type: String, trim: true, required: true },
         price: { type: Number, trim: true, required: true },
-        typePrice: {
-          ars: { type: Boolean, trim: true, required: true },
-          dollar: { type: Boolean, trim: true, required: true },
-        },
+        typePrice: { type: String, trim: true, required: true },
         state: { type: String, trim: true, required: true },
         credit: { type: Boolean, trim: true, required: true },
         barter: { type: Boolean, trim: true, required: true },
         title: { type: String, trim: true, required: true },
         commission: {
-          valueInit: { type: Boolean, trim: true, required: true },
-          valueHalf: { type: Boolean, trim: true, required: true },
-          valueFinal: { type: Boolean, trim: true, required: true },
+          valueInit: { type: Number, trim: true, required: true },
+          valueHalf: { type: Number, trim: true, required: true },
+          valueFinal: { type: Number, trim: true, required: true },
         },
       },
       surface: {
@@ -32,13 +29,12 @@ const houseSchema = new mongoose.Schema(
         state: { type: String, trim: true, required: true },
         town: { type: String, trim: true, required: true },
         locality: { type: String, trim: true, required: true },
-        neighborhood: { type: String, trim: true, required: true },
-        subNeighborhood: { type: String, trim: true, required: true },
         nameStreet: { type: String, trim: true, required: true },
         numberStreet: { type: Number, trim: true, required: true },
         flat: { type: Number, trim: true, required: true },
         department: { type: Number, trim: true, required: true },
         postalCode: { type: String, trim: true, required: true },
+        exactLocation: { type: String, trim: true, required: true}
       },
       mainFeatures: {
         bedroom: {
@@ -250,22 +246,7 @@ const houseSchema = new mongoose.Schema(
       multimedia: {
         frontPage: { type: String, trim: true, required: true },
         photoTour360: {
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
-          photo: { type: String, trim: true, required: false },
+          photo: { type: String, trim: true, required: true },
         },
         photo360: {
           photo: { type: String, trim: true, required: false },

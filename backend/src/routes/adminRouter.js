@@ -3,6 +3,8 @@ import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
 import Admin from '../models/adminModel.js';
 import { generateToken } from '../../utils/utilsAdmin.js';
+import Token from '../../utils/tokens/tokenEmail.js'
+import sendEmail from '../../utils/auth/sendEmail.js'
 
 const adminRouter = express.Router();
 
@@ -71,6 +73,8 @@ adminRouter.post(
     });
   })
 );
+
+
 
 //Actualización de Usuarios
 adminRouter.put(

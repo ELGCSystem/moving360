@@ -308,4 +308,4 @@ const houseSchema = new mongoose.Schema(
 );
 
 const House = mongoose.model('houses', houseSchema);
-export default Post;
+export default House;

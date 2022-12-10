@@ -10,7 +10,7 @@ import ownerRouter from './src/routes/ownerRouter.js';
 import traditionalRouter from './src/routes/realEstates/traditionalRouter.js';
 import decentralizedRouter from './src/routes/realEstates/decentralizedFranchiseRouter.js';
 import centralizedRouter from './src/routes/realEstates/centralizedFranchiseRouter.js';
-import House from './src/routes/Estates/houseRouter.js';
+import house from './src/routes/Estates/houseRouter.js';
 import './passport.js';
 import authRouter from './src/auth/auth.js';
 

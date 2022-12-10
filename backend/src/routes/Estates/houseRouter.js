@@ -1,7 +1,6 @@
 import express from 'express';
-import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
-import House from '../models/Estates/houseModel.js';
+import House from '../../models/Estates/houseModel.js';
 import { generateToken } from '../../../utils/Estates/utilsHouse.js';
 
 const houseRouter = express.Router();

@@ -9,6 +9,7 @@ import Facebook from '../../assets/facebook.png';
 import axios from 'axios';
 import './Login.css';
 import './Auth.css';
+import Success from './success/Success.js';
 
 const Login = () => {
   const google = () => {
@@ -37,7 +38,7 @@ const Login = () => {
       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       window.location.href = "/gestion-inmobiliaria";
-      navigate("/iniciar-sesion");
+      navigate(Success);
 
     } catch (error) {
       console.log(error.response.status);

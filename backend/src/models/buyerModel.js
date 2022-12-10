@@ -12,6 +12,7 @@ const buyerSchema = new mongoose.Schema(
     isBuyer: { type: Boolean, required: true, default: false },
     isOwner: { type: Boolean, required: true, default: false },
     isSeller: { type: Boolean, required: true, default: false },
+    verified: { type: Boolean, required: true, default: false },
   },
   {
     timestamps: true,

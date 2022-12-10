@@ -23,7 +23,7 @@ houseRouter.post(
       surface: req.body.surface,
       location: req.body.location,
       mainFeatures: req.body.mainFeatures,
-      general: req.body.mainFeatures,
+      generalFeatures: req.body.generalFeatures,
       otherEnvironments: req.body.otherEnvironments,
       installations: req.body.installations,
       services: req.body.services,

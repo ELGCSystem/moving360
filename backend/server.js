@@ -10,6 +10,7 @@ import ownerRouter from './src/routes/ownerRouter.js';
 import traditionalRouter from './src/routes/realEstates/traditionalRouter.js';
 import decentralizedRouter from './src/routes/realEstates/decentralizedFranchiseRouter.js';
 import centralizedRouter from './src/routes/realEstates/centralizedFranchiseRouter.js';
+import House from './src/routes/Estates/houseRouter.js';
 import './passport.js';
 import authRouter from './src/auth/auth.js';
 
@@ -26,11 +27,13 @@ mongoose
 
 const app = express();
 
-app.use(cors({
-  origin:"http://localhost:3000",
-  methods:"GET,POST,PUT,DELETE",
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    methods: 'GET,POST,PUT,DELETE',
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -41,11 +44,12 @@ app.use('/api/owner', ownerRouter);
 app.use('/api/traditional', traditionalRouter);
 app.use('/api/decentralized', decentralizedRouter);
 app.use('/api/centralized', centralizedRouter);
+app.use('/api/house', House);
 
 app.use(
   cookieSession({
-    name:"session",
-    keys:["elgcsystem"],
+    name: 'session',
+    keys: ['elgcsystem'],
     maxAge: 24 * 60 * 60 * 100,
   })
 );
@@ -53,7 +57,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/auth", authRouter)
+app.use('/auth', authRouter);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

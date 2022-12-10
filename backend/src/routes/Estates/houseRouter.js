@@ -2,7 +2,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
 import House from '../models/Estates/houseModel.js';
-import { generateToken } from '../../utils/utilsAdmin.js';
+import { generateToken } from '../../../utils/Estates/utilsHouse.js';
 
 const houseRouter = express.Router();
 
@@ -31,7 +31,7 @@ houseRouter.post(
       multimedia: req.body.multimedia,
       additionalInformation: req.body.additionalInformation,
       contactOwner: req.body.contactOwner,
-      statistics: req.body.statistics
+      statistics: req.body.statistics,
     });
     const createdHouse = await house.save();
     res.send({
@@ -48,6 +48,7 @@ houseRouter.post(
       additionalInformation: createdHouse.additionalInformation,
       contactOwner: createdHouse.contactOwner,
       statistics: createdHouse.statistics,
+      token: generateToken(createdHouse),
     });
   })
 );
@@ -69,7 +70,7 @@ houseRouter.put(
       multimedia,
       additionalInformation,
       contactOwner,
-      statistics
+      statistics,
     } = req.body;
     const houseUpdated = await House.findByIdAndUpdate(
       _id,
@@ -86,7 +87,7 @@ houseRouter.put(
           multimedia,
           additionalInformation,
           contactOwner,
-          statistics
+          statistics,
         },
       },
       { useFindAndModify: false }

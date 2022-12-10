@@ -44,7 +44,7 @@ app.use('/api/owner', ownerRouter);
 app.use('/api/traditional', traditionalRouter);
 app.use('/api/decentralized', decentralizedRouter);
 app.use('/api/centralized', centralizedRouter);
-app.use('/api/house', House);
+app.use('/api/house', house);
 
 app.use(
   cookieSession({

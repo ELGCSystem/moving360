@@ -1,0 +1,29 @@
+.verification-body {
+  text-align: center;
+  font-family: var(--titles);
+}
+
+.top-img {
+  width: 25%;
+  margin: -30px;
+}
+
+.top-title {
+  font-size: 50px;
+}
+
+.bottom-text {
+  font-size: 15px;
+}
+
+.top-container {
+  line-height: 50px;
+}
+
+.bottom-title {
+  line-height: 65px;
+}
+
+.verificacion {
+  line-height: 65px;
+}

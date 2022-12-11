@@ -18,7 +18,8 @@ import {
   SolicitudRegistro,
   TipoRegistro,
   GestionInmobiliaria,
-  Login
+  Login,
+  Verificacion
 } from "./views/index.js";
 
 //Componente principal, contiene "Header", "Main" y "Footer"
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/publicar/*" element={<Publicar />} />
           <Route path="/gestion-inmobiliaria/*" element={<GestionInmobiliaria />} />
           <Route path="/registrarse" exact element={<Registrarse />} />
+          <Route path="/verificacion" exact element={<Verificacion />} />
         </Routes>
       </main>
 

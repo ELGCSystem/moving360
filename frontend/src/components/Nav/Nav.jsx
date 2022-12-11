@@ -24,7 +24,7 @@ const DesktopNavBar = () => {
     const signoutHandler = () => {
         ctxDispatch({ type: 'USER_SIGNOUT' });
         localStorage.removeItem('userInfo');
-        window.location.href = "/iniciar-sesion";
+        window.location.href = "/";
     }
 
     return (

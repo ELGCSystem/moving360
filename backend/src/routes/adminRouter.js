@@ -3,8 +3,8 @@ import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
 import Admin from '../models/adminModel.js';
 import { generateToken } from '../../utils/utilsAdmin.js';
-import nodemailer from 'nodemailer'
-import crypto from 'crypto'
+import nodemailer from 'nodemailer';
+import crypto from 'crypto';
 
 const adminRouter = express.Router();
 
@@ -23,7 +23,6 @@ adminRouter.post(
   expressAsyncHandler(async (req, res) => {
     const admin = await Admin.findOne({ email: req.body.email });
     if (admin) {
-
       if (bcrypt.compareSync(req.body.password, admin.password)) {
         res.send({
           _id: admin._id,
@@ -68,29 +67,111 @@ adminRouter.post(
       secure: false,
       auth: {
         user: 'elgcsystem@gmail.com',
-        pass: 'nwzanwgdwlsimmlm'
+        pass: 'nwzanwgdwlsimmlm',
       },
       tls: {
-        rejectUnauthorized : false
-      }
-    })
+        rejectUnauthorized: false,
+      },
+    });
 
     const mailOptions = {
-      from: ' "Verifica tu email" <elgcsystem@gmail.com> ',
+      from: ' "Moving360" <elgcsystem@gmail.com> ',
       to: admin.email,
-      subject: 'elgcsystem -verifica tu email',
-      html: `<h2> ${admin.name}! Gracias por registrarte con Moving360</h2>
-             <h4> Por favor verifica tu email para continuar <h4>
-             <a href="http://${req.headers.host}/api/admin/verify-email?token=${admin.emailToken}">Verifica tu Email</a>`
-    }
+      subject: 'Bienvenido a Moving360 Usuario Navegante! :)',
+      html: `
+      <table
+      style="
+        max-width: 600px;
+        padding: 10px;
+        margin: 0 auto;
+        border-collapse: collapse;
+      "
+    >
+      <tr>
+        <td
+          style="
+            padding: 0;
+            background: rgb(183, 193, 255);
+            background: linear-gradient(
+              180deg,
+              rgba(183, 193, 255, 1) 0%,
+              rgba(255, 255, 255, 1) 85%
+            );
+            display: flex;
+            justify-content: center;
+          "
+        >
+          <img
+            style="padding: 0; display: block"
+            src="https://moving360.netlify.app/static/media/logo-moving360.98e793f126324cc833ff.png"
+            width="20%"
+          />
+        </td>
+      </tr>
 
-    transporter.sendMail(mailOptions, function(error, info) {
-      if(error){
-        console.log(error)
-      }else{
-        console.log("El email de verificación se envió a su cuenta de gmail")
+      <tr>
+        <td style="background-color: #fff">
+          <div
+            style="
+              color: #000000;
+              margin: 4% 10% 2%;
+              text-align: justify;
+              font-family: sans-serif;
+            "
+          >
+            <h2 style="color: #222d65; margin: 0 0 7px">Hola ${admin.name}!</h2>
+            <h4 style="color: #00000065;">Tu cuenta ha sido registrada con éxito!</h4>
+            <p style="margin: 2px; font-size: 15px">
+              Tu cuenta ha sido registrada con éxito y para poder proseguir con el registro es necesario
+              realizar una verificación para comprobar que no eres un robot.<br />
+              <br />
+              Gracias por confiar en nosotros<br />
+            </p>
+            <div
+              style="
+                width: 100%;
+                margin: 20px 0;
+                display: inline-block;
+                text-align: center;
+              "
+            >
+            </div>
+            <div style="width: 100%; text-align: center">
+              <a
+                style="
+                  text-decoration: none;
+                  border-radius: 5px;
+                  padding: 11px 23px;
+                  color: white;
+                  background-color: #3498db;
+                "
+                href="http://${req.headers.host}/api/admin/verify-email?token=${admin.emailToken}"
+                >Verificar mi cuenta</a
+              >
+            </div>
+            <p
+              style="
+                color: #b3b3b3;
+                font-size: 12px;
+                text-align: center;
+                margin: 30px 0 0;
+              "
+            >
+              Moving360 - 2023
+            </p>
+          </div>
+        </td>
+      </tr>
+    </table>`,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('El email de verificación se envió a su cuenta de gmail');
       }
-    })
+    });
 
     res.send({
       _id: createdAdmin._id,
@@ -108,23 +189,23 @@ adminRouter.post(
 );
 
 //Verificación de Usuarios
-adminRouter.get('/verify-email', async(req, res) => {
+adminRouter.get('/verify-email', async (req, res) => {
   try {
-    const token = req.query.token
-    const admin = await Admin.findOne({ emailToken : token })
-    if(admin){
-      admin.emailToken = null
-      admin.verified = true
-      await admin.save()
-      res.redirect('http://localhost:3000/iniciar-sesion')
-    }else{
-      res.redirect('http://localhost:3000//registrarse')
-      console.log("Email no verificado")
+    const token = req.query.token;
+    const admin = await Admin.findOne({ emailToken: token });
+    if (admin) {
+      admin.emailToken = null;
+      admin.verified = true;
+      await admin.save();
+      res.redirect('http://localhost:3000/verificacion');
+    } else {
+      res.redirect('http://localhost:3000//registrarse');
+      console.log('Email no verificado');
     }
-  }catch(err){
-    console.log(err)
+  } catch (err) {
+    console.log(err);
   }
-})
+});
 
 //Actualización de Usuarios
 adminRouter.put(

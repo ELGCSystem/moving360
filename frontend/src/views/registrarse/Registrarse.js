@@ -4,7 +4,11 @@ import { Input } from '../../components/index.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartBar, faCircleCheck, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons';
 import Axios from 'axios';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import './Registrarse.css';
+import './Swal.css';
+import success from '../../assets/success.png';
 
 const Register = () => {
 
@@ -29,9 +33,18 @@ const Register = () => {
     try {
       const url = 'http://localhost:4000/api/admin/signup';
       const { data: res } = await Axios.post(url, data);
-      navigate('/iniciar-sesion');
+      const MySwal = withReactContent(Swal);
+
+      MySwal.fire({ title: 'Registrado con éxito!',
+                  text: 'Verifica tu correo electrónico para poder Iniciar Sesión!',
+                  imageUrl: `${success}`,
+                  imageWidth: '100',
+                  imageHeight: '100',
+                  padding: '8rem',  
+                  width: '800',
+      });
       console.log(res.message);
-    } catch (error) {
+    } catch (error) { 
       if (
         error.response &&
         error.response.status >= 400 &&
@@ -44,6 +57,7 @@ const Register = () => {
 
   return (
     <>
+    
       <div className="body-register">
         <h2 className="register__title">
           Ingresá los datos para crear tu usuario

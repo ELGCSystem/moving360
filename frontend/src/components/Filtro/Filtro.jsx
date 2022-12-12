@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Contador } from '../../components';
+import { Contador } from '..';
 
 //<Contador name={name}/>
 

@@ -1,73 +1,73 @@
-export const servicios = [
+export const services = [
     {
         id: 1,
         displayName: "Impuesto municipal",
-        name: "impuestoMunicipal"
+        name: "councilTax"
     },
     {
         id: 2,
         displayName: "Electricidad",
-        name: "electricidad"
+        name: "electricity"
     },
     {
         id: 3,
         displayName: "Limpieza",
-        name: "limpieza"
+        name: "cleaning"
     },
     {
         id: 4,
         displayName: "Seguridad",
-        name: "seguridad"
+        name: "security"
     },
     {
         id: 5,
         displayName: "Vigilancia",
-        name: "vigilencia"
+        name: "vigilance"
     },
     {
         id: 6,
         displayName: "Agua corriente",
-        name: "aguaCorriente"
+        name: "runningWater"
     },
     {
         id: 7,
         displayName: "Gas envasado",
-        name: "gasEnvasado"
+        name: "bottledGas"
     },
     {
         id: 8,
         displayName: "Refrigeración",
-        name: "refrigeracion"
+        name: "refrigeration"
     },
     {
         id: 9,
         displayName: "Teléfono",
-        name: "telefono"
+        name: "telephone"
     },
     {
         id: 10,
         displayName: "Calefacción",
-        name: "calefaccion"
+        name: "heating"
     },
     {
         id: 11,
         displayName: "Gas natural",
-        name: "gasNatural"
+        name: "naturalGas"
     },
     {
         id: 12,
         displayName: "Impuesto inmobiliario",
-        name: "impuestoInmobiliario"
+        name: "realEstateTax"
     },
     {
         id: 13,
         displayName: "Toallas",
-        name: "toallas"
+        name: "towels"
     },
     {
         id: 14,
         displayName: "Conmutador",
-        name: "conmutador"
+        name: "commutator"
     },
     {
         id: 15,
@@ -77,7 +77,7 @@ export const servicios = [
     {
         id: 16,
         displayName: "Ropa de cama",
-        name: "ropaCama"
+        name: "linen"
     },
     {
         id: 17,

@@ -5,8 +5,8 @@ import { Store } from '../../../../Store.js';
 const InformacionAdicional = () => {
 
     const [data, setData] = useState({
-        descripcion: '',
-        notas: ''
+        description: '',
+        notes: ''
     });
 
     const { dispatch: ctxDispatch } = useContext(Store);
@@ -26,12 +26,12 @@ const InformacionAdicional = () => {
             <h2>Información adicional</h2>
             <Textarea
                 displayName="Descripción"
-                name="descripcion"
+                name="description"
                 onChange={handleChange}
             />
             <Textarea
                 displayName="Notas (no se publican en internet)"
-                name="notas"
+                name="notes"
                 onChange={handleChange}
             />
 

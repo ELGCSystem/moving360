@@ -1,157 +1,4 @@
-export const partidosZonaNorte = [
-    {
-        id: 1,
-        name: "Campana"
-    },
-    {
-        id: 2,
-        name: "Escobar"
-    },
-    {
-        id: 3,
-        name: "Exaltación de la Cruz"
-    },
-    {
-        id: 4,
-        name: "General San Martín"
-    },
-    {
-        id: 5,
-        name: "José C. Paz"
-    },
-    {
-        id: 6,
-        name: "Malvinas Argentinas"
-    },
-    {
-        id: 7,
-        name: "Pilar"
-    },
-    {
-        id: 8,
-        name: "San Fernando"
-    },
-    {
-        id: 9,
-        name: "San Isidro"
-    },
-    {
-        id: 10,
-        name: "San Miguel"
-    },
-    {
-        id: 11,
-        name: "Tigre"
-    },
-    {
-        id: 12,
-        name: "Vicente López"
-    },
-    {
-        id: 13,
-        name: "Zarate"
-    }
-];
-
-export const partidosZonaOeste = [
-    {
-        id: 1,
-        name: "Cañuelas"
-    },
-    {
-        id: 2,
-        name: "General Rodríguez"
-    },
-    {
-        id: 3,
-        name: "Hurlingham"
-    },
-    {
-        id: 4,
-        name: "Ituzaingó"
-    },
-    {
-        id: 5,
-        name: "La Matanza"
-    },
-    {
-        id: 6,
-        name: "Luján"
-    },
-    {
-        id: 7,
-        name: "Marcos Paz"
-    },
-    {
-        id: 8,
-        name: "Merlo"
-    },
-    {
-        id: 9,
-        name: "Moreno"
-    },
-    {
-        id: 10,
-        name: "Tres de Febrero"
-    }
-];
-
-export const partidosZonaSur = [
-    {
-        id: 1,
-        name: "Almirante Brown"
-    },
-    {
-        id: 2,
-        name: "Avellaneda"
-    },
-    {
-        id: 3,
-        name: "Lanús"
-    },
-    {
-        id: 4,
-        name: "Berazategui"
-    },
-    {
-        id: 5,
-        name: "Lomas de Zamora"
-    },
-    {
-        id: 6,
-        name: "Beriso"
-    },
-    {
-        id: 7,
-        name: "Esteban Echeverría"
-    },
-    {
-        id: 8,
-        name: "Ezeiza"
-    },
-    {
-        id: 9,
-        name: "Florencio Varela"
-    },
-    {
-        id: 10,
-        name: "La Plata"
-    },
-    {
-        id: 11,
-        name: "Presidente Perón"
-    },
-    {
-        id: 12,
-        name: "Quilmes"
-    },
-    {
-        id: 13,
-        name: "San Vicente"
-    }
-];
-
-export const zonas = [
+export const zones = [
     {
         id: 1,
         title: "Norte",
@@ -169,21 +16,21 @@ export const zonas = [
     }
 ];
 
-export const deportes = [
+export const sports = [
     {
         id: 1,
         displayName: "Basquet",
-        name: "basquet"
+        name: "basketball"
     },
     {
         id: 2,
         displayName: "Equitación",
-        name: "equitacion"
+        name: "horseRiding"
     },
     {
         id: 3,
         displayName: "Fútbol",
-        name: "futbol"
+        name: "football"
     },
     {
         id: 4,
@@ -213,12 +60,12 @@ export const deportes = [
     {
         id: 9,
         displayName: "Tenis",
-        name: "tenis"
+        name: "tennis"
     },
     {
         id: 10,
         displayName: "Voley",
-        name: "voley"
+        name: "volleyball"
     }
 ];
 
@@ -231,12 +78,12 @@ export const amenities = [
     {
         id: 2,
         displayName: "Gimnasio",
-        name: "gimnasio"
+        name: "gym"
     },
     {
         id: 3,
         displayName: "Juegos",
-        name: "juegos"
+        name: "games"
     },
     {
         id: 4,
@@ -246,31 +93,31 @@ export const amenities = [
     {
         id: 5,
         displayName: "Piscina",
-        name: "piscina"
+        name: "pool"
     },
     {
         id: 6,
         displayName: "SUM",
-        name: "SUM"
+        name: "multipurposeRoom"
     },
     {
         id: 7,
         displayName: "Caballeriza",
-        name: "caballeriza"
+        name: "stable"
     },
     {
         id: 8,
         displayName: "Colegio",
-        name: "colegio"
+        name: "school"
     },
     {
         id: 9,
         displayName: "Bancos",
-        name: "bancos"
+        name: "bank"
     },
     {
         id: 10,
         displayName: "Centro Comercial",
-        name: "centroComercial"
+        name: "mall"
     }
 ];

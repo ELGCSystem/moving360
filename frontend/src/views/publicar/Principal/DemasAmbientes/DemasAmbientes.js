@@ -1,33 +1,33 @@
-export const demasAmbientes = [
+export const otherEnvironments = [
     {
         id: 1,
         displayName: "Altillo",
-        name: "altillo"
+        name: "loft"
     },
     {
         id: 2,
         displayName: "Ante cocina",
-        name: "anteCocina"
+        name: "beforeKitchen"
     },
     {
         id: 3,
         displayName: "Ante sala",
-        name: "anteSala"
+        name: "beforeLiving"
     },
     {
         id: 4,
         displayName: "Azotea",
-        name: "azotea"
+        name: "rooftop"
     },
     {
         id: 5,
         displayName: "Balcón",
-        name: "balcon"
+        name: "balcony"
     },
     {
         id: 6,
         displayName: "Balcón aterrazado",
-        name: "balconAterrazado"
+        name: "balconyTerraced"
     },
     {
         id: 7,
@@ -37,37 +37,37 @@ export const demasAmbientes = [
     {
         id: 8,
         displayName: "Baulera",
-        name: "baulera"
+        name: "trunk"
     },
     {
         id: 9,
         displayName: "Biblioteca",
-        name: "biblioteca"
+        name: "library"
     },
     {
         id: 10,
         displayName: "Bodega",
-        name: "bodega"
+        name: "cellar"
     },
     {
         id: 11,
         displayName: "Cuarto de herramientas",
-        name: "cuartoHerramientas"
+        name: "toolRoom"
     },
     {
         id: 12,
         displayName: "Cuarto de planchar",
-        name: "cuartoPlanchar"
+        name: "ironingRoom"
     },
     {
         id: 13,
         displayName: "Entre piso",
-        name: "entrePiso"
+        name: "betweenFloor"
     },
     {
         id: 14,
         displayName: "Estudio",
-        name: "estudio"
+        name: "studio"
     },
     {
         id: 15,
@@ -77,12 +77,12 @@ export const demasAmbientes = [
     {
         id: 16,
         displayName: "Galería",
-        name: "galeria"
+        name: "gallery"
     },
     {
         id: 17,
         displayName: "Galpón",
-        name: "galpon"
+        name: "shed"
     },
     {
         id: 18,
@@ -92,12 +92,12 @@ export const demasAmbientes = [
     {
         id: 19,
         displayName: "Jardín",
-        name: "jardin"
+        name: "garden"
     },
     {
         id: 20,
         displayName: "Fondo libre",
-        name: "fondoLibre"
+        name: "freeBackground"
     },
     {
         id: 21,
@@ -107,7 +107,7 @@ export const demasAmbientes = [
     {
         id: 22,
         displayName: "Oficina",
-        name: "oficina"
+        name: "office"
     },
     {
         id: 23,
@@ -117,36 +117,36 @@ export const demasAmbientes = [
     {
         id: 24,
         displayName: "Parrilla",
-        name: "parrilla"
+        name: "grill"
     },
     {
         id: 25,
         displayName: "Sala",
-        name: "sala"
+        name: "livingRoom"
     },
     {
         id: 26,
         displayName: "Sotano",
-        name: "sotano"
+        name: "basement"
     },
     {
         id: 27,
         displayName: "Suite",
-        name: "suite"
+        name: "suiteRoom"
     },
     {
         id: 28,
         displayName: "Vestíbulo",
-        name: "vestibulo"
+        name: "lobby"
     },
     {
         id: 29,
         displayName: "Vestidor",
-        name: "vestidor"
+        name: "dressingRoom"
     },
     {
         id: 30,
         displayName: "Vestuario",
-        name: "vestuario"
+        name: "lockerRoom"
     }
 ];

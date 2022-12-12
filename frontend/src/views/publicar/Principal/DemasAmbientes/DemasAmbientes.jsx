@@ -1,42 +1,42 @@
 import { useState, useContext } from "react";
 import { Input } from "../../../../components";
 import { Store } from '../../../../Store.js';
-import { demasAmbientes } from "./DemasAmbientes";
+import { otherEnvironments } from "./DemasAmbientes";
 import './DemasAmbientes.css';
 
 const DemasAmbientes = () => {
 
     const [data, setData] = useState({
-        altillo: false,
-        anteCocina: false,
-        anteSala: false,
-        azotea: false,
-        balcon: false,
-        balconAterrazado: false,
+        loft: false,
+        beforeKitchen: false,
+        beforeLiving: false,
+        rooftop: false,
+        balcony: false,
+        balconyTerraced: false,
         bar: false,
-        baulera: false,
-        biblioteca: false,
-        bodega: false,
-        cuartoHerramientas: false,
-        cuartoPlanchar: false,
-        entrePiso: false,
-        estudio: false,
+        trunk: false,
+        library: false,
+        cellar: false,
+        toolRoom: false,
+        ironingRoom: false,
+        betweenFloor: false,
+        studio: false,
         familyRoom: false,
-        galeria: false,
-        galpon: false,
+        gallery: false,
+        shed: false,
         garage: false,
-        jardin: false,
-        fondoLibre: false,
+        garden: false,
+        freeBackground: false,
         local: false,
-        oficina: false,
+        office: false,
         palier: false,
-        parrilla: false,
-        sala: false,
-        sotano: false,
-        suite: false,
-        vestibulo: false,
-        vestidor: false,
-        vestuario: false
+        grill: false,
+        livingRoom: false,
+        basement: false,
+        suiteRoom: false,
+        lobby: false,
+        dressingRoom: false,
+        lockerRoom: false,
     });
 
     const { dispatch: ctxDispatch } = useContext(Store);
@@ -57,11 +57,11 @@ const DemasAmbientes = () => {
             <h2>Demas ambientes</h2>
 
             {
-                demasAmbientes.map((ambiente) => (
+                otherEnvironments.map((field) => (
                     <Input
-                        key={ambiente.id}
-                        displayName={ambiente.displayName}
-                        name={ambiente.name}
+                        key={field.id}
+                        displayName={field.displayName}
+                        name={field.name}
                         type="checkbox"
                         onChange={handleChange}
                     />

@@ -13,6 +13,10 @@ const initialState = {
         ? JSON.parse(localStorage.getItem('dataBasic'))
         : {},
 
+        dataCountry: localStorage.getItem('dataCountry')
+        ? JSON.parse(localStorage.getItem('dataCountry'))
+        : {},
+
         surface: localStorage.getItem('surface')
         ? JSON.parse(localStorage.getItem('surface'))
         : {},
@@ -25,8 +29,8 @@ const initialState = {
         ? JSON.parse(localStorage.getItem('mainFeatures'))
         : {},
 
-        general: localStorage.getItem('general')
-        ? JSON.parse(localStorage.getItem('general'))
+        generalFeatures: localStorage.getItem('generalFeatures')
+        ? JSON.parse(localStorage.getItem('generalFeatures'))
         : {},
 
         otherEnvironments: localStorage.getItem('otherEnvironments')
@@ -52,6 +56,8 @@ const initialState = {
         contactOwner: localStorage.getItem('contactOwner')
         ? JSON.parse(localStorage.getItem('contactOwner'))
         : {},
+
+        statistics: null
     }
 }
 
@@ -69,6 +75,15 @@ function reducer(state, action) {
                 houseData: {
                      ...state.houseData,
                      dataBasic: action.payload 
+                } 
+            };
+
+        case 'SAVE_DATA_COUNTRY':
+            return { 
+                ...state, 
+                houseData: {
+                     ...state.houseData,
+                     dataCountry: action.payload 
                 } 
             };
 
@@ -99,12 +114,12 @@ function reducer(state, action) {
                 } 
             };
 
-        case 'SAVE_GENERAL':
+        case 'SAVE_GENERAL_FEATURES':
             return { 
                 ...state, 
                 houseData: {
                      ...state.houseData,
-                     general: action.payload 
+                     generalFeatures: action.payload 
                 } 
             };
 

@@ -1,44 +1,75 @@
-export const caracteristicasCheckboxes = [
+export const mainEnvironments = [
+  {
+    id: 1,
+    displayName: "Dormitorios",
+    name: "bedrooms",
+    className: "dormitorios",
+    max: 20
+  },
+  {
+    id: 2,
+    displayName: "Baños",
+    name: "bathrooms",
+    className: "banos",
+    max: 10
+  },
+  {
+    id: 3,
+    displayName: "Toilettes",
+    name: "toilettes",
+    className: "toilettes",
+    max: 10
+  },
+  {
+    id: 4,
+    displayName: "Baños en suite",
+    name: "suiteBathrooms",
+    className: "banosSuite",
+    max: 10
+  }
+];
+
+export const features = [
     {
         id: 1,
         displayName: "Cocina",
-        name: "cocina",
+        name: "kitchen",
         className: "cocina"
     },
     {
         id: 2,
         displayName: "Cocina integrada",
-        name: "cocinaIntegrada",
+        name: "integratedKitchen",
         className: "cocina-integrada"
     },
     {
         id: 3,
         displayName: "Comedor",
-        name: "comedor",
+        name: "dinningRoom",
         className: "comedor"
     },
     {
         id: 4,
         displayName: "Comedor diario",
-        name: "comedorDiario",
+        name: "dailyDinningRoom",
         className: "comedor-diario"
     },
     {
         id: 5,
         displayName: "Living",
-        name: "living",
+        name: "livingRoom",
         className: "living"
     },
     {
         id: 6,
         displayName: "Lavadero",
-        name: "lavadero",
+        name: "laundryRoom",
         className: "lavadero"
     },
     {
         id: 7,
         displayName: "Patio",
-        name: "patio",
+        name: "yard",
         className: "patio"
     },
     {
@@ -50,7 +81,7 @@ export const caracteristicasCheckboxes = [
     {
         id: 9,
         displayName: "Escritorio",
-        name: "escritorio",
+        name: "desktop",
         className: "escritorio"
     },
     {
@@ -62,30 +93,30 @@ export const caracteristicasCheckboxes = [
     {
         id: 11,
         displayName: "Terraza",
-        name: "terraza",
+        name: "terrace",
         className: "terraza"
     },
     {
         id: 12,
         displayName: "Quincho",
-        name: "quincho",
+        name: "barbecue",
         className: "quincho"
     },
     {
         id: 13,
         displayName: "Pileta",
-        name: "pileta",
+        name: "pool",
         className: "pileta"
     },
     {
         id: 14,
         displayName: "Dependencia de servicio",
-        name: "dependenciaServicio",
+        name: "serviceDependency",
         className: "dependencia-servicio"
     }
 ];
 
-export const tipoCochera = [
+export const garagesType = [
   {
     id: 1,
     title: "Fija"  
@@ -104,7 +135,7 @@ export const tipoCochera = [
   }
 ];
 
-export const coberturaCochera = [
+export const garagesCover = [
     {
       id: 1,
       title: "Cubierta"  

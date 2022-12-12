@@ -8,11 +8,10 @@ const Contacto = () => {
 
     const [data, setData] = useState({
         email: '',
-        telefono: '',
-        celular: '',
-        telefonoAlternativo: '',
-        whatsappCodigo: '+54',
-        whatsappNumero: ''
+        telephone: '',
+        mobile: '',
+        alternativeTelephone: '',
+        whatsApp: ''
     });
 
     const { dispatch: ctxDispatch } = useContext(Store);
@@ -39,31 +38,25 @@ const Contacto = () => {
                 />
                 <Input
                     displayName="Teléfono: *"
-                    name="telefono"
+                    name="telephone"
                     type="number"
                     onChange={handleChange}
                 />
                 <Input
                     displayName="Celular: *"
-                    name="celular"
+                    name="mobile"
                     type="number"
                     onChange={handleChange}
                 />
                 <Input
                     displayName="Teléfono alternativo:"
-                    name="telefonoAlternativo"
+                    name="alternativeTelephone"
                     type="number"
                     onChange={handleChange}
                 />
-                <Select 
-                    displayName="Whatsapp (Cód. país + número): *"
-                    name="whatsappCodigo"
-                    className="whatsapp"
-                    onChange={handleChange}
-                >  
-                </Select>
                 <Input
-                    name="whatsappNumero"
+                    displayName="WhatsApp"
+                    name="whatsApp"
                     type="number"
                     className="whatsapp-num"
                     onChange={handleChange}

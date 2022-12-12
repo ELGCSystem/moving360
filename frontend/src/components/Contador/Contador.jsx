@@ -8,7 +8,7 @@ const Contador = ({ displayName, name, max, min, disabled, onChange }) => {
 
     const [count, setCount] = useState(parseInt(min));
 
-    const manageCount = (newCount, event) => {
+    const manageCount = (newCount) => {
         if (newCount >= min && newCount <= max && !disabled) {
             setCount(newCount);
             onChange(newCount, name);
@@ -19,9 +19,9 @@ const Contador = ({ displayName, name, max, min, disabled, onChange }) => {
         <div className="contador">
             <label htmlFor={name}>{displayName}</label>
             <div className="contador__buttons">
-                <div onClick={(e) => manageCount(count - 1)}>-</div>
+                <div onClick={() => manageCount(count - 1)}>-</div>
                 <input value={count} readOnly name={name} />
-                <div onClick={(e) => manageCount(count + 1)}>+</div>
+                <div onClick={() => manageCount(count + 1)}>+</div>
             </div>
         </div>
     );

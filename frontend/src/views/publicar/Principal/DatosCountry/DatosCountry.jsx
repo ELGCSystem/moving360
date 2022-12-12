@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Select, Input } from "../../../../components";
+import { Store } from '../../../../Store.js';
 import {
-    zonas,
-    deportes,
+    zones,
+    sports,
     amenities
 } from "./DatosCountry";
 import "./DatosCountry.css";
@@ -13,31 +14,33 @@ const DatosCountry = () => {
     const [idZona, setIdZona] = useState(-1);
 
     const [data, setData] = useState({
-        nombre: '',
-        zona: '',
-        partido: '',
-        urbanizacion: '',
-        basquet: false,
-        equitacion: false,
-        futbol: false,
+        name: false,
+        zone: false,
+        state: false,
+        urbanization: false,
+        basketball: false,
+        horseRiding: false,
+        football: false,
         golf: false,
         hockey: false,
         paddle: false,
         polo: false,
         rugby: false,
-        tenis: false,
-        voley: false,
+        tennis: false,
+        volleyball: false,
         clubHouse: false,
-        gimnasio: false,
-        juegos: false,
+        gym: false,
+        games: false,
         laundry: false,
-        piscina: false,
-        SUM: false,
-        caballeriza: false,
-        colegio: false,
-        bancos: false,
-        centroComercial: false
+        pool: false,
+        multipurposeRoom: false,
+        stable: false,
+        school: false,
+        bank: false,
+        mall: false
     });
+
+    const { dispatch: ctxDispatch } = useContext(Store);
 
     const zonaHandler = (e) => {
         setZona(e.target.value);
@@ -45,7 +48,7 @@ const DatosCountry = () => {
     }
 
     const idZonaHandler = (newZona) => {
-        zonas.map((zonaItem) => {
+        zones.map((zonaItem) => {
             if (newZona == zonaItem.title) {
                 setIdZona(zonaItem.id -1);
             }
@@ -53,11 +56,21 @@ const DatosCountry = () => {
     }
 
     const handleChange = e => {
+
+        let sendData = data;
+
         if (e.target.type === "checkbox") {
             let value = data[e.target.name];
             setData({ ...data, [e.target.name]: !value });
-        } else
+            sendData[e.target.name] = !value;
+        } else {
             setData({ ...data, [e.target.name]: e.target.value });
+            sendData[e.target.name] = e.target.value;
+        }
+
+        ctxDispatch({ type: 'SAVE_DATA_COUNTRY', payload: sendData });
+        localStorage.setItem('dataCountry', JSON.stringify(sendData));
+        
     };
 
     return (
@@ -66,14 +79,14 @@ const DatosCountry = () => {
 
             <Input 
                 displayName="Nombre *" 
-                name="nombre"
+                name="name"
                 type="text"
                 onChange={handleChange}
             />
 
             <Select 
                 displayName="Zona *"
-                name="zona" 
+                name="zone" 
                 onChange={
                     (e) => {
                         zonaHandler(e);
@@ -88,13 +101,13 @@ const DatosCountry = () => {
 
             <Select
                 displayName="Partido *"
-                name="partido"
+                name="state"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
                     zona ? 
                     (
-                        zonas[idZona].partidos.map((partido) => (
+                        zones[idZona].partidos.map((partido) => (
                             <option>{partido}</option>
                         ))
                     ) : 
@@ -104,7 +117,7 @@ const DatosCountry = () => {
             
             <Select
                 displayName="Urbanización *"
-                name="urbanizacion"
+                name="urbanization"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 <option>Country Club</option>
@@ -115,11 +128,11 @@ const DatosCountry = () => {
             <h3>Deportes</h3>
 
             {
-                deportes.map((deporte) => (
+                sports.map((field) => (
                     <Input
-                        key={deporte.id}
-                        displayName={deporte.displayName}
-                        name={deporte.name}
+                        key={field.id}
+                        displayName={field.displayName}
+                        name={field.name}
                         type="checkbox"
                         onChange={handleChange}
                     />
@@ -129,11 +142,11 @@ const DatosCountry = () => {
             <h3>Amenities</h3>
 
             {
-                amenities.map((amenity) => (
+                amenities.map((field) => (
                     <Input
-                        key={amenity.id}
-                        displayName={amenity.displayName}
-                        name={amenity.name}
+                        key={field.id}
+                        displayName={field.displayName}
+                        name={field.name}
                         type="checkbox"
                         onChange={handleChange}
                     />

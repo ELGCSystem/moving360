@@ -20,6 +20,7 @@ houseRouter.post(
   expressAsyncHandler(async (req, res) => {
     const house = new House({
       dataBasic: req.body.dataBasic,
+      dataCountry: req.body.dataCountry,
       surface: req.body.surface,
       location: req.body.location,
       mainFeatures: req.body.mainFeatures,
@@ -36,6 +37,7 @@ houseRouter.post(
     res.send({
       _id: createdHouse._id,
       dataBasic: createdHouse.dataBasic,
+      dataCountry: createdHouse.dataCountry,
       surface: createdHouse.surface,
       location: createdHouse.location,
       mainFeatures: createdHouse.mainFeatures,
@@ -58,7 +60,8 @@ houseRouter.put(
   expressAsyncHandler(async (req, res) => {
     const { _id } = req.params;
     const {
-      dateBasic,
+      dataBasic,
+      dataCountry,
       surface,
       location,
       mainFeatures,
@@ -75,7 +78,8 @@ houseRouter.put(
       _id,
       {
         $set: {
-          dateBasic,
+          dataBasic,
+          dataCountry,
           surface,
           location,
           mainFeatures,

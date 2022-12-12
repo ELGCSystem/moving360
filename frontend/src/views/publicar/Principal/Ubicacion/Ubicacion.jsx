@@ -7,15 +7,16 @@ import './Ubicacion.css'
 const Ubicacion = () => {
 
     const [data, setData] = useState({
-        provincia: '',
-        partido: '',
-        localidad: '',
-        calle: '',
-        altura: '',
-        piso: 0,
-        departamento: '',
-        CP: 0,
-        ubicacion: ""
+        country: 'Argentina',
+        province: '',
+        state: '',
+        locality: '',
+        streetName: '',
+        streetNumber: '',
+        flat: 0,
+        department: '',
+        postalCode: 0,
+        locationType: ''
     });
 
     const [provincias, setProvincias] = useState([]);
@@ -101,15 +102,14 @@ const Ubicacion = () => {
             const url = `https://apis.datos.gob.ar/georef/api/direcciones`;
 
             const params = {
-                provincia: data['provincia'],
-                departamento: data['partido'],
-                localidad: data['localidad'],
-                direccion: `${data['calle']} ${data['altura']}`
+                provincia: data['province'],
+                departamento: data['state'],
+                localidad: data['locality'],
+                direccion: `${data['streetName']} ${data['streetNumber']}`
             }
 
             const { data: res } = await Axios.get(url, { params: params });
             console.log(res.direcciones[0].ubicacion);
-            console.log(data['calle']);
 
         } catch (error) {
             console.log(error)
@@ -131,13 +131,13 @@ const Ubicacion = () => {
 
             <h2>Ubicación</h2>
 
-            <Select displayName="País *" name="pais">
+            <Select displayName="País *" name="country">
                 <option>Argentina</option>
             </Select>
 
             <Select
                 displayName="Provincia *"
-                name="provincia"
+                name="province"
                 onChange={(e) => {
                     getPartidos(e);
                     handleChange(e);
@@ -154,7 +154,7 @@ const Ubicacion = () => {
 
             <Select
                 displayName="Partido *"
-                name="partido"
+                name="state"
                 className="partido"
                 onChange={(e) => {
                     getLocalidades(e);
@@ -172,7 +172,7 @@ const Ubicacion = () => {
 
             <Select
                 displayName="Localidad *"
-                name="localidad"
+                name="locality"
                 className="localidad"
                 onChange={handleChange}>
                 <option value="-1">Seleccione una opción...</option>
@@ -187,7 +187,7 @@ const Ubicacion = () => {
 
             <Input
                 displayName="Calle *"
-                name="calle"
+                name="streetName"
                 type="text"
                 className="calle"
                 onChange={handleChange}
@@ -195,28 +195,28 @@ const Ubicacion = () => {
 
             <Input
                 displayName="Altura *"
-                name="altura"
+                name="streetNumber"
                 type="number"
                 onChange={handleChange}
             />
 
             <Input
                 displayName="Piso"
-                name="piso"
+                name="flat"
                 type="number"
                 onChange={handleChange}
             />
 
             <Input
                 displayName="Dpto."
-                name="departamento"
+                name="department"
                 type="text"
                 onChange={handleChange}
             />
 
             <Input
                 displayName="C.P."
-                name="CP"
+                name="postalCode"
                 type="number"
                 onChange={handleChange}
             />
@@ -225,7 +225,7 @@ const Ubicacion = () => {
 
             <Input
                 displayName="Exacta"
-                name="ubicacion"
+                name="locationType"
                 type="radio"
                 className="muestra-ubicacion"
                 value="Exacta"
@@ -233,7 +233,7 @@ const Ubicacion = () => {
             />
             <Input
                 displayName="Aproximada"
-                name="ubicacion"
+                name="locationType"
                 type="radio"
                 className="muestra-ubicacion"
                 value="Aproximada"

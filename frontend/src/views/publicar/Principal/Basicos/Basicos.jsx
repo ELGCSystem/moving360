@@ -7,23 +7,22 @@ import './Basicos.css';
 const Basicos = ({ tipoUnidad, operaciones }) => {
 
     const [data, setData] = useState({
-        unidad: '',
-        operacion: '',
-        precio: null,
-        noPublicar: false,
-        moneda: '',
-        estado: '',
-        aptoCredito: false,
-        aceptaPermuta: false,
-        aptoProfesional: false,
-        propiedadOcupada: false,
-        aptoMascotas: false,
-        titulo: '',
-        comision: null
+        unit: '',
+        operation: '',
+        price: null,
+        dontShowPrice: false,
+        currency: '',
+        state: '',
+        suitableCredit: false,
+        acceptsExchange: false,
+        suitableProfesional: false,
+        propertyOccupied: false,
+        suitablePets: false,
+        title: '',
+        commission: null
     });
     
-    const { state, dispatch: ctxDispatch } = useContext(Store);
-    const { houseData } = state;
+    const { dispatch: ctxDispatch } = useContext(Store);
 
     const handleChange = e => {
 
@@ -41,13 +40,13 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
         ctxDispatch({ type: 'SAVE_DATA_BASIC', payload: sendData });
         localStorage.setItem('dataBasic', JSON.stringify(sendData));
         
-      };
+    };
 
     return (
         <section className='datos-basicos'>
             <h2>Datos básicos</h2>
 
-            <Select displayName="Tipo de Unidad *" name="unidad" onChange={handleChange}>
+            <Select displayName="Tipo de Unidad *" name="unit" onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
                     tipoUnidad.map((unidad) => (
@@ -58,7 +57,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
                 }
             </Select>
 
-            <Select displayName="Tipo de Operación *" name="operacion" onChange={handleChange}>
+            <Select displayName="Tipo de Operación *" name="operation" onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
                     operaciones.map((operacion) => (
@@ -71,14 +70,14 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
             
             <Input
                 displayName="Precio *"
-                name="precio"
+                name="price"
                 type="number"
                 onChange={handleChange}
             />
 
             <Input
                 displayName="USD"
-                name="moneda"
+                name="currency"
                 type="radio"
                 value="USD"
                 onChange={handleChange}
@@ -86,13 +85,13 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="$"
-                name="moneda"
+                name="currency"
                 type="radio"
                 value="$"
                 onChange={handleChange}
             />
 
-            <Select displayName="Estado *" name="estado" onChange={handleChange}>
+            <Select displayName="Estado *" name="state" onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
                     estadoPropiedades.map((estado) => (
@@ -105,7 +104,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="No publicar"
-                name="noPublicar"
+                name="dontShowPrice"
                 type="checkbox"
                 className="no-publicar"
                 onChange={handleChange}
@@ -113,7 +112,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="Apto crédito"
-                name="aptoCredito"
+                name="suitableCredit"
                 type="checkbox"
                 className="apto-credito"
                 onChange={handleChange}
@@ -121,7 +120,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="Acepta Permuta"
-                name="aceptaPermuta"
+                name="acceptsExchange"
                 type="checkbox"
                 className="acepta-permuta"
                 onChange={handleChange}
@@ -129,7 +128,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
             
             <Input
                 displayName="Apto profesional"
-                name="aptoProfesional"
+                name="suitableProfesional"
                 type="checkbox"
                 className="apto-profesional"
                 onChange={handleChange}
@@ -137,7 +136,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="Propiedad ocupada"
-                name="propiedadOcupada"
+                name="propertyOccupied"
                 type="checkbox"
                 className="propiedad-ocupada"
                 onChange={handleChange}
@@ -145,7 +144,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="Apto mascotas"
-                name="aptoMascotas"
+                name="suitablePets"
                 type="checkbox"
                 className="apto-mascotas"
                 onChange={handleChange}
@@ -153,7 +152,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="Título del aviso *"
-                name="titulo"
+                name="title"
                 type="text"
                 className="titulo-aviso"
                 onChange={handleChange}
@@ -165,7 +164,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="Compartir 50%"
-                name="comision"
+                name="commission"
                 type="radio"
                 value="50"
                 className="comision"
@@ -174,7 +173,7 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="Compartir 30%"
-                name="comision"
+                name="commission"
                 type="radio"
                 value="30"
                 className="comision"
@@ -183,14 +182,12 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
 
             <Input
                 displayName="No compartir"
-                name="comision"
+                name="commission"
                 type="radio"
                 value="0"
                 className="comision"
                 onChange={handleChange}
             />
-
-            <button onClick={() => console.log(houseData)}>Mostrar</button>
 
         </section>
     )

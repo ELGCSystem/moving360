@@ -1,4 +1,4 @@
-export const pisoInterior = [
+export const insideFlooring = [
     {
         id: 1,
         title: "Cerámico"
@@ -57,7 +57,7 @@ export const pisoInterior = [
     }
 ];
 
-export const pisoMadera = [
+export const woodFlooring = [
     {
         id: 1,
         title: "Pino elliotis"
@@ -84,7 +84,7 @@ export const pisoMadera = [
     }
 ];
 
-export const pisoExterior = [
+export const outsideFlooring = [
     {
         id: 1,
         title: "Cerámico"
@@ -131,7 +131,7 @@ export const pisoExterior = [
     },
 ];
 
-export const paredes = [
+export const outsideWalls = [
     {
         id: 1,
         title: "Piedra"
@@ -182,7 +182,7 @@ export const paredes = [
     }
 ];
 
-export const techo = [
+export const ceiling = [
     {
         id: 1,
         title: "Losa"
@@ -205,7 +205,7 @@ export const techo = [
     }
 ];
 
-export const estadoPropiedad = [
+export const estateState = [
     {
         id: 1,
         title: "Excelente"
@@ -228,7 +228,7 @@ export const estadoPropiedad = [
     }
 ];
 
-export const orientacion = [
+export const orientation = [
     {
         id: 1,
         title: "Norte"
@@ -263,7 +263,7 @@ export const orientacion = [
     }
 ];
 
-export const vista = [
+export const view = [
     {
         id: 1,
         title: "Vista al mar"
@@ -294,7 +294,7 @@ export const vista = [
     }
 ];
 
-export const costa = [
+export const coast = [
     {
         id: 1,
         title: "Vista al mar"
@@ -309,7 +309,7 @@ export const costa = [
     }
 ];
 
-export const pendiente = [
+export const slope = [
     {
         id: 1,
         title: "Plana"

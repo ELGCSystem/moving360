@@ -6,10 +6,10 @@ import './Superficies.css';
 const Superficies = () => {
 
     const [data, setData] = useState({
-        superficieCubierta: null,
-        superficieSemicubierta: null,
-        superficieDescubierta: null,
-        superficieTerreno: null,
+        covered: null,
+        semiCovered: null,
+        discovered: null,
+        total: null,
     });
 
     const { dispatch: ctxDispatch } = useContext(Store);
@@ -29,25 +29,25 @@ const Superficies = () => {
             <h2>Superficies</h2>
             <Input
                 displayName="Superficie cubierta (m2) *"
-                name="superficieCubierta"
+                name="covered"
                 type="number"
                 onChange={handleChange}
             />
             <Input
                 displayName="Superficie semi cubierta (m2)"
-                name="superficieSemicubierta"
+                name="semiCovered"
                 type="number"
                 onChange={handleChange}
             />
             <Input
                 displayName="Superficie descubierta (m2)"
-                name="superficieDescubierta"
+                name="discovered"
                 type="number"
                 onChange={handleChange}
             />
             <Input
                 displayName="Superficie terreno (m2) *"
-                name="superficieTerreno"
+                name="total"
                 type="number"
                 onChange={handleChange}
             />

@@ -2,34 +2,34 @@ import { useState, useContext } from 'react';
 import { Select, Input } from '../../../../components';
 import { Store } from '../../../../Store.js';
 import {
-    pisoInterior,
-    pisoMadera,
-    pisoExterior,
-    paredes,
-    techo,
-    estadoPropiedad,
-    orientacion,
-    vista,
-    costa,
-    pendiente
+    insideFlooring,
+    woodFlooring,
+    outsideFlooring,
+    outsideWalls,
+    ceiling,
+    estateState,
+    orientation,
+    view,
+    coast,
+    slope
 } from './CaracteristicasGenerales.js';
 import './CaracteristicasGenerales.css'; 
 
 const CaracteristicasGenerales = () => {
 
     const [data, setData] = useState({
-        terrenoFrente: '',
-        terrenoFondo: '',
-        pisoInterior: '',
-        pisoMadera: '',
-        pisoExterior: '',
-        paredes: '',
-        techo: '',
-        estado: '',
-        orientacion: '',
-        vista: '',
-        costa: '',
-        pendiente: ''
+        frontSize: '',
+        backSize: '',
+        insideFlooring: '',
+        woodFlooring: '',
+        outsideFlooring: '',
+        outsideWalls: '',
+        ceiling: '',
+        estateState: '',
+        orientation: '',
+        view: '',
+        coast: '',
+        slope: ''
     });
 
     const { dispatch: ctxDispatch } = useContext(Store);
@@ -40,8 +40,8 @@ const CaracteristicasGenerales = () => {
         setData({ ...data, [e.target.name]: e.target.value });
         sendData[e.target.name] = e.target.value;
 
-        ctxDispatch({ type: 'SAVE_GENERAL', payload: sendData });
-        localStorage.setItem('general', JSON.stringify(sendData));
+        ctxDispatch({ type: 'SAVE_GENERAL_FEATURES', payload: sendData });
+        localStorage.setItem('generalFeatures', JSON.stringify(sendData));
     }
 
     return (
@@ -55,14 +55,14 @@ const CaracteristicasGenerales = () => {
 
             <Input
                 displayName="Medidas frente (m2)"
-                name="terrenoFrente"
+                name="frontSize"
                 type="number"
                 onChange={handleChange}
             />
 
             <Input
                 displayName="Medidas fondo (m2)"
-                name="terrenoFondo"
+                name="backSize"
                 type="number"
                 onChange={handleChange}
             />
@@ -71,13 +71,13 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Tipo de piso (interior)" 
-                name="pisoInterior"
+                name="insideFlooring"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    pisoInterior.map((piso) => (
-                        <option key={piso.id}>
-                            {piso.title}
+                    insideFlooring.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
                         </option>
                     ))
                 }
@@ -85,13 +85,13 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Tipo de piso de madera" 
-                name="pisoMadera"
+                name="woodFlooring"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    pisoMadera.map((piso) => (
-                        <option key={piso.id}>
-                            {piso.title}
+                    woodFlooring.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
                         </option>
                     ))
                 }
@@ -99,13 +99,13 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Tipo de piso (exterior)"
-                name="pisoExterior"
+                name="outsideFlooring"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    pisoExterior.map((piso) => (
-                        <option key={piso.id}>
-                            {piso.title}
+                    outsideFlooring.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
                         </option>
                     ))
                 }
@@ -113,13 +113,13 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Paredes (exteriores)" 
-                name="paredes"
+                name="outsideWalls"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    paredes.map((pared) => (
-                        <option key={pared.id}>
-                            {pared.title}
+                    outsideWalls.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
                         </option>
                     ))
                 }
@@ -127,11 +127,11 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Tipo de techo" 
-                name="techo"
+                name="ceiling"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    techo.map((item) => (
+                    ceiling.map((item) => (
                         <option key={item.id}>
                             {item.title}
                         </option>
@@ -143,13 +143,13 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Estado de la propiedad"
-                name="estado"
+                name="estateState"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    estadoPropiedad.map((estado) => (
-                        <option key={estado.id}>
-                            {estado.title}
+                    estateState.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
                         </option>
                     ))
                 }
@@ -157,11 +157,11 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Orientación" 
-                name="orientacion"
+                name="orientation"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    orientacion.map((item) => (
+                    orientation.map((item) => (
                         <option key={item.id}>
                             {item.title}
                         </option>
@@ -171,11 +171,11 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Tipo de vista" 
-                name="vista"
+                name="view"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    vista.map((item) => (
+                    view.map((item) => (
                         <option key={item.id}>
                             {item.title}
                         </option>
@@ -185,11 +185,11 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Tipo de costa" 
-                name="costa"
+                name="coast"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    costa.map((item) => (
+                    coast.map((item) => (
                         <option key={item.id}>
                             {item.title}
                         </option>
@@ -199,11 +199,11 @@ const CaracteristicasGenerales = () => {
 
             <Select 
                 displayName="Tipo de pendiente" 
-                name="pendiente"
+                name="slope"
                 onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    pendiente.map((item) => (
+                    slope.map((item) => (
                         <option key={item.id}>
                             {item.title}
                         </option>

@@ -1,29 +1,29 @@
 import { useState, useContext } from "react";
 import { Input } from "../../../../components";
 import { Store } from '../../../../Store.js';
-import { servicios } from "./Servicios";
+import { services } from "./Servicios";
 import './Servicios.css';
 
 const Servicios = () => {
 
     const [data, setData] = useState({
-        impuestoMunicipal: false,
-        electricidad: false,
-        limpieza: false,
-        seguridad: false,
-        vigilancia: false,
-        aguaCaliente: false,
-        gasEnvasado: false,
-        refrigeracion: false,
-        telefono: false,
-        calefaccion: false,
-        gasNatural: false,
-        impuestoInmobiliario: false,
-        toallas: false,
-        conmutador: false,
+        councilTax: false,
+        electricity: false,
+        cleaning: false,
+        security: false,
+        vigilance: false,
+        runningWater: false,
+        bottledGas: false,
+        refrigeration: false,
+        telephone: false,
+        heating: false,
+        naturalGas: false,
+        realEstateTax: false,
+        towels: false,
+        commutator: false,
         internet: false,
-        ropaCama: false,
-        videoCable: false
+        linen: false,
+        videoCable: false,
     });
 
     const { dispatch: ctxDispatch } = useContext(Store);
@@ -44,11 +44,11 @@ const Servicios = () => {
             <h2>Servicios</h2>
 
             {
-                servicios.map((servicio) => (
+                services.map((field) => (
                     <Input
-                        key={servicio.id}
-                        displayName={servicio.displayName}
-                        name={servicio.name}
+                        key={field.id}
+                        displayName={field.displayName}
+                        name={field.name}
                         type="checkbox"
                         onChange={handleChange}
                     />

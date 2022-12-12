@@ -20,31 +20,31 @@ const VistaPrevia = () => {
                 <Publicacion
                     imagen={imagenPrincipal}
                     precio={`
-                        ${houseData.dataBasic.moneda}
-                        ${houseData.dataBasic.precio}
+                        ${houseData.dataBasic.currency}
+                        ${houseData.dataBasic.price}
                     `}
                     expensas=''
-                    ubicacion={houseData.location.localidad}
-                    ciudad={houseData.location.partido}
+                    ubicacion={houseData.location.locality}
+                    ciudad={houseData.location.state}
                     tipoPublicacion='98,2% coincidencia'
                     superficieTotal={`
-                        ${houseData.surface.superficieTerreno}
+                        ${houseData.surface.total}
                         m2
                     `}
                     superficieCubierta={`
-                        ${houseData.surface.superficieCubierta}
+                        ${houseData.surface.covered}
                         m2
                     `}
                     dormitorios={`
-                        ${houseData.mainFeatures.cantidadDormitorios}
+                        ${houseData.mainFeatures.bedroomsQuantity}
                         dorm.
                     `}
                     banos={`
-                        ${houseData.mainFeatures.cantidadBanos}
+                        ${houseData.mainFeatures.bathroomsQuantity}
                         baño(s)
                     `}
                     cocheras={`
-                        ${houseData.mainFeatures.cantidadCocheras}
+                        ${houseData.mainFeatures.garagesQuantity}
                         coch.
                     `}
                     titulo={houseData.dataBasic.titulo}
@@ -61,13 +61,10 @@ const VistaPrevia = () => {
                 >
                     <FaAngleLeft /> Atras
                 </Button>
-                <Button 
-                    to="/"
-                    type="blue"
-                >
+                
+                <button className="button button--blue">
                     <FaUpload /> Publicar
-                </Button>
-                <div onClick={() => console.log(houseData)}>Mostrar</div>
+                </button>
             </div>
         </section>
     );
@@ -76,6 +73,14 @@ export default VistaPrevia;
 
 
 /*
+
+
+<Button 
+                    to="/"
+                    type="blue"
+                >
+                    <FaUpload /> Publicar
+                </Button>
 
 <Card
                     icon={faHouseChimneyUser}

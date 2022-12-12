@@ -5,6 +5,7 @@ export const generateToken = (house) => {
     {
       _id: house._id,
       dataBasic: house.dataBasic,
+      dataCountry: house.dataCountry,
       surface: house.surface,
       location: house.location,
       mainFeatures: house.mainFeatures,

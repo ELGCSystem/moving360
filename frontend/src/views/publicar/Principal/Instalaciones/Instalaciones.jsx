@@ -1,47 +1,47 @@
 import { useState, useContext } from "react";
 import { Input } from "../../../../components";
 import { Store } from '../../../../Store.js';
-import { instalaciones } from './Instalaciones'
+import { installations } from './Instalaciones'
 import './Instalaciones.css';
 
 const Instalaciones = () => {
 
     const [data, setData] = useState({
-        aguaCloaca: false,
-        aireCaliente: false,
-        cable: false,
-        calefaccionTiroBalanceado: false,
-        desayunador: false,
-        gasEnvasado: false,
-        losaRadiante: false,
-        pileta: false,
-        pisoRadianteIndividual: false,
-        aguaCaliente: false,
-        amoblado: false,
-        cajaFuerte: false,
-        calefon: false,
-        electricidad: false,
-        gasNatural: false,
-        mueblesCocina: false,
-        radiadores: false,
-        pisoRadianteCentral: false,
-        aireAcondicionadoCentral: false,
-        aireAcondicionadoIndividual: false,
-        artefactosCocina: false,
-        calderaIndividual: false,
-        canchaFutbol: false,
-        canchaTenis: false,
-        espacioVehicular: false,
-        hidromasaje: false,
-        accesoMovilidadReducida: false,
+        sewerWater: false,
+        hotAir: false,
+        televisionCable: false,
+        heatingBalanced: false,
+        breakfastNook: false,
+        bottledGas: false,
+        underfloorHeating: false,
+        pool: false,
+        individualRadiantFloor: false,
+        hotWater: false,
+        furnished: false,
+        safe: false,
+        waterHeater: false,
+        electricity: false,
+        naturalGas: false,
+        kitchenFurniture: false,
+        radiators: false,
+        centralRadiantFloor: false,
+        centralAirConditioner: false,
+        individualAirConditioner: false,
+        kitchenGadgets: false,
+        singleBoiler: false,
+        soccerField: false,
+        tennisCourt: false,
+        vehicleSpace: false,
+        whirlpool: false,
+        reducedMobilityAccess: false,
         solarium: false,
-        ascensor: false,
-        calefaccion: false,
-        extractorAire: false,
-        hogarLena: false,
-        pavimento: false,
-        termotanque: false,
-        riegoAspersion: false
+        elevator: false,
+        heating: false,
+        airExtractor: false,
+        fireplace: false,
+        pavement: false,
+        waterHeater: false,
+        sprinklerIrrigation: false,
     });
 
     const { dispatch: ctxDispatch } = useContext(Store);
@@ -62,11 +62,11 @@ const Instalaciones = () => {
             <h2>Instalaciones</h2>
 
             {
-                instalaciones.map((instalacion) => (
+                installations.map((field) => (
                     <Input
-                        key={instalacion.id}
-                        displayName={instalacion.displayName}
-                        name={instalacion.name}
+                        key={field.id}
+                        displayName={field.displayName}
+                        name={field.name}
                         type="checkbox"
                         onChange={handleChange}
                     />

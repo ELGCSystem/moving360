@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Contacto from './Contacto/Contacto.jsx';
 import VistaPrevia from './VistaPrevia/VistaPrevia.jsx';
-import './Publicar.css';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { useNavigate, Route, Routes } from 'react-router-dom';
+import { Store } from '../../Store.js';
 import {
   Casa,
   Departamento,
@@ -19,6 +19,8 @@ import {
   ParcelaNichoBoveda,
   CamasNauticas
 } from './Inmuebles/index.js';
+import './Publicar.css';
+import axios from 'axios';
 
 const Publicar = () => {
 
@@ -26,9 +28,46 @@ const Publicar = () => {
     document.title = "Publicar - Moving360"
   }, []);
 
+  const { state } = useContext(Store);
+  const { houseData } = state;
+
+  let navigate = useNavigate();
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
+    console.log("hola")
+    try {
+
+      const { data } = await axios.post("http://localhost:4000/api/house/signup", {
+        dataBasic: houseData.dataBasic,
+        dataCountry: houseData.dataCountry,
+        surface: houseData.surface,
+        location: houseData.location,
+        mainFeatures: houseData.mainFeatures,
+        generalFeatures: houseData.generalFeatures,
+        otherEnvironments: houseData.otherEnvironments,
+        installations: houseData.installations,
+        services: houseData.services,
+        multimedia: houseData.multimedia,
+        additionalInformation: houseData.additionalInformation,
+        contactOwner: houseData.contactOwner
+      });
+
+      // window.location.href = "/gestion-inmobiliaria";
+      // navigate("/publicar/vista-previa");
+
+      
+      console.log(data);
+
+    } catch (error) {
+      console.log(error.response);
+    }
+  }
+
   return (
     <div className='publicar'>
-      <form>
+      <form onSubmit={submitHandler}>
         <Routes>
           <Route path=':seccion/casa/*' element={<Casa />} />
           <Route path=':seccion/departamento/*' element={<Departamento />} />

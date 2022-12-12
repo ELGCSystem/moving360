@@ -1,10 +1,43 @@
-import React from 'react';
+import { useState, useContext } from 'react';
 import { FaCamera } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Input, Button } from '../../../../components';
+import { Store } from '../../../../Store.js';
 import './Multimedia.css';
 
-const Multimedia = () => (
+const Multimedia = () => {
+    
+    const [data, setData] = useState({
+        frontPage: "/",
+        photoTour360: "/",
+        photo360: {
+          photo1: "/",
+          photo2: "/",
+          photo3: "/",
+          photo4: "/",
+          photo5: "/",
+          photo6: "/",
+          photo7: "/",
+          photo8: "/",
+          photo9: "/",
+          photo10: "/",
+          photo11: "/",
+          photo12: "/",
+          photo13: "/",
+          photo14: "/",
+          photo15: "/",
+          photo16: "/",
+        },
+    });
+
+    const { dispatch: ctxDispatch } = useContext(Store);
+
+    const handleChange = () => {
+        ctxDispatch({ type: 'SAVE_MULTIMEDIA', payload: data });
+        localStorage.setItem('multimedia', JSON.stringify(data));
+    }
+
+    return (
     <section className='multimedia'>
         <h2>Multimedia</h2>
 
@@ -105,8 +138,10 @@ const Multimedia = () => (
             />
             <h4 className='carga-material-360__turno'>En caso de no tener fotos 360°</h4>
             <Button to="/" type="blue">Solicitar Turno</Button>
+            <button onClick={handleChange}>Enviar</button>
         </article>
     </section>
-);
+)
+};
 
 export default Multimedia;

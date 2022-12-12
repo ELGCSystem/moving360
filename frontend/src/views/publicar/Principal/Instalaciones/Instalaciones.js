@@ -1,138 +1,138 @@
-export const instalaciones = [
+export const installations = [
     {
         id: 1,
         displayName: "Agua cloaca",
-        name: "aguaCloaca"
+        name: "sewerWater"
     },
     {
         id: 2,
         displayName: "Aire caliente",
-        name: "aireCaliente"
+        name: "hotAir"
     },
     {
         id: 3,
         displayName: "Cable",
-        name: "cable"
+        name: "televisionCable"
     },
     {
         id: 4,
         displayName: "Calefacción tiro balanceado",
-        name: "calefaccionTiroBalanceado"
+        name: "heatingBalanced"
     },
     {
         id: 5,
         displayName: "Desayunador",
-        name: "desayunador"
+        name: "breakfastNook"
     },
     {
         id: 6,
         displayName: "Gas envasado",
-        name: "gasEnvasado"
+        name: "bottledGas"
     },
     {
         id: 7,
         displayName: "Losa radiante",
-        name: "losaRadiante"
+        name: "underfloorHeating"
     },
     {
         id: 8,
         displayName: "Pileta",
-        name: "pileta"
+        name: "pool"
     },
     {
         id: 9,
         displayName: "Piso radiante individual",
-        name: "pisoRadianteIndividual"
+        name: "individualRadiantFloor"
     },
     {
         id: 10,
         displayName: "Agua caliente",
-        name: "aguaCaliente"
+        name: "hotWater"
     },
     {
         id: 11,
         displayName: "Amoblado",
-        name: "amoblado"
+        name: "furnished"
     },
     {
         id: 12,
         displayName: "Caja fuerte",
-        name: "cajaFuerte"
+        name: "safe"
     },
     {
         id: 13,
         displayName: "Calefon",
-        name: "calefon"
+        name: "waterHeater"
     },
     {
         id: 14,
         displayName: "Electricidad",
-        name: "electricidad"
+        name: "electricity"
     },
     {
         id: 15,
         displayName: "Gas Natural",
-        name: "gasNatural"
+        name: "naturalGas"
     },
     {
         id: 16,
         displayName: "Muebles de cocina",
-        name: "mueblesCocina"
+        name: "kitchenFurniture"
     },
     {
         id: 17,
         displayName: "Radiadores",
-        name: "radiadores"
+        name: "radiators"
     },
     {
         id: 18,
         displayName: "Piso radiante central",
-        name: "pisoRadianteCentral"
+        name: "centralRadiantFloor"
     },
     {
         id: 19,
         displayName: "Aire acondicionado central",
-        name: "aireAcondicionadoCentral"
+        name: "centralAirConditioner"
     },
     {
         id: 20,
         displayName: "Aire acondicionado individual",
-        name: "aireAcondicionadoIndividual"
+        name: "individualAirConditioner"
     },
     {
         id: 21,
         displayName: "Artefactos de cocina",
-        name: "artefactosCocina"
+        name: "kitchenGadgets"
     },
     {
         id: 22,
         displayName: "Caldera individual",
-        name: "calderaIndividual"
+        name: "singleBoiler"
     },
     {
         id: 23,
         displayName: "Cancha de fútbol",
-        name: "canchaFutbol"
+        name: "soccerField"
     },
     {
         id: 24,
         displayName: "Cancha de tenis",
-        name: "canchaTenis"
+        name: "tennisCourt"
     },
     {
         id: 25,
         displayName: "Espacio vehicular",
-        name: "espacioVehicular"
+        name: "vehicleSpace"
     },
     {
         id: 26,
         displayName: "Hidromasaje",
-        name: "hidromasaje"
+        name: "whirlpool"
     },
     {
         id: 27,
         displayName: "Acceso movilidad reducida",
-        name: "accesoMovilidadReducida"
+        name: "reducedMobilityAccess"
     },
     {
         id: 28,
@@ -142,36 +142,36 @@ export const instalaciones = [
     {
         id: 29,
         displayName: "Ascensor",
-        name: "ascensor"
+        name: "elevator"
     },
     {
         id: 30,
         displayName: "Calefacción",
-        name: "calefaccion"
+        name: "heating"
     },
     {
         id: 31,
         displayName: "Extractor de aire",
-        name: "extractorAire"
+        name: "airExtractor"
     },
     {
         id: 32,
         displayName: "Hogar a leña",
-        name: "hogarLena"
+        name: "fireplace"
     },
     {
         id: 33,
         displayName: "Pavimento",
-        name: "pavimento"
+        name: "pavement"
     },
     {
         id: 34,
         displayName: "Termotanque",
-        name: "termotanque"
+        name: "waterHeater"
     },
     {
         id: 35,
         displayName: "Riego por aspersión",
-        name: "riegoAspersion"
+        name: "sprinklerIrrigation"
     },
 ] 

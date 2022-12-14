@@ -8,3 +8,4 @@ export { default as Textarea } from './Textarea/Textarea.jsx';
 export { default as Card } from './Card/Card.jsx';
 export { default as Publicacion } from './Publicacion/Publicacion.jsx';
 export { default as Contador } from './Contador/Contador.jsx';
+export { default as Filter } from './Filter/Filter.jsx';

@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Button, Select } from "../../../components/index.js";
-import ReactPlayer from 'react-player';
 import { heroButtons } from "./HeroButtons.js";
 import video from './Video360.mp4';
 import './Hero.css';
@@ -19,6 +18,7 @@ const Hero = () => {
           <video
             className="video"
             src={video}
+            loop
             muted
           />
         </div>

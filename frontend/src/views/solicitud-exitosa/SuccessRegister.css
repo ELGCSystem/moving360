@@ -1,0 +1,29 @@
+.container__success {
+  text-align: center;
+}
+
+.container__success-img {
+  padding: 50px;
+  display: block;
+}
+
+.vector {
+  width: 40%;
+}
+
+.success__title {
+  font-family: var(--titles);
+  font-size: 50px;
+}
+
+.success__text {
+  font-family: var(--titles);
+  font-size: 15px;
+}
+
+.success__signature {
+  padding: 25px;
+  font-family: var(--titles);
+  font-weight: bold;
+  font-size: 20px;
+}

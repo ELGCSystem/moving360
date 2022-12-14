@@ -3,38 +3,38 @@ export const heroButtons = [
         id: "1",
         text: "Comprar",
         url: "/comprar",
-        type: "wider",
+        type: "bigger",
         class: "hero__button--first"
     },
     {
         id: "2",
         text: "Alquilar",
         url: "/alquilar",
-        type: "wider",
+        type: "bigger",
         class: "hero__button--second"
     },
     {
         id: "3",
         text: "Countries",
         url: "/countries",
-        type: "wider"
+        type: "bigger"
     },
     {
         id: "4",
         text: "Emprendimientos",
         url: "/emprendimientos",
-        type: "wider"
+        type: "bigger"
     },
     {
         id: "5",
         text: "Oportunidades",
         url: "/oportunidades",
-        type: "wider"
+        type: "bigger"
     },
     {
         id: "6",
         text: "Tiempo compartido",
         url: "/tiempo-compartido",
-        type: "wider"
+        type: "bigger"
     },
 ];

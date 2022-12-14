@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { inmuebles } from './Inmuebles.js';
-import { Publicacion, Contador } from '../../components/index.js';
-import Filtros from './Filtros.jsx';
+import { Publicacion, Filter } from '../../components/index.js';
 import './Publicaciones.css';
-import Filtro from '../../components/Filtro/Filtro.jsx';
 
 const Publicaciones = () => {
+
   useEffect(() => {
     document.title = 'Publicaciones - Moving360';
   }, []);
@@ -14,12 +13,23 @@ const Publicaciones = () => {
     <section className='publicaciones'>
 
 
-    <div className='filtros'>
-      <Filtro name="pileta"/>
-      <Filtro name="quincho"/>
-      <Filtro name="patio"/>
-      <Filtro name="ascensor"/>
-    </div>
+    <form className='filtros'>
+      <Filter 
+        displayName="Pileta"
+        name="pileta"/>
+
+      <Filter
+        displayName="Quincho"
+        name="quincho"/>
+
+      <Filter
+        displayName="Patio"
+        name="patio"/>
+
+      <Filter
+        displayName="Ascensor"
+        name="ascensor"/>
+    </form>
 
       {
         inmuebles.map((inmueble) => (

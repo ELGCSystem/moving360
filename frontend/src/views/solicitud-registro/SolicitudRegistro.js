@@ -36,7 +36,7 @@ const SolicitudRegistro = () => (
                 name="nombre-inmobiliaria"
                 type="text"
             />
-            <Button to="/" type="blue">Enviar</Button>
+            <Button to="/registro-exitoso" type="blue">Enviar</Button>
         </form>
     </section>
 );

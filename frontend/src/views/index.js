@@ -8,4 +8,5 @@ export { default as SolicitudRegistro } from './solicitud-registro/SolicitudRegi
 export { default as TipoRegistro } from './tipo-registro/TipoRegistro.js';
 export { default as GestionInmobiliaria } from './gestion-inmobiliaria/GestionInmobiliaria.js';
 export { default as Login } from './login/Login.js';
-export { default as Verificacion } from './verificacion/Verificacion.js'
+export { default as Verificacion } from './verificacion/Verificacion.js';
+export { default as SuccessRegister } from './solicitud-exitosa/SuccesRegister.js';

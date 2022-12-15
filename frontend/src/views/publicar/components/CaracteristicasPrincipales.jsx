@@ -1,14 +1,14 @@
 import { useState, useContext } from 'react';
-import { Input, Contador, Select } from '../../../../components';
-import { Store } from '../../../../Store.js';
-import { capitalize } from '../../../../utils/utils';
+import { Input, Contador, Select } from '../../../components';
+import { Store } from '../../../Store.js';
+import { capitalize } from '../../../utils/utils';
 import {
     mainEnvironments,
     features,
     garagesType,
     garagesCover 
-} from './CaracteristicasPrincipales';
-import './CaracteristicasPrincipales.css';
+} from '../js/CaracteristicasPrincipales';
+import '../css/CaracteristicasPrincipales.css';
 
 const CaracteristicasPrincipales = () => {
 

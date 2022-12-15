@@ -1,10 +1,11 @@
 import { useState, useContext } from 'react';
-import { Select, Input } from '../../../../components';
-import { Store } from '../../../../Store.js';
-import { estadoPropiedades } from './Basicos.js';
-import './Basicos.css';
+import { Select, Input } from '../../../components';
+import { Store } from '../../../Store.js';
+import { estadoPropiedades } from '../js/Basicos.js';
+import { expensas } from '../js/Basicos.js';
+import '../css/Basicos.css';
 
-const Basicos = ({ tipoUnidad, operaciones }) => {
+const Basicos = ({ inmueble, tipoUnidad, operaciones }) => {
 
     const [data, setData] = useState({
         unit: '',
@@ -117,6 +118,37 @@ const Basicos = ({ tipoUnidad, operaciones }) => {
                 className="apto-credito"
                 onChange={handleChange}
             />
+
+            {
+                inmueble === "departamento" ? (
+                    <Select
+                        displayName="Expensas *" 
+                        name="expenses" 
+                        className="expenses" 
+                        onChange={handleChange}>
+                        <option value="">Seleccione una opción...</option>
+                        {
+                            expensas.map((item) => (
+                                <option key={item.id}>
+                                    {item.title}
+                                </option>
+                            ))
+                        }
+                    </Select>
+                ) : null
+            }
+
+            {
+                inmueble === "departamento" ? (
+                    <Input
+                        displayName="Valor expensas"
+                        name="expensesValue"
+                        type="number"
+                        className="expenses-value"
+                        onChange={handleChange}
+                    />
+                ) : null
+            }
 
             <Input
                 displayName="Acepta Permuta"

@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"; 
-import { Textarea } from "../../../../components";
-import { Store } from '../../../../Store.js';
+import { Textarea } from "../../../components";
+import { Store } from '../../../Store.js';
 
 const InformacionAdicional = () => {
 

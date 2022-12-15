@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
-import { Input } from "../../../../components";
-import { Store } from '../../../../Store.js';
-import { services } from "./Servicios";
-import './Servicios.css';
+import { Input } from "../../../components";
+import { Store } from '../../../Store.js';
+import { services } from "../js/Servicios";
+import '../css/Servicios.css';
 
 const Servicios = () => {
 

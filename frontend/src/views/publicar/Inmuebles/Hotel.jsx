@@ -8,7 +8,7 @@ import {
     Multimedia,
     Superficies,
     Ubicacion
-} from '../Principal';
+} from '../components';
 
 const Hotel = () => {
 

@@ -1,5 +1,3 @@
-// Operaciones
-
 export const operaciones = [
     {
         id: 1,
@@ -15,7 +13,24 @@ export const operaciones = [
     }
 ];
 
-// Estado
+export const expensas = [
+    {
+        id: 1,
+        title: "Incluidas"
+    },
+    {
+        id: 2,
+        title: "No incluidas"
+    },
+    {
+        id: 3,
+        title: "No paga"
+    },
+    {
+        id: 4,
+        title: "A convenir"
+    },
+];
 
 export const estadoPropiedades = [
     {
@@ -43,8 +58,6 @@ export const estadoPropiedades = [
         title: "No vigente"
     },
 ];
-
-// Tipo de unidad
 
 export const casa = [
     {

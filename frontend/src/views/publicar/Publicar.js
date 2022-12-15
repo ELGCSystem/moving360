@@ -1,8 +1,8 @@
-import { useState, useEffect, useContext } from 'react';
-import Contacto from './Contacto/Contacto.jsx';
-import VistaPrevia from './VistaPrevia/VistaPrevia.jsx';
+import { useEffect, useContext } from 'react';
 import { useNavigate, Route, Routes } from 'react-router-dom';
+import { FaAngleLeft } from 'react-icons/fa/index.esm.js';
 import { Store } from '../../Store.js';
+import { Button } from '../../components/index.js';
 import {
   Casa,
   Departamento,
@@ -19,7 +19,7 @@ import {
   ParcelaNichoBoveda,
   CamasNauticas
 } from './Inmuebles/index.js';
-import './Publicar.css';
+import './css/Publicar.css';
 import axios from 'axios';
 
 const Publicar = () => {
@@ -61,12 +61,21 @@ const Publicar = () => {
       console.log(data);
 
     } catch (error) {
-      console.log(error.response);
+      console.log(error.response.data.message);
     }
   }
 
   return (
     <div className='publicar'>
+
+      <Button 
+          to="/gestion-inmobiliaria/nueva-publicacion"
+          onClick={window.scroll(0, 0)}
+          className="atras"
+      >
+          <FaAngleLeft /> Atras
+      </Button>
+
       <form onSubmit={submitHandler}>
         <Routes>
           <Route path=':seccion/casa/*' element={<Casa />} />
@@ -83,9 +92,8 @@ const Publicar = () => {
           <Route path=':seccion/hotel/*' element={<Hotel />} />
           <Route path=':seccion/parcelas-nichos-bovedas/*' element={<ParcelaNichoBoveda />} />
           <Route path=':seccion/camas-nauticas/*' element={<CamasNauticas />} />
-          <Route path='contacto' element={<Contacto />} />
-          <Route path='vista-previa' element={<VistaPrevia />} />
         </Routes>
+        <button className='button button--blue'>Publicar</button>
       </form>
     </div>
   )

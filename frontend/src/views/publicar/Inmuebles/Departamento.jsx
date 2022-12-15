@@ -8,8 +8,8 @@ import {
     Multimedia,
     Superficies,
     Ubicacion
-} from '../Principal';
-import { operaciones, departamento } from '../Principal/Basicos/Basicos.js';
+} from '../components';
+import { operaciones, departamento } from '../js/Basicos.js';
 
 const Departamento = () => {
 
@@ -25,15 +25,8 @@ const Departamento = () => {
         <>
             <h2 className='titulo__seccion'>Nuevo departamento</h2>
 
-            <Button 
-                to="/gestion-inmobiliaria/nueva-publicacion"
-                onClick={window.scroll(0, 0)}
-                className="atras"
-            >
-                <FaAngleLeft /> Atras
-            </Button>
-
             <Basicos
+                inmueble="departamento"
                 tipoUnidad={departamento}
                 operaciones={op}
             />
@@ -42,15 +35,6 @@ const Departamento = () => {
             <Ubicacion />
             <Multimedia />
             <InformacionAdicional />
-
-            <Button 
-                to="/publicar/contacto"
-                onClick={window.scroll(0, 0)}
-                className="continuar"
-                type="blue"
-            >
-                Continuar <FaAngleRight />
-            </Button>
         </>
     );
 }

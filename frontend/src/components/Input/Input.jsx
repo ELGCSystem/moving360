@@ -1,6 +1,6 @@
 import './Input.css';
 
-const Input = ({ displayName, name, type, className, value, onChange }) => (
+const Input = ({ displayName, name, type, className, value, onChange, required }) => (
     <div className={`${type}-container ${className}`}>
         <label
             htmlFor={name}
@@ -13,7 +13,7 @@ const Input = ({ displayName, name, type, className, value, onChange }) => (
             className={type}
             onChange={onChange}
             value={value}
-            required
+            required={required}
         />
     </div>
 );

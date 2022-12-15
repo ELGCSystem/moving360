@@ -11,7 +11,7 @@ const Textarea = ({ displayName, name, className, onChange }) => (
             name={name} 
             className="textarea" 
             onChange={onChange} 
-            required>    
+            >    
         </textarea>
     </div>
 );

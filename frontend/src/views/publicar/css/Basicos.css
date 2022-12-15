@@ -1,7 +1,7 @@
 .datos-basicos {
     width: 100%;
     display: grid;
-    grid-template-rows: 7rem 7rem 4rem repeat(4, 2rem) 7rem 2rem 7rem 4rem;
+    grid-template-rows: 7rem 7rem 4rem 2rem repeat(3, 2rem) 7rem 2rem 7rem 4rem;
     grid-template-columns: 20% 20% 20% 5% 5% 20%;
     column-gap: 2%;
     row-gap: 1rem;
@@ -19,6 +19,16 @@
 
 .datos-basicos .no-publicar {
     grid-column: 3/4;
+}
+
+.datos-basicos .expenses {
+    grid-column: 4/5;
+    grid-column: 1;
+}
+
+.datos-basicos .expenses-value {
+    grid-column: 4/5;
+    grid-column: 2;
 }
 
 .datos-basicos .apto-credito {

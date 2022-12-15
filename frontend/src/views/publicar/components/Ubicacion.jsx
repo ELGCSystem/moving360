@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
-import { Select, Input } from '../../../../components';
-import { Store } from '../../../../Store.js';
+import { Select, Input } from '../../../components';
+import { Store } from '../../../Store.js';
 import Axios from 'axios';
-import './Ubicacion.css'
+import '../css/Ubicacion.css'
 
 const Ubicacion = () => {
 

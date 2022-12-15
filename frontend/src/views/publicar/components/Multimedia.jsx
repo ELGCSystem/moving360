@@ -1,9 +1,9 @@
 import { useState, useContext } from 'react';
 import { FaCamera } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { Input, Button } from '../../../../components';
-import { Store } from '../../../../Store.js';
-import './Multimedia.css';
+import { Input, Button } from '../../../components';
+import { Store } from '../../../Store.js';
+import '../css/Multimedia.css';
 
 const Multimedia = () => {
     

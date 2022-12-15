@@ -1,12 +1,12 @@
 import { useState, useContext } from "react";
-import { Select, Input } from "../../../../components";
-import { Store } from '../../../../Store.js';
+import { Select, Input } from "../../../components";
+import { Store } from '../../../Store.js';
 import {
     zones,
     sports,
     amenities
-} from "./DatosCountry";
-import "./DatosCountry.css";
+} from "../js/DatosCountry";
+import "../css/DatosCountry.css";
 
 const DatosCountry = () => {
 

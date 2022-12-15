@@ -8,7 +8,7 @@ import {
     Multimedia,
     Superficies,
     Ubicacion
-} from '../Principal';
+} from '../components';
 
 const LoteTerreno = () => {
 
@@ -29,7 +29,7 @@ const LoteTerreno = () => {
 
             <Basicos />
             { isCountries ? <DatosCountry /> : null }
-            <Superficies />
+            <Superficies estate={"lote-terreno"} />
             <Ubicacion />
             <Multimedia />
             <InformacionAdicional />

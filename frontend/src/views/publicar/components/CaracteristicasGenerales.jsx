@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
-import { Select, Input } from '../../../../components';
-import { Store } from '../../../../Store.js';
+import { Select, Input } from '../../../components';
+import { Store } from '../../../Store.js';
 import {
     insideFlooring,
     woodFlooring,
@@ -12,8 +12,8 @@ import {
     view,
     coast,
     slope
-} from './CaracteristicasGenerales.js';
-import './CaracteristicasGenerales.css'; 
+} from '../js/CaracteristicasGenerales.js';
+import '../css/CaracteristicasGenerales.css'; 
 
 const CaracteristicasGenerales = () => {
 

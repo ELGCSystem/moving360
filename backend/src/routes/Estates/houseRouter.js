@@ -14,6 +14,35 @@ houseRouter.get(
   })
 );
 
+//Mostrar Registro de Inmuebles filtrado por parámetros
+houseRouter.get(
+  '/get/:search',
+
+  expressAsyncHandler(async (req, res) => {
+
+    const search = JSON.parse(req.params.search);
+
+    let params = [];
+
+    if (search.unit)
+      params.push({'dataBasic.unit': search.unit });
+
+    if (search.operation)
+      params.push({'dataBasic.operation': search.operation });
+
+    if (search.price)
+      params.push({'dataBasic.price': search.price });
+
+    if (search.title)
+      params.push({'dataBasic.title': new RegExp("^" + search.title) });
+    
+
+    let house = await House.find({$and: params});
+
+    res.send(house);
+  })
+);
+
 //Registro de Inmuebles
 houseRouter.post(
   '/signup',

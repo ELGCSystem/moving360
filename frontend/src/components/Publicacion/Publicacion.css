@@ -9,10 +9,23 @@
     border: 2px solid var(--d-gray);
     border-radius: 20px;
     overflow: hidden;
+    margin: 3rem 0;
 }
 
 .publicacion * {
     grid-column: 2;
+}
+
+.publicacion h4 {
+    font-size: 1.7rem;
+    color: var(--black);
+    font-family: var(--titles);
+}
+
+.publicacion p {
+    color: var(--gray);
+    font-family: var(--paragraphs);
+    font-size: 1.5rem;
 }
 
 .publicacion__img {

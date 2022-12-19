@@ -1,19 +1,20 @@
 import './Input.css';
 
-const Input = ({ displayName, name, type, className, value, onChange, required }) => (
-    <div className={`${type}-container ${className}`}>
+const Input = (props) => (
+    <div className={`${props.type}-container ${props.className}`}>
         <label
-            htmlFor={name}
-            className={`${type}__label`}>
-            {displayName}
+            htmlFor={props.name}
+            className={`${props.type}__label`}>
+            {props.displayName}
         </label>
         <input
-            type={type}
-            name={name}
-            className={type}
-            onChange={onChange}
-            value={value}
-            required={required}
+            type={props.type}
+            name={props.name}
+            className={props.type}
+            onChange={props.onChange}
+            value={props.value}
+            placeholder={props.placeholder}
+            required={props.required}
         />
     </div>
 );

@@ -36,7 +36,6 @@ const Publicar = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    console.log("hola")
     try {
 
       const { data } = await axios.post("http://localhost:4000/api/house/signup", {

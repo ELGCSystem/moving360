@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7210ab4f.css",
+    "main.js": "/static/js/main.72e26280.js",
+    "static/media/Video360.mp4": "/static/media/Video360.48dd2b1868032dcd4bab.mp4",
+    "static/media/vectorVerification.jpg": "/static/media/vectorVerification.dee2b77dfcc48996d008.jpg",
+    "static/media/vectorRegister.jpg": "/static/media/vectorRegister.71e9d074a640328b43a4.jpg",
+    "static/media/google.png": "/static/media/google.81b266ef71e5ed02bccd.png",
+    "static/media/comprar.jpg": "/static/media/comprar.1e195e136ce3de66fd56.jpg",
+    "static/media/logo-moving360.png": "/static/media/logo-moving360.98e793f126324cc833ff.png",
+    "static/media/germano.png": "/static/media/germano.f970de02f9e5becab2c4.png",
+    "static/media/casa-ejemplo.jpg": "/static/media/casa-ejemplo.71b783a3f803d46df1db.jpg",
+    "static/media/vender.jpg": "/static/media/vender.62b01d4625cd1653798a.jpg",
+    "static/media/chatImg.jpg": "/static/media/chatImg.f75a9918e1b8bd836503.jpg",
+    "static/media/alquilar.jpg": "/static/media/alquilar.7872e9b06946d4647c48.jpg",
+    "static/media/aaip.png": "/static/media/aaip.c07fd7bf4b979643a11a.png",
+    "static/media/remax.jpg": "/static/media/remax.1ea87668d69f3b5880f9.jpg",
+    "static/media/moving360.png": "/static/media/moving360.b00f771345a21cdcf5f0.png",
+    "static/media/stella.jpg": "/static/media/stella.38b98e9942dc03e5c44e.jpg",
+    "static/media/success.png": "/static/media/success.fc4f61e24652c8db238c.png",
+    "index.html": "/index.html",
+    "main.7210ab4f.css.map": "/static/css/main.7210ab4f.css.map",
+    "main.72e26280.js.map": "/static/js/main.72e26280.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7210ab4f.css",
+    "static/js/main.72e26280.js"
+  ]
+}

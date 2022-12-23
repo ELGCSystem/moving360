@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Select, Button } from "../../../components";
-import { secciones } from "./Secciones";
+import { sections } from "./Secciones";
 import './NuevaPublicacion.css';
 
 const NuevaPublicacion = () => {
@@ -15,7 +15,7 @@ const NuevaPublicacion = () => {
     }
 
     const idSeccionHandler = (newSeccion) => {
-        secciones.map((seccionItem) => {
+        sections.map((seccionItem) => {
             if (newSeccion == seccionItem.title)
                 setIdSeccion(seccionItem.id -1);
         })
@@ -48,7 +48,7 @@ const NuevaPublicacion = () => {
                     }}>
                 <option value="">Seleccione una opcion...</option>
                 {
-                    secciones.map((seccion) => (
+                    sections.map((seccion) => (
                         <option key={seccion.id}>
                             {seccion.title}
                         </option>
@@ -65,7 +65,7 @@ const NuevaPublicacion = () => {
                 {
                     seccion ? 
                     (
-                        secciones[idSeccion].inmuebles.map((inmueble) => (
+                        sections[idSeccion].inmuebles.map((inmueble) => (
                             <option>{inmueble}</option>
                         ))
                     ) : 

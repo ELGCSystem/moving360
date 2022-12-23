@@ -3,6 +3,7 @@ import { useNavigate, Route, Routes } from 'react-router-dom';
 import { FaAngleLeft } from 'react-icons/fa/index.esm.js';
 import { Store } from '../../Store.js';
 import { Button } from '../../components/index.js';
+import { getPosts, isOportunidadesSuitable } from './js/CalcularPrecio.js';
 import {
   Casa,
   Departamento,
@@ -36,33 +37,44 @@ const Publicar = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    console.log("hola")
-    try {
+    let posts = await getPosts("Casa",
+                                houseData.dataBasic.unit,
+                                houseData.dataBasic.operation);
+    
+    if (isOportunidadesSuitable(posts,
+                                houseData.dataBasic.price,
+                                houseData.surface.covered))
+      console.log("Tu inmueble de publicará en la sección de oportunidades");
+    else
+      console.log("Te invitamos a publicar tu inmueble en la sección oportunidades");
+    
+    // try {
 
-      const { data } = await axios.post("http://localhost:4000/api/house/signup", {
-        dataBasic: houseData.dataBasic,
-        dataCountry: houseData.dataCountry,
-        surface: houseData.surface,
-        location: houseData.location,
-        mainFeatures: houseData.mainFeatures,
-        generalFeatures: houseData.generalFeatures,
-        otherEnvironments: houseData.otherEnvironments,
-        installations: houseData.installations,
-        services: houseData.services,
-        multimedia: houseData.multimedia,
-        additionalInformation: houseData.additionalInformation,
-        contactOwner: houseData.contactOwner
-      });
+    //   const { data } = await axios.post("http://localhost:4000/api/house/signup", {
+    //     dataBasic: houseData.dataBasic,
+    //     dataCountry: houseData.dataCountry,
+    //     surface: houseData.surface,
+    //     location: houseData.location,
+    //     mainFeatures: houseData.mainFeatures,
+    //     generalFeatures: houseData.generalFeatures,
+    //     otherEnvironments: houseData.otherEnvironments,
+    //     installations: houseData.installations,
+    //     services: houseData.services,
+    //     multimedia: houseData.multimedia,
+    //     additionalInformation: houseData.additionalInformation,
+    //     contactOwner: houseData.contactOwner
+    //   });
 
-      // window.location.href = "/gestion-inmobiliaria";
-      // navigate("/publicar/vista-previa");
+    //   // window.location.href = "/gestion-inmobiliaria";
+    //   // navigate("/publicar/vista-previa");
 
       
-      console.log(data);
+    //   console.log(data);
 
-    } catch (error) {
-      console.log(error.response.data.message);
-    }
+    // } catch (error) {
+    //   console.log(error.response.data.message);
+    // }
+    
   }
 
   return (

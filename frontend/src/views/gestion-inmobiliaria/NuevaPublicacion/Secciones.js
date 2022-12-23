@@ -5,7 +5,7 @@ import {
     faMountainCity
 } from "@fortawesome/free-solid-svg-icons";
 
-export const secciones = [
+export const sections = [
     {
         id: 1,
         title: "General",
@@ -19,7 +19,7 @@ export const secciones = [
     {
         id: 3,
         title: "Emprendimientos",
-        inmuebles: ["Departamento", "Departamento tipo PH", "Cochera", "Local"]
+        inmuebles: ["Departamento", "Departamento tipo PH", "Cochera", "Local", "Oficina", "Terreno"]
     },
     {
         id: 4,

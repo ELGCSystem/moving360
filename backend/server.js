@@ -10,7 +10,9 @@ import ownerRouter from './src/routes/ownerRouter.js';
 import traditionalRouter from './src/routes/realEstates/traditionalRouter.js';
 import decentralizedRouter from './src/routes/realEstates/decentralizedFranchiseRouter.js';
 import centralizedRouter from './src/routes/realEstates/centralizedFranchiseRouter.js';
-import house from './src/routes/Estates/houseRouter.js';
+import houseRouter from './src/routes/Estates/houseRouter.js';
+import conversationRouter from './src/routes/Chats/conversationRouter.js';
+import messageRouter from './src/routes/Chats/messageRouter.js';
 import './passport.js';
 import authRouter from './src/auth/auth.js';
 
@@ -44,7 +46,9 @@ app.use('/api/owner', ownerRouter);
 app.use('/api/traditional', traditionalRouter);
 app.use('/api/decentralized', decentralizedRouter);
 app.use('/api/centralized', centralizedRouter);
-app.use('/api/house', house);
+app.use('/api/house', houseRouter);
+app.use('/api/conversation', conversationRouter);
+app.use('/api/message', messageRouter);
 
 app.use(
   cookieSession({

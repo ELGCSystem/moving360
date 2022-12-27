@@ -17,24 +17,6 @@ adminRouter.get(
   })
 );
 
-//Mostrar Registro de Usuario Administrador
-adminRouter.get(
-  '/getAdmin',
-  expressAsyncHandler(async (req, res) => {
-    const adminId = req.query.adminId;
-    const name = req.query.username;
-    try {
-      const admin = adminId
-        ? await Admin.findById(adminId)
-        : await Admin.findOne({ name: name });
-      const { password, updatedAt, ...other } = admin._doc;
-      res.status(200).json(other);
-    } catch (error) {
-      res.status(500).json(err);
-    }
-  })
-);
-
 //Inicio de Sesión de Usuarios Administradores
 adminRouter.post(
   '/signin',

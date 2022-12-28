@@ -14,6 +14,7 @@ import centralizedRouter from './src/routes/realEstates/centralizedFranchiseRout
 import houseRouter from './src/routes/Estates/houseRouter.js';
 import conversationRouter from './src/routes/Chats/conversationRouter.js';
 import messageRouter from './src/routes/Chats/messageRouter.js';
+import dateRouter from './src/routes/dateApplicationRouter.js';
 import './passport.js';
 import authRouter from './src/auth/auth.js';
 
@@ -51,6 +52,7 @@ app.use('/api/centralized', centralizedRouter);
 app.use('/api/house', houseRouter);
 app.use('/api/conversation', conversationRouter);
 app.use('/api/message', messageRouter);
+app.use('/api/date', dateRouter)
 
 app.use(
   cookieSession({

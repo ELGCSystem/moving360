@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const houseSchema = new mongoose.Schema(
+const phApartmentSchema = new mongoose.Schema(
   [
     {
       dataBasic: {
@@ -17,6 +17,13 @@ const houseSchema = new mongoose.Schema(
         suitablePets: { type: Boolean, trim: true, required: true },
         title: { type: String, trim: true, required: true },
         commission: { type: String, trim: true, required: true },
+      },
+      dataEntrepreneurship: {
+        state: { type: String, trim: true, required: false },
+        maximumDateYear: { type: String, trim: true, required: false },
+        maximumDateMonth: { type: String, trim: true, required: false },
+        bedroomsQuantity: { type: Number, trim: true, required: false },
+        insideCountry: { type: Boolean, trim: true, required: false },
       },
       dataCountry: {
         name: { type: String, trim: true, required: false },
@@ -264,5 +271,5 @@ const houseSchema = new mongoose.Schema(
   }
 );
 
-const House = mongoose.model('houses', houseSchema);
-export default House;
+const PhApartment = mongoose.model('phApartments', phApartmentSchema);
+export default PhApartment;

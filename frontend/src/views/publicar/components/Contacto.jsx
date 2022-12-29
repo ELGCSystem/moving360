@@ -1,17 +1,12 @@
 import { useState, useContext } from 'react';
 import { Button, Input, Select } from '../../../components/index.js';
 import { Store } from '../../../Store.js';
+import { contactOwner } from '../js/Fields.js';
 import '../css/Contacto.css'
 
 const Contacto = () => {
 
-    const [data, setData] = useState({
-        email: '',
-        telephone: '',
-        mobile: '',
-        alternativeTelephone: '',
-        whatsApp: ''
-    });
+    const [data, setData] = useState(contactOwner);
 
     const { dispatch: ctxDispatch } = useContext(Store);
 

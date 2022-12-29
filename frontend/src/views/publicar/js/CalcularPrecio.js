@@ -1,14 +1,16 @@
 import Axios from 'axios';
+import { translateEstates } from '../../../utils/utils.js';
 
 export const getPosts = async (estate, unit, operation) => {
     
     const params = {
-        estate: estate,
         unit: unit,
         operation: operation,
     }
 
-    const url = `http://localhost:4000/api/house/get/${JSON.stringify(params)}`;
+    let searchEstate = translateEstates(estate);
+
+    const url = `http://localhost:4000/api/${searchEstate}/get/${JSON.stringify(params)}`;
 
     try {
         const { data } = await Axios.get(url);

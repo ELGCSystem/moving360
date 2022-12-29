@@ -7,10 +7,14 @@ const initialState = {
     ? JSON.parse(localStorage.getItem('userInfo'))
     : null,
 
-    houseData: {
+    estateData: {
 
         dataBasic: localStorage.getItem('dataBasic')
         ? JSON.parse(localStorage.getItem('dataBasic'))
+        : {},
+
+        dataEntrepreneurship: localStorage.getItem('dataEntrepreneurship')
+        ? JSON.parse(localStorage.getItem('dataEntrepreneurship'))
         : {},
 
         dataCountry: localStorage.getItem('dataCountry')
@@ -45,6 +49,20 @@ const initialState = {
         ? JSON.parse(localStorage.getItem('services'))
         : {},
 
+        building: {
+            mainFeatures: localStorage.getItem('buildingMainFeatures')
+            ? JSON.parse(localStorage.getItem('buildingMainFeatures'))
+            : {},
+
+            installations: localStorage.getItem('buildingInstallations')
+            ? JSON.parse(localStorage.getItem('buildingInstallations'))
+            : {},
+
+            services: localStorage.getItem('buildingServices')
+            ? JSON.parse(localStorage.getItem('buildingServices'))
+            : {},
+        },
+
         multimedia: localStorage.getItem('multimedia')
         ? JSON.parse(localStorage.getItem('multimedia'))
         : {},
@@ -72,17 +90,26 @@ function reducer(state, action) {
         case 'SAVE_DATA_BASIC':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      dataBasic: action.payload 
+                } 
+            };
+
+        case 'SAVE_DATA_ENTREPRENEURSHIP':
+            return { 
+                ...state, 
+                estateData: {
+                     ...state.estateData,
+                     dataEntrepreneurship: action.payload 
                 } 
             };
 
         case 'SAVE_DATA_COUNTRY':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      dataCountry: action.payload 
                 } 
             };
@@ -90,8 +117,8 @@ function reducer(state, action) {
         case 'SAVE_SURFACE':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      surface: action.payload 
                 } 
             };
@@ -99,8 +126,8 @@ function reducer(state, action) {
         case 'SAVE_LOCATION':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      location: action.payload 
                 } 
             };
@@ -108,8 +135,8 @@ function reducer(state, action) {
         case 'SAVE_MAIN_FEATURES':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      mainFeatures: action.payload 
                 } 
             };
@@ -117,8 +144,8 @@ function reducer(state, action) {
         case 'SAVE_GENERAL_FEATURES':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      generalFeatures: action.payload 
                 } 
             };
@@ -126,8 +153,8 @@ function reducer(state, action) {
         case 'SAVE_OTHER_ENVIRONMENTS':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      otherEnvironments: action.payload 
                 } 
             };
@@ -135,8 +162,8 @@ function reducer(state, action) {
         case 'SAVE_INSTALLATIONS':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      installations: action.payload 
                 } 
             };
@@ -144,17 +171,53 @@ function reducer(state, action) {
         case 'SAVE_SERVICES':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      services: action.payload 
+                } 
+            };
+
+        case 'SAVE_BUILDING_MAIN_FEATURES':
+            return { 
+                ...state, 
+                estateData: {
+                     ...state.estateData,
+                     building: {
+                        ...state.building,
+                        mainFeatures: action.payload
+                     } 
+                } 
+            };
+        
+        case 'SAVE_BUILDING_INSTALLATIONS':
+            return { 
+                ...state, 
+                estateData: {
+                     ...state.estateData,
+                     building: {
+                        ...state.building,
+                        installations: action.payload
+                     } 
+                } 
+            };
+
+        case 'SAVE_BUILDING_SERVICES':
+            return { 
+                ...state, 
+                estateData: {
+                     ...state.estateData,
+                     building: {
+                        ...state.building,
+                        services: action.payload
+                     } 
                 } 
             };
 
         case 'SAVE_MULTIMEDIA':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      multimedia: action.payload 
                 } 
             };
@@ -162,8 +225,8 @@ function reducer(state, action) {
         case 'SAVE_ADDITIONAL_INFORMATION':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      additionalInformation: action.payload 
                 } 
             };
@@ -171,8 +234,8 @@ function reducer(state, action) {
         case 'SAVE_CONTACT_OWNER':
             return { 
                 ...state, 
-                houseData: {
-                     ...state.houseData,
+                estateData: {
+                     ...state.estateData,
                      contactOwner: action.payload 
                 } 
             };

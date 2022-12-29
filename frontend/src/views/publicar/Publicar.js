@@ -1,27 +1,13 @@
 import { useEffect, useContext } from 'react';
-import { useNavigate, Route, Routes } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaAngleLeft } from 'react-icons/fa/index.esm.js';
 import { Store } from '../../Store.js';
 import { Button } from '../../components/index.js';
 import { getPosts, isOportunidadesSuitable } from './js/CalcularPrecio.js';
-import {
-  Casa,
-  Departamento,
-  DepartamentoPH,
-  Cochera,
-  OficinaConsultorio,
-  Local,
-  Galpon,
-  FondoComercio,
-  Campo,
-  Quinta,
-  LoteTerreno,
-  Hotel,
-  ParcelaNichoBoveda,
-  CamasNauticas
-} from './Inmuebles/index.js';
+import Inmueble from './Inmueble.jsx';
 import './css/Publicar.css';
 import axios from 'axios';
+import { translateEstates } from '../../utils/utils.js';
 
 const Publicar = () => {
 
@@ -30,50 +16,55 @@ const Publicar = () => {
   }, []);
 
   const { state } = useContext(Store);
-  const { houseData } = state;
+  const { estateData } = state;
 
   let navigate = useNavigate();
+
+  let { section, estate } = useParams();
 
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    let posts = await getPosts("Casa",
-                                houseData.dataBasic.unit,
-                                houseData.dataBasic.operation);
+    console.log(estateData);
+
+    let posts = await getPosts(estate,
+                               estateData.dataBasic.unit,
+                               estateData.dataBasic.operation);
     
     if (isOportunidadesSuitable(posts,
-                                houseData.dataBasic.price,
-                                houseData.surface.covered))
+                                estateData.dataBasic.price,
+                                estateData.surface.covered))
       console.log("Tu inmueble de publicará en la sección de oportunidades");
     else
       console.log("Te invitamos a publicar tu inmueble en la sección oportunidades");
     
-    // try {
+    try {
 
-    //   const { data } = await axios.post("http://localhost:4000/api/house/signup", {
-    //     dataBasic: houseData.dataBasic,
-    //     dataCountry: houseData.dataCountry,
-    //     surface: houseData.surface,
-    //     location: houseData.location,
-    //     mainFeatures: houseData.mainFeatures,
-    //     generalFeatures: houseData.generalFeatures,
-    //     otherEnvironments: houseData.otherEnvironments,
-    //     installations: houseData.installations,
-    //     services: houseData.services,
-    //     multimedia: houseData.multimedia,
-    //     additionalInformation: houseData.additionalInformation,
-    //     contactOwner: houseData.contactOwner
-    //   });
+      const { data } = await axios.post(`http://localhost:4000/api/${translateEstates(estate)}/signup`, {
+        dataBasic: estateData.dataBasic,
+        dataEntrepreneurship: estateData.dataEntrepreneurship,
+        dataCountry: estateData.dataCountry,
+        surface: estateData.surface,
+        location: estateData.location,
+        mainFeatures: estateData.mainFeatures,
+        generalFeatures: estateData.generalFeatures,
+        otherEnvironments: estateData.otherEnvironments,
+        installations: estateData.installations,
+        services: estateData.services,
+        building: estateData.building,
+        multimedia: estateData.multimedia,
+        additionalInformation: estateData.additionalInformation,
+        contactOwner: estateData.contactOwner
+      });
 
-    //   // window.location.href = "/gestion-inmobiliaria";
-    //   // navigate("/publicar/vista-previa");
-
+      // window.location.href = "/gestion-inmobiliaria";
+      // navigate("/publicar/vista-previa");
       
-    //   console.log(data);
+      console.log(data);
 
-    // } catch (error) {
-    //   console.log(error.response.data.message);
-    // }
+    } catch (error) {
+      console.log(error.response.data.message);
+    }
     
   }
 
@@ -89,22 +80,7 @@ const Publicar = () => {
       </Button>
 
       <form onSubmit={submitHandler}>
-        <Routes>
-          <Route path=':seccion/casa/*' element={<Casa />} />
-          <Route path=':seccion/departamento/*' element={<Departamento />} />
-          <Route path=':seccion/departamento-tipo-ph/*' element={<DepartamentoPH />} />
-          <Route path=':seccion/cochera/*' element={<Cochera />} />
-          <Route path=':seccion/oficina-consultorio/*' element={<OficinaConsultorio />} />
-          <Route path=':seccion/local/*' element={<Local />} />
-          <Route path=':seccion/galpon/*' element={<Galpon />} />
-          <Route path=':seccion/fondo-de-comercio/*' element={<FondoComercio />} />
-          <Route path=':seccion/campo/*' element={<Campo />} />
-          <Route path=':seccion/quinta/*' element={<Quinta />} />
-          <Route path=':seccion/lote-terreno/*' element={<LoteTerreno />} />
-          <Route path=':seccion/hotel/*' element={<Hotel />} />
-          <Route path=':seccion/parcelas-nichos-bovedas/*' element={<ParcelaNichoBoveda />} />
-          <Route path=':seccion/camas-nauticas/*' element={<CamasNauticas />} />
-        </Routes>
+        <Inmueble section={section} estate={estate}/>
         <button className='button button--blue'>Publicar</button>
       </form>
     </div>

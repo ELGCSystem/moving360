@@ -1,16 +1,12 @@
 import { useState, useContext } from "react";
 import { Input } from "../../../components";
 import { Store } from '../../../Store.js';
+import { surface } from "../js/Fields";
 import '../css/Superficies.css';
 
 const Superficies = ({ estate }) => {
 
-    const [data, setData] = useState({
-        covered: null,
-        semiCovered: null,
-        discovered: null,
-        total: null,
-    });
+    const [data, setData] = useState(surface);
 
     const { dispatch: ctxDispatch } = useContext(Store);
 

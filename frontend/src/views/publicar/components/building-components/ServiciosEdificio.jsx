@@ -1,14 +1,13 @@
 import { useState, useContext } from "react";
-import { Input } from "../../../components";
-import { Store } from '../../../Store.js';
-import { installations } from '../js/Instalaciones';
-import { installations as installationsData } from "../js/Fields";
-import '../css/Instalaciones.css';
+import { Input } from "../../../../components";
+import { Store } from '../../../../Store.js';
+import { buildingServices } from "../../js/Servicios";
+import { building } from '../../js/Fields';
+import '../../css/Servicios.css';
 
-const Instalaciones = () => {
+const ServiciosEdificio = () => {
 
-    const [data, setData] = useState(installationsData);
-
+    const [data, setData] = useState(building.services);
     const { dispatch: ctxDispatch } = useContext(Store);
 
     const handleChange = e => {
@@ -18,16 +17,16 @@ const Instalaciones = () => {
         setData({ ...data, [e.target.name]: !value });
         sendData[e.target.name] = !value;
 
-        ctxDispatch({ type: 'SAVE_INSTALLATIONS', payload: sendData });
-        localStorage.setItem('installations', JSON.stringify(sendData));
+        ctxDispatch({ type: 'SAVE_BUILDING_SERVICES', payload: sendData });
+        localStorage.setItem('buildingServices', JSON.stringify(sendData));
     };
 
     return (
-        <section className="instalaciones">
-            <h2>Instalaciones</h2>
+        <section className="servicios">
+            <h2>Servicios del edificio</h2>
 
             {
-                installations.map((field) => (
+                buildingServices.map((field) => (
                     <Input
                         key={field.id}
                         displayName={field.displayName}
@@ -43,4 +42,4 @@ const Instalaciones = () => {
     )
 };
 
-export default Instalaciones;
+export default ServiciosEdificio;

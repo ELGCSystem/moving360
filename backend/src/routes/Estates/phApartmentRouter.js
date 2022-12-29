@@ -1,21 +1,21 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
-import House from '../../models/Estates/houseModel.js';
-import { generateToken } from '../../../utils/Estates/utilsHouse.js';
+import PhApartment from '../../models/Estates/phApartmentModel.js';
+import { generateToken } from '../../../utils/Estates/utilsApartment.js';
 
-const houseRouter = express.Router();
+const phApartmentRouter = express.Router();
 
 //Mostrar Registro completo de Inmuebles
-houseRouter.get(
+phApartmentRouter.get(
   '/getAll',
   expressAsyncHandler(async (req, res) => {
-    const house = await House.find();
-    res.send(house);
+    const phApartment = await PhApartment.find();
+    res.send(phApartment);
   })
 );
 
 //Mostrar Registro de Inmuebles filtrado por parámetros
-houseRouter.get(
+phApartmentRouter.get(
   '/get/:search',
 
   expressAsyncHandler(async (req, res) => {
@@ -37,18 +37,19 @@ houseRouter.get(
       params.push({'dataBasic.title': new RegExp("^" + search.title) });
     
 
-    let house = await House.find({$and: params});
+    let phApartment = await PhApartment.find({$and: params});
 
-    res.send(house);
+    res.send(phApartment);
   })
 );
 
 //Registro de Inmuebles
-houseRouter.post(
+phApartmentRouter.post(
   '/signup',
   expressAsyncHandler(async (req, res) => {
-    const house = new House({
+    const phApartment = new PhApartment({
       dataBasic: req.body.dataBasic,
+      dataEntrepreneurship: req.body.dataEntrepreneurship,
       dataCountry: req.body.dataCountry,
       surface: req.body.surface,
       location: req.body.location,
@@ -62,34 +63,36 @@ houseRouter.post(
       contactOwner: req.body.contactOwner,
       statistics: req.body.statistics,
     });
-    const createdHouse = await house.save();
+    const createdPhApartment = await phApartment.save();
     res.send({
-      _id: createdHouse._id,
-      dataBasic: createdHouse.dataBasic,
-      dataCountry: createdHouse.dataCountry,
-      surface: createdHouse.surface,
-      location: createdHouse.location,
-      mainFeatures: createdHouse.mainFeatures,
-      generalFeatures: createdHouse.generalFeatures,
-      otherEnvironments: createdHouse.otherEnvironments,
-      installations: createdHouse.installations,
-      services: createdHouse.services,
-      multimedia: createdHouse.multimedia,
-      additionalInformation: createdHouse.additionalInformation,
-      contactOwner: createdHouse.contactOwner,
-      statistics: createdHouse.statistics,
-      token: generateToken(createdHouse),
+      _id: createdPhApartment._id,
+      dataBasic: createdPhApartment.dataBasic,
+      dataEntrepreneurship: createdPhApartment.dataEntrepreneurship,
+      dataCountry: createdPhApartment.dataCountry,
+      surface: createdPhApartment.surface,
+      location: createdPhApartment.location,
+      mainFeatures: createdPhApartment.mainFeatures,
+      generalFeatures: createdPhApartment.generalFeatures,
+      otherEnvironments: createdPhApartment.otherEnvironments,
+      installations: createdPhApartment.installations,
+      services: createdPhApartment.services,
+      multimedia: createdPhApartment.multimedia,
+      additionalInformation: createdPhApartment.additionalInformation,
+      contactOwner: createdPhApartment.contactOwner,
+      statistics: createdPhApartment.statistics,
+      token: generateToken(createdPhApartment),
     });
   })
 );
 
 //Actualización de Datos Inmuebles
-houseRouter.put(
+phApartmentRouter.put(
   '/update/:_id',
   expressAsyncHandler(async (req, res) => {
     const { _id } = req.params;
     const {
       dataBasic,
+      dataEntrepreneurship,
       dataCountry,
       surface,
       location,
@@ -103,11 +106,12 @@ houseRouter.put(
       contactOwner,
       statistics,
     } = req.body;
-    const houseUpdated = await House.findByIdAndUpdate(
+    const phApartmentUpdated = await PhApartment.findByIdAndUpdate(
       _id,
       {
         $set: {
           dataBasic,
+          dataEntrepreneurship,
           dataCountry,
           surface,
           location,
@@ -124,19 +128,19 @@ houseRouter.put(
       },
       { useFindAndModify: false }
     );
-    res.send(`${houseUpdated.name} updated`);
+    res.send(`${phApartmentUpdated.name} updated`);
   })
 );
 
 //Eliminación de Inmuebles
-houseRouter.delete(
+phApartmentRouter.delete(
   '/delete/:_id',
   expressAsyncHandler(async (req, res) => {
     const { _id } = req.params;
-    const removed = await House.findByIdAndDelete(_id);
+    const removed = await PhApartment.findByIdAndDelete(_id);
     console.log(removed);
     res.send(`${removed.name} deleted from database`);
   })
 );
 
-export default houseRouter;
+export default phApartmentRouter;

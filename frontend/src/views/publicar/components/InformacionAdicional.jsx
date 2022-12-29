@@ -1,13 +1,11 @@
 import { useState, useContext } from "react"; 
 import { Textarea } from "../../../components";
 import { Store } from '../../../Store.js';
+import { addiotinalInformation } from "../js/Fields";
 
 const InformacionAdicional = () => {
 
-    const [data, setData] = useState({
-        description: '',
-        notes: ''
-    });
+    const [data, setData] = useState(addiotinalInformation);
 
     const { dispatch: ctxDispatch } = useContext(Store);
 

@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const houseSchema = new mongoose.Schema(
+const apartmentSchema = new mongoose.Schema(
   [
     {
       dataBasic: {
@@ -10,6 +10,8 @@ const houseSchema = new mongoose.Schema(
         dontShowPrice: { type: Boolean, trim: true, required: true },
         currency: { type: String, trim: true, required: true },
         state: { type: String, trim: true, required: true },
+        expenses: { type: String, trim: true, required: true },
+        expensesValue: { type: Number, trim: true, required: false },
         suitableCredit: { type: Boolean, trim: true, required: true },
         acceptsExchange: { type: Boolean, trim: true, required: true },
         suitableProfesional: { type: Boolean, trim: true, required: true },
@@ -17,6 +19,13 @@ const houseSchema = new mongoose.Schema(
         suitablePets: { type: Boolean, trim: true, required: true },
         title: { type: String, trim: true, required: true },
         commission: { type: String, trim: true, required: true },
+      },
+      dataEntrepreneurship: {
+        state: { type: String, trim: true, required: false },
+        maximumDateYear: { type: String, trim: true, required: false },
+        maximumDateMonth: { type: String, trim: true, required: false },
+        bedroomsQuantity: { type: Number, trim: true, required: false },
+        insideCountry: { type: Boolean, trim: true, required: false },
       },
       dataCountry: {
         name: { type: String, trim: true, required: false },
@@ -76,6 +85,7 @@ const houseSchema = new mongoose.Schema(
         suiteBathroomsQuantity: { type: Number, trim: true, required: true },
         suiteBathroomsSize: { type: String, trim: true, required: false },
         environmentsQuantity: { type: Number, trim: true, required: true },
+        setup: { type: String, trim: true, required: true },
         hasKitchen: { type: Boolean, trim: true, required: true },
         kitchenSize: { type: String, trim: true, required: false },
         hasIntegratedKitchen: { type: Boolean, trim: true, required: true },
@@ -106,6 +116,9 @@ const houseSchema = new mongoose.Schema(
         serviceDependencySize: { type: String, trim: true, required: false },
         hasFloors: { type: Boolean, trim: true, required: true },
         floorsQuantity: { type: Number, trim: true, required: true },
+        hasBalcony: { type: Boolean, trim: true, required: true },
+        balconyType: { type: String, trim: true, required: false },
+        balconySize: { type: String, trim: true, required: false },
         hasGarages: { type: Boolean, trim: true, required: true },
         garagesQuantity: { type: Number, trim: true, required: false },
         garagesType: { type: String, trim: true, required: false },
@@ -114,8 +127,6 @@ const houseSchema = new mongoose.Schema(
         antiquityYears: { type: Number, trim: true, required: false },
       },
       generalFeatures: {
-        frontSize: { type: Number, trim: true, required: true },
-        backSize: { type: Number, trim: true, required: true },
         insideFlooring: { type: String, trim: true, required: true },
         woodFlooring: { type: String, trim: true, required: true },
         outsideFlooring: { type: String, trim: true, required: true },
@@ -132,8 +143,6 @@ const houseSchema = new mongoose.Schema(
         beforeKitchen: { type: Boolean, trim: true, required: true },
         beforeLiving: { type: Boolean, trim: true, required: true },
         rooftop: { type: Boolean, trim: true, required: true },
-        balcony: { type: Boolean, trim: true, required: true },
-        balconyTerraced: { type: Boolean, trim: true, required: true },
         bar: { type: Boolean, trim: true, required: true },
         trunk: { type: Boolean, trim: true, required: true },
         library: { type: Boolean, trim: true, required: true },
@@ -215,6 +224,54 @@ const houseSchema = new mongoose.Schema(
         linen: { type: Boolean, trim: true, required: true },
         videoCable: { type: Boolean, trim: true, required: true },
       },
+      building: {
+        mainFeatures: {
+          floorsQuantity: { type: Number, trim: true, required: true },
+          garagesQuantity: { type: Number, trim: true, required: true },
+          antiquity: { type: String, trim: true, required: true },
+          antiquityYears: { type: Number, trim: true, required: false },
+        },
+        installations: {
+          multipurposeRoom: { type: Boolean, trim: true, required: true },
+          pool: { type: Boolean, trim: true, required: true },
+          centralAirConditioner: { type: Boolean, trim: true, required: true },
+          individualAirConditioner: { type: Boolean, trim: true, required: true },
+          boiler: { type: Boolean, trim: true, required: true },
+          soccerField: { type: Boolean, trim: true, required: true },
+          tennisCourt: { type: Boolean, trim: true, required: true },
+          vehicleSpace: { type: Boolean, trim: true, required: true },
+          whirlpool: { type: Boolean, trim: true, required: true },
+          reducedMobilityAccess: { type: Boolean, trim: true, required: true },
+          solarium: { type: Boolean, trim: true, required: true },
+          elevator: { type: Boolean, trim: true, required: true },
+          heating: { type: Boolean, trim: true, required: true },
+          airExtractor: { type: Boolean, trim: true, required: true },
+          barbecue: { type: Boolean, trim: true, required: true },
+          park: { type: Boolean, trim: true, required: true },
+          sprinklerIrrigation: { type: Boolean, trim: true, required: true },
+          surveillanceCameras: { type: Boolean, trim: true, required: true },
+          terrace: { type: Boolean, trim: true, required: true },
+        },
+        services: {
+          doorkeeper: { type: Boolean, trim: true, required: true },
+          councilTax: { type: Boolean, trim: true, required: true },
+          electricity: { type: Boolean, trim: true, required: true },
+          cleaning: { type: Boolean, trim: true, required: true },
+          security: { type: Boolean, trim: true, required: true },
+          vigilance: { type: Boolean, trim: true, required: true },
+          runningWater: { type: Boolean, trim: true, required: true },
+          bottledGas: { type: Boolean, trim: true, required: true },
+          refrigeration: { type: Boolean, trim: true, required: true },
+          telephone: { type: Boolean, trim: true, required: true },
+          heating: { type: Boolean, trim: true, required: true },
+          naturalGas: { type: Boolean, trim: true, required: true },
+          laundry: { type: Boolean, trim: true, required: true },
+          commutator: { type: Boolean, trim: true, required: true },
+          internet: { type: Boolean, trim: true, required: true },
+          linen: { type: Boolean, trim: true, required: true },
+          videoCable: { type: Boolean, trim: true, required: true },
+        },
+      },
       multimedia: {
         frontPage: { type: String, trim: true, required: true },
         photoTour360: { type: String, trim: true, required: true },
@@ -264,5 +321,5 @@ const houseSchema = new mongoose.Schema(
   }
 );
 
-const House = mongoose.model('houses', houseSchema);
-export default House;
+const Apartment = mongoose.model('apartments', apartmentSchema);
+export default Apartment;

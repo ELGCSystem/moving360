@@ -2,69 +2,26 @@ import { useState, useContext } from 'react';
 import { Input, Contador, Select } from '../../../components';
 import { Store } from '../../../Store.js';
 import { capitalize } from '../../../utils/utils';
+import { mainFeatures } from '../js/Fields';
 import {
+    getMainFeatures,
     mainEnvironments,
     features,
+    setup,
+    balconyType,
     garagesType,
-    garagesCover 
+    garagesCover,
+    carType,
+    accessType
 } from '../js/CaracteristicasPrincipales';
 import '../css/CaracteristicasPrincipales.css';
 
-const CaracteristicasPrincipales = () => {
+const CaracteristicasPrincipales = ({ estate }) => {
 
-    const [data, setData] = useState({
-        hasBedrooms: false,
-        bedroomsQuantity: 1,
-        bedroomsSize: '',
-        hasBathrooms: false,
-        bathroomsQuantity: 1,
-        bathroomsSize: '',
-        hasToilettes: false,
-        toilettesQuantity: 1,
-        toilettesSize: '',
-        hasSuiteBathrooms: false,
-        suiteBathroomsQuantity: 1,
-        suiteBathroomsSize: '',
-        environmentsQuantity: 1,
-        hasKitchen: false,
-        kitchenSize: '',
-        hasIntegratedKitchen: false,
-        integratedKitchenSize: '',
-        hasDinningRoom: false,
-        dinningRoomSize: '',
-        hasDailyDinningRoom: false,
-        dailyDinningRoomSize: '',
-        hasLivingRoom: false,
-        livingRoomSize: '',
-        hasLaundryRoom: false,
-        laundryRoomSize: '',
-        hasYard: false,
-        yardSize: '',
-        hasHall: false,
-        hallSize: '',
-        hasDesktop: false,
-        desktopSize: '',
-        hasPlayroom: false,
-        playroomSize: '',
-        hasTerrace: false,
-        terraceSize: '',
-        hasBarbecue: false,
-        barbecueSize: '',
-        hasPool: false,
-        poolSize: '',
-        hasServiceDependency: false,
-        serviceDependencySize: '',
-        hasFloors: false,
-        floorsQuantity: 1,
-        hasGarages: false,
-        garagesQuantity: 1,
-        garagesType: '',
-        garagesCover: '',
-        antiquity: '',
-        antiquityYears: null
-    });
-
+    const [data, setData] = useState(mainFeatures);
     const { dispatch: ctxDispatch } = useContext(Store);
+    const fields = getMainFeatures(estate);
+
 
     const handleChange = e => {
 
@@ -101,146 +58,326 @@ const CaracteristicasPrincipales = () => {
             <p>Contanos un poco más sobre tu propiedad.</p>
 
             {
-                mainEnvironments.map((field) => (
-                    <div className={field.className} key={field.id}>
+                mainEnvironments.map((field) =>
+
+                    fields.includes(field.name) ? (
+                        <div className={field.className} key={field.id}>
+                            <Input
+                                displayName={field.displayName}
+                                name={`has${capitalize(field.name)}`}
+                                type="checkbox"
+                                onChange={handleChange}
+                            />
+                            <Contador
+                                displayName={`Cantidad de ${field.displayName}`}
+                                name={`${field.name}Quantity`}
+                                max={field.max}
+                                min="1"
+                                onChange={counterChange}
+                            />
+                            <Input
+                                displayName={`Medidas de ${field.displayName}`}
+                                name={`${field.name}Size`}
+                                type="text"
+                                onChange={handleChange}
+                            />
+                        </div>
+                    ) : null
+                )
+            }
+
+            {
+                fields.includes("environmentsQuantity") ? (
+                    <Contador
+                        displayName="Cantidad de ambientes *"
+                        name="environmentsQuantity"
+                        max="20"
+                        min="1"
+                        onChange={counterChange}
+                    />
+                ) : null
+            }
+
+            {
+                fields.includes("setup") ? (
+                    <Select 
+                        displayName="Disposición" 
+                        name="setup" 
+                        onChange={handleChange}>
+                        <option value="">Seleccione una opción...</option>
+                        {
+                            setup.map((item) => (
+                                <option key={item.id}>
+                                    {item.title}
+                                </option>
+                            ))
+                        }
+                    </Select>
+                ) : null
+            }
+
+            {
+                features.map((field) => 
+                
+                    fields.includes(field.name) ? (
+                        <div className={field.className} key={field.id}>
+                            <Input
+                                displayName={field.displayName}
+                                name={`has${capitalize(field.name)}`}
+                                type="checkbox"
+                                onChange={handleChange}
+                            />
+                            <Input
+                                displayName={`Medidas de ${field.displayName}`}
+                                name={`${field.name}Size`}
+                                type="text"
+                                onChange={handleChange}
+                            />
+                        </div>
+                    ) : null
+                )
+            }
+
+            {
+                fields.includes("columnsSheds") ? (
+                    <>
+                        <Contador
+                            displayName="Cantidad de columnas"
+                            name="columnsQuantity"
+                            max="20"
+                            min="1"
+                            onChange={counterChange}
+                        />
+
+                        <Contador
+                            displayName="Cantidad de naves"
+                            name="shedsQuantity"
+                            max="10"
+                            min="1"
+                            onChange={counterChange}
+                        />
+                    </>
+                ) : null
+            }
+
+            {
+                fields.includes("pavementHectares") ? (
+                    <>
+                        <Input 
+                            displayName="Distancia al pavimento (m)"
+                            name="pavementDistance"
+                            type="number"
+                            onChange={handleChange}
+                        />
+                        <Input 
+                            displayName="Cantidad de hectáreas"
+                            name="hectaresQuantity"
+                            type="number"
+                            onChange={handleChange}
+                        />
+                    </>
+                ) : null
+            }
+
+            {
+                fields.includes("floors") ? (
+                    <div className='plantas'>
                         <Input
-                            displayName={field.displayName}
-                            name={`has${capitalize(field.name)}`}
+                            displayName="Plantas"
+                            name="hasFloors"
                             type="checkbox"
                             onChange={handleChange}
                         />
                         <Contador
-                            displayName={`Cantidad de ${field.displayName}`}
-                            name={`${field.name}Quantity`}
-                            max={field.max}
+                            displayName="Cantidad de plantas *"
+                            name="floorsQuantity"
+                            max="5"
                             min="1"
                             onChange={counterChange}
                         />
-                        <Input
-                            displayName={`Medidas de ${field.displayName}`}
-                            name={`${field.name}Size`}
-                            type="text"
-                            onChange={handleChange}
-                        />
                     </div>
-                ))
+                ) : null
             }
 
-            <Contador
-                displayName="Cantidad de ambientes *"
-                name="environmentsQuantity"
-                max="20"
-                min="1"
-                onChange={counterChange}
-            />
-
             {
-                features.map((field) => (
-                    <div className={field.className} key={field.id}>
+                fields.includes("balcony") ? (
+                    <div className="balcon">
                         <Input
-                            displayName={field.displayName}
-                            name={`has${capitalize(field.name)}`}
+                            displayName="Balcón"
+                            name="hasBalcony"
                             type="checkbox"
                             onChange={handleChange}
                         />
+
+                        <Select 
+                            displayName="Tipo de Balcón" 
+                            name="balconyType" 
+                            onChange={handleChange}>
+                            <option value="">Seleccione una opción...</option>
+                            {
+                                balconyType.map((item) => (
+                                    <option key={item.id}>
+                                        {item.title}
+                                    </option>
+                                ))
+                            }
+                        </Select>
+
                         <Input
-                            displayName={`Medidas de ${field.displayName}`}
-                            name={`${field.name}Size`}
+                            displayName="Medidas de Balcón"
+                            name="balconySize"
                             type="text"
                             onChange={handleChange}
                         />
                     </div>
-                ))
+                ) : null
             }
 
-            <div className='plantas'>
-                <Input
-                    displayName="Plantas"
-                    name="hasFloors"
-                    type="checkbox"
-                    onChange={handleChange}
-                />
-                <Contador
-                    displayName="Cantidad de plantas *"
-                    name="floorsQuantity"
-                    max="5"
-                    min="1"
-                    onChange={counterChange}
-                />
-            </div>
+            {
+                fields.includes("hasGarages") ? (
+                    <>
+                        <h3>Cocheras</h3>
 
-            <h3>Cocheras</h3>
+                        <div className='cocheras'>
+                            <Input
+                                displayName="Cocheras"
+                                name="hasGarages"
+                                type="checkbox"
+                                onChange={handleChange}
+                            />
+                            <Contador
+                                displayName="Cantidad de cocheras *"
+                                name="garagesQuantity"
+                                max="6"
+                                min="1"
+                                onChange={counterChange}
+                            />
+                        </div>
+                    </>
+                ) : null
+            }
 
-            <div className='cocheras'>
-                <Input
-                    displayName="Cocheras"
-                    name="hasGarages"
-                    type="checkbox"
-                    onChange={handleChange}
-                />
-                <Contador
-                    displayName="Cantidad de cocheras *"
-                    name="garagesQuantity"
-                    max="6"
-                    min="1"
-                    onChange={counterChange}
-                />
-            </div>
+            {
+                fields.includes("garagesType") ? (
+                    <Select 
+                        displayName="Tipo de cochera" 
+                        name="garagesType" 
+                        onChange={handleChange}>
+                        <option value="">Seleccione una opción...</option>
+                        {
+                            garagesType.map((type) => (
+                                <option key={type.id}>
+                                    {type.title}
+                                </option>
+                            ))
+                        }
+                    </Select>
+                ) : null
+            }
 
-            <Select 
-                displayName="Tipo de cochera" 
-                name="garagesType" 
-                onChange={handleChange}>
-                <option value="">Seleccione una opción...</option>
-                {
-                    garagesType.map((type) => (
-                        <option key={type.id}>
-                            {type.title}
-                        </option>
-                    ))
-                }
-            </Select>
+            {
+                fields.includes("garagesCover") ? (
+                    <Select
+                        displayName="Cobertura de cochera" 
+                        name="garagesCover" 
+                        onChange={handleChange}>
+                        <option value="">Seleccione una opción...</option>
+                        {
+                            garagesCover.map((cover) => (
+                                <option key={cover.id}>
+                                    {cover.title}
+                                </option>
+                            ))
+                        }
+                    </Select>
+                ) : null
+            }
 
-            <Select
-                displayName="Cobertura de cochera" 
-                name="garagesCover" 
-                onChange={handleChange}>
-                <option value="">Seleccione una opción...</option>
-                {
-                    garagesCover.map((cover) => (
-                        <option key={cover.id}>
-                            {cover.title}
-                        </option>
-                    ))
-                }
-            </Select>
+            {
+                fields.includes("garagesExtras") ? (
+                    <>
+                        <Select 
+                            displayName="Tipo de coche" 
+                            name="carType" 
+                            onChange={handleChange}>
+                            <option value="">Seleccione una opción...</option>
+                            {
+                                carType.map((item) => (
+                                    <option key={item.id}>
+                                        {item.title}
+                                    </option>
+                                ))
+                            }
+                        </Select>
 
-            <h3 className='antiguedad__subtitle'>Antigüedad</h3>
+                        <Select 
+                            displayName="Tipo de acceso" 
+                            name="accessType" 
+                            onChange={handleChange}>
+                            <option value="">Seleccione una opción...</option>
+                            {
+                                accessType.map((item) => (
+                                    <option key={item.id}>
+                                        {item.title}
+                                    </option>
+                                ))
+                            }
+                        </Select>
 
-            <Input
-                displayName="A estrenar"
-                name="antiquity"
-                type="radio"
-                value="A estrenar"
-                onChange={handleChange}
-            />     
+                        <Input
+                            displayName="Largo (m)"
+                            name="length"
+                            type="number"
+                            onChange={handleChange}
+                        />
 
-            <Input
-                displayName="Años de antigüedad"
-                name="antiquity"
-                type="radio"
-                value="Años de antigüedad"
-                onChange={handleChange}
-            />
+                        <Input
+                            displayName="Ancho (m)"
+                            name="width"
+                            type="number"
+                            onChange={handleChange}
+                        />
 
-            <Input
-                displayName="Años"
-                name="antiquityYears"
-                type="number"
-                onChange={handleChange}
-            />
+                        <Input
+                            displayName="Altura (m)"
+                            name="height"
+                            type="number"
+                            onChange={handleChange}
+                        />
+                    </>
+                ) : null
+            }
 
-            <button onClick={() => console.log(data.dormitorios)}>Mostrar</button>
+            {
+                fields.includes("antiquity") ? (
+                    <>
+                        <h3 className='antiguedad__subtitle'>Antigüedad</h3>
+
+                        <Input
+                            displayName="A estrenar"
+                            name="antiquity"
+                            type="radio"
+                            value="A estrenar"
+                            onChange={handleChange}
+                        />     
+
+                        <Input
+                            displayName="Años de antigüedad"
+                            name="antiquity"
+                            type="radio"
+                            value="Años de antigüedad"
+                            onChange={handleChange}
+                        />
+
+                        <Input
+                            displayName="Años"
+                            name="antiquityYears"
+                            type="number"
+                            onChange={handleChange}
+                        />
+                    </>
+                ) : null
+            }
             
         </section>
     )

@@ -1,21 +1,21 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
-import House from '../../models/Estates/houseModel.js';
-import { generateToken } from '../../../utils/Estates/utilsHouse.js';
+import Apartment from '../../models/Estates/apartmentModel.js';
+import { generateToken } from '../../../utils/Estates/utilsApartment.js';
 
-const houseRouter = express.Router();
+const apartmentRouter = express.Router();
 
 //Mostrar Registro completo de Inmuebles
-houseRouter.get(
+apartmentRouter.get(
   '/getAll',
   expressAsyncHandler(async (req, res) => {
-    const house = await House.find();
-    res.send(house);
+    const apartment = await Apartment.find();
+    res.send(apartment);
   })
 );
 
 //Mostrar Registro de Inmuebles filtrado por parámetros
-houseRouter.get(
+apartmentRouter.get(
   '/get/:search',
 
   expressAsyncHandler(async (req, res) => {
@@ -37,18 +37,19 @@ houseRouter.get(
       params.push({'dataBasic.title': new RegExp("^" + search.title) });
     
 
-    let house = await House.find({$and: params});
+    let apartment = await Apartment.find({$and: params});
 
-    res.send(house);
+    res.send(Apartment);
   })
 );
 
 //Registro de Inmuebles
-houseRouter.post(
+apartmentRouter.post(
   '/signup',
   expressAsyncHandler(async (req, res) => {
-    const house = new House({
+    const apartment = new Apartment({
       dataBasic: req.body.dataBasic,
+      dataEntrepreneurship: req.body.dataEntrepreneurship,
       dataCountry: req.body.dataCountry,
       surface: req.body.surface,
       location: req.body.location,
@@ -57,39 +58,43 @@ houseRouter.post(
       otherEnvironments: req.body.otherEnvironments,
       installations: req.body.installations,
       services: req.body.services,
+      building: req.body.building,
       multimedia: req.body.multimedia,
       additionalInformation: req.body.additionalInformation,
       contactOwner: req.body.contactOwner,
       statistics: req.body.statistics,
     });
-    const createdHouse = await house.save();
+    const createdApartment = await apartment.save();
     res.send({
-      _id: createdHouse._id,
-      dataBasic: createdHouse.dataBasic,
-      dataCountry: createdHouse.dataCountry,
-      surface: createdHouse.surface,
-      location: createdHouse.location,
-      mainFeatures: createdHouse.mainFeatures,
-      generalFeatures: createdHouse.generalFeatures,
-      otherEnvironments: createdHouse.otherEnvironments,
-      installations: createdHouse.installations,
-      services: createdHouse.services,
-      multimedia: createdHouse.multimedia,
-      additionalInformation: createdHouse.additionalInformation,
-      contactOwner: createdHouse.contactOwner,
-      statistics: createdHouse.statistics,
-      token: generateToken(createdHouse),
+      _id: createdApartment._id,
+      dataBasic: createdApartment.dataBasic,
+      dataEntrepreneurship: createdApartment.dataEntrepreneurship,
+      dataCountry: createdApartment.dataCountry,
+      surface: createdApartment.surface,
+      location: createdApartment.location,
+      mainFeatures: createdApartment.mainFeatures,
+      generalFeatures: createdApartment.generalFeatures,
+      otherEnvironments: createdApartment.otherEnvironments,
+      installations: createdApartment.installations,
+      services: createdApartment.services,
+      building: createdApartment.building,
+      multimedia: createdApartment.multimedia,
+      additionalInformation: createdApartment.additionalInformation,
+      contactOwner: createdApartment.contactOwner,
+      statistics: createdApartment.statistics,
+      token: generateToken(createdApartment),
     });
   })
 );
 
 //Actualización de Datos Inmuebles
-houseRouter.put(
+apartmentRouter.put(
   '/update/:_id',
   expressAsyncHandler(async (req, res) => {
     const { _id } = req.params;
     const {
       dataBasic,
+      dataEntrepreneurship,
       dataCountry,
       surface,
       location,
@@ -99,15 +104,17 @@ houseRouter.put(
       installations,
       services,
       multimedia,
+      building,
       additionalInformation,
       contactOwner,
       statistics,
     } = req.body;
-    const houseUpdated = await House.findByIdAndUpdate(
+    const apartmentUpdated = await Apartment.findByIdAndUpdate(
       _id,
       {
         $set: {
           dataBasic,
+          dataEntrepreneurship,
           dataCountry,
           surface,
           location,
@@ -116,6 +123,7 @@ houseRouter.put(
           otherEnvironments,
           installations,
           services,
+          building,
           multimedia,
           additionalInformation,
           contactOwner,
@@ -124,19 +132,19 @@ houseRouter.put(
       },
       { useFindAndModify: false }
     );
-    res.send(`${houseUpdated.name} updated`);
+    res.send(`${apartmentUpdated.name} updated`);
   })
 );
 
 //Eliminación de Inmuebles
-houseRouter.delete(
+apartmentRouter.delete(
   '/delete/:_id',
   expressAsyncHandler(async (req, res) => {
     const { _id } = req.params;
-    const removed = await House.findByIdAndDelete(_id);
+    const removed = await Apartment.findByIdAndDelete(_id);
     console.log(removed);
     res.send(`${removed.name} deleted from database`);
   })
 );
 
-export default houseRouter;
+export default apartmentRouter;

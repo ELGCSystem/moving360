@@ -2,29 +2,12 @@ import { useState, useContext } from "react";
 import { Input } from "../../../components";
 import { Store } from '../../../Store.js';
 import { services } from "../js/Servicios";
+import { services as servicesData } from "../js/Fields";
 import '../css/Servicios.css';
 
 const Servicios = () => {
 
-    const [data, setData] = useState({
-        councilTax: false,
-        electricity: false,
-        cleaning: false,
-        security: false,
-        vigilance: false,
-        runningWater: false,
-        bottledGas: false,
-        refrigeration: false,
-        telephone: false,
-        heating: false,
-        naturalGas: false,
-        realEstateTax: false,
-        towels: false,
-        commutator: false,
-        internet: false,
-        linen: false,
-        videoCable: false,
-    });
+    const [data, setData] = useState(servicesData);
 
     const { dispatch: ctxDispatch } = useContext(Store);
 

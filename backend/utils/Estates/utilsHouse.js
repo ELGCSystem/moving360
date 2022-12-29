@@ -9,7 +9,7 @@ export const generateToken = (house) => {
       surface: house.surface,
       location: house.location,
       mainFeatures: house.mainFeatures,
-      general: house.general,
+      generalFeatures: house.generalFeatures,
       otherEnvironments: house.otherEnvironments,
       installations: house.installations,
       services: house.services,

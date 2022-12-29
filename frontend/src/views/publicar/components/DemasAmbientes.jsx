@@ -1,45 +1,15 @@
 import { useState, useContext } from "react";
 import { Input } from "../../../components";
 import { Store } from '../../../Store.js';
-import { otherEnvironments } from "../js/DemasAmbientes";
+import { otherEnvironments, getOtherEnvironments } from "../js/DemasAmbientes";
+import { otherEnvironments as otherEnvironmentsData } from "../js/Fields";
 import '../css/DemasAmbientes.css';
 
-const DemasAmbientes = () => {
+const DemasAmbientes = ({ estate }) => {
 
-    const [data, setData] = useState({
-        loft: false,
-        beforeKitchen: false,
-        beforeLiving: false,
-        rooftop: false,
-        balcony: false,
-        balconyTerraced: false,
-        bar: false,
-        trunk: false,
-        library: false,
-        cellar: false,
-        toolRoom: false,
-        ironingRoom: false,
-        betweenFloor: false,
-        studio: false,
-        familyRoom: false,
-        gallery: false,
-        shed: false,
-        garage: false,
-        garden: false,
-        freeBackground: false,
-        local: false,
-        office: false,
-        palier: false,
-        grill: false,
-        livingRoom: false,
-        basement: false,
-        suiteRoom: false,
-        lobby: false,
-        dressingRoom: false,
-        lockerRoom: false,
-    });
-
+    const [data, setData] = useState(otherEnvironmentsData);
     const { dispatch: ctxDispatch } = useContext(Store);
+    const fields = getOtherEnvironments(estate);
 
     const handleChange = e => {
         let sendData = data;
@@ -57,18 +27,19 @@ const DemasAmbientes = () => {
             <h2>Demas ambientes</h2>
 
             {
-                otherEnvironments.map((field) => (
-                    <Input
-                        key={field.id}
-                        displayName={field.displayName}
-                        name={field.name}
-                        type="checkbox"
-                        onChange={handleChange}
-                    />
-                ))
+                otherEnvironments.map((field) => 
+                
+                    fields.includes(field.name) ? (
+                        <Input
+                            key={field.id}
+                            displayName={field.displayName}
+                            name={field.name}
+                            type="checkbox"
+                            onChange={handleChange}
+                        />
+                    ) : null
+                )
             }
-
-            <button onClick={() => console.log(data)}></button>
 
         </section>
     )

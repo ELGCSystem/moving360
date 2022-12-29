@@ -174,4 +174,97 @@ export const installations = [
         displayName: "Riego por aspersión",
         name: "sprinklerIrrigation"
     },
-] 
+];
+
+export const buildingInstallations = [
+    {
+        id: 1,
+        displayName: "SUM",
+        name: "multipurposeRoom"
+    },
+    {
+        id: 2,
+        displayName: "Pileta",
+        name: "pool"
+    },
+    {
+        id: 3,
+        displayName: "Aire acondicionado central",
+        name: "centralAirConditioner"
+    },
+    {
+        id: 4,
+        displayName: "Caldera",
+        name: "boiler"
+    },
+    {
+        id: 5,
+        displayName: "Cancha de fútbol",
+        name: "soccerField"
+    },
+    {
+        id: 6,
+        displayName: "Cancha de tenis",
+        name: "tennisCourt"
+    },
+    {
+        id: 7,
+        displayName: "Espacio vehicular",
+        name: "vehicleSpace"
+    },
+    {
+        id: 8,
+        displayName: "Hidromasaje",
+        name: "whirlpool"
+    },
+    {
+        id: 9,
+        displayName: "Acceso movilidad reducida",
+        name: "reducedMobilityAccess"
+    },
+    {
+        id: 10,
+        displayName: "Solarium",
+        name: "solarium"
+    },
+    {
+        id: 11,
+        displayName: "Ascensor",
+        name: "elevator"
+    },
+    {
+        id: 12,
+        displayName: "Calefacción",
+        name: "heating"
+    },
+    {
+        id: 13,
+        displayName: "Extractor de aire",
+        name: "airExtractor"
+    },
+    {
+        id: 14,
+        displayName: "Quincho",
+        name: "barbecue"
+    },
+    {
+        id: 15,
+        displayName: "Parque",
+        name: "park"
+    },
+    {
+        id: 16,
+        displayName: "Riego por aspersión",
+        name: "sprinklerIrrigation"
+    },
+    {
+        id: 17,
+        displayName: "Cámaras de vigilancia",
+        name: "surveillanceCameras"
+    },
+    {
+        id: 18,
+        displayName: "Terraza",
+        name: "terrace"
+    }
+];

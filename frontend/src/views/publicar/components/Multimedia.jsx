@@ -3,32 +3,12 @@ import { FaCamera } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Input, Button } from '../../../components';
 import { Store } from '../../../Store.js';
+import { multimedia } from '../js/Fields';
 import '../css/Multimedia.css';
 
 const Multimedia = () => {
     
-    const [data, setData] = useState({
-        frontPage: "/",
-        photoTour360: "/",
-        photo360: {
-          photo1: "/",
-          photo2: "/",
-          photo3: "/",
-          photo4: "/",
-          photo5: "/",
-          photo6: "/",
-          photo7: "/",
-          photo8: "/",
-          photo9: "/",
-          photo10: "/",
-          photo11: "/",
-          photo12: "/",
-          photo13: "/",
-          photo14: "/",
-          photo15: "/",
-          photo16: "/",
-        },
-    });
+    const [data, setData] = useState(multimedia);
 
     const { dispatch: ctxDispatch } = useContext(Store);
 

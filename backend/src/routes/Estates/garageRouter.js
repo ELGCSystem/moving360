@@ -1,21 +1,21 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
-import House from '../../models/Estates/houseModel.js';
-import { generateToken } from '../../../utils/Estates/utilsHouse.js';
+import Garage from '../../models/Estates/garageModel.js';
+import { generateToken } from '../../../utils/Estates/utilsGarage.js';
 
-const houseRouter = express.Router();
+const garageRouter = express.Router();
 
 //Mostrar Registro completo de Inmuebles
-houseRouter.get(
+garageRouter.get(
   '/getAll',
   expressAsyncHandler(async (req, res) => {
-    const house = await House.find();
-    res.send(house);
+    const garage = await Garage.find();
+    res.send(garage);
   })
 );
 
 //Mostrar Registro de Inmuebles filtrado por parámetros
-houseRouter.get(
+garageRouter.get(
   '/get/:search',
 
   expressAsyncHandler(async (req, res) => {
@@ -37,85 +37,72 @@ houseRouter.get(
       params.push({'dataBasic.title': new RegExp("^" + search.title) });
     
 
-    let house = await House.find({$and: params});
+    let garage = await Garage.find({$and: params});
 
-    res.send(house);
+    res.send(garage);
   })
 );
 
 //Registro de Inmuebles
-houseRouter.post(
+garageRouter.post(
   '/signup',
   expressAsyncHandler(async (req, res) => {
-    const house = new House({
+    const garage = new Garage({
       dataBasic: req.body.dataBasic,
+      dataEntrepreneurship: req.body.dataEntrepreneurship,
       dataCountry: req.body.dataCountry,
       surface: req.body.surface,
       location: req.body.location,
       mainFeatures: req.body.mainFeatures,
-      generalFeatures: req.body.generalFeatures,
-      otherEnvironments: req.body.otherEnvironments,
-      installations: req.body.installations,
-      services: req.body.services,
       multimedia: req.body.multimedia,
       additionalInformation: req.body.additionalInformation,
       contactOwner: req.body.contactOwner,
       statistics: req.body.statistics,
     });
-    const createdHouse = await house.save();
+    const createdGarage = await garage.save();
     res.send({
-      _id: createdHouse._id,
-      dataBasic: createdHouse.dataBasic,
-      dataCountry: createdHouse.dataCountry,
-      surface: createdHouse.surface,
-      location: createdHouse.location,
-      mainFeatures: createdHouse.mainFeatures,
-      generalFeatures: createdHouse.generalFeatures,
-      otherEnvironments: createdHouse.otherEnvironments,
-      installations: createdHouse.installations,
-      services: createdHouse.services,
-      multimedia: createdHouse.multimedia,
-      additionalInformation: createdHouse.additionalInformation,
-      contactOwner: createdHouse.contactOwner,
-      statistics: createdHouse.statistics,
-      token: generateToken(createdHouse),
+      _id: createdGarage._id,
+      dataBasic: createdGarage.dataBasic,
+      dataEntrepreneurship: createdGarage.dataEntrepreneurship,
+      dataCountry: createdGarage.dataCountry,
+      surface: createdGarage.surface,
+      location: createdGarage.location,
+      mainFeatures: createdGarage.mainFeatures,
+      multimedia: createdGarage.multimedia,
+      additionalInformation: createdGarage.additionalInformation,
+      contactOwner: createdGarage.contactOwner,
+      statistics: createdGarage.statistics,
+      token: generateToken(createdGarage),
     });
   })
 );
 
 //Actualización de Datos Inmuebles
-houseRouter.put(
+garageRouter.put(
   '/update/:_id',
   expressAsyncHandler(async (req, res) => {
     const { _id } = req.params;
     const {
       dataBasic,
+      dataEntrepreneurship,
       dataCountry,
       surface,
       location,
       mainFeatures,
-      generalFeatures,
-      otherEnvironments,
-      installations,
-      services,
-      multimedia,
       additionalInformation,
       contactOwner,
       statistics,
     } = req.body;
-    const houseUpdated = await House.findByIdAndUpdate(
+    const garageUpdated = await Garage.findByIdAndUpdate(
       _id,
       {
         $set: {
           dataBasic,
+          dataEntrepreneurship,
           dataCountry,
           surface,
           location,
           mainFeatures,
-          generalFeatures,
-          otherEnvironments,
-          installations,
-          services,
           multimedia,
           additionalInformation,
           contactOwner,
@@ -124,19 +111,19 @@ houseRouter.put(
       },
       { useFindAndModify: false }
     );
-    res.send(`${houseUpdated.name} updated`);
+    res.send(`${garageUpdated.name} updated`);
   })
 );
 
 //Eliminación de Inmuebles
-houseRouter.delete(
+garageRouter.delete(
   '/delete/:_id',
   expressAsyncHandler(async (req, res) => {
     const { _id } = req.params;
-    const removed = await House.findByIdAndDelete(_id);
+    const removed = await Garage.findByIdAndDelete(_id);
     console.log(removed);
     res.send(`${removed.name} deleted from database`);
   })
 );
 
-export default houseRouter;
+export default garageRouter;

@@ -2,22 +2,12 @@ import { useState, useEffect, useContext } from 'react';
 import { Select, Input } from '../../../components';
 import { Store } from '../../../Store.js';
 import Axios from 'axios';
+import { location } from '../js/Fields';
 import '../css/Ubicacion.css'
 
 const Ubicacion = () => {
 
-    const [data, setData] = useState({
-        country: 'Argentina',
-        province: '',
-        state: '',
-        locality: '',
-        streetName: '',
-        streetNumber: '',
-        flat: 0,
-        department: '',
-        postalCode: 0,
-        locationType: ''
-    });
+    const [data, setData] = useState(location);
 
     const [provincias, setProvincias] = useState([]);
     const [partidos, setPartidos] = useState([]);

@@ -19,7 +19,7 @@ export const sections = [
     {
         id: 3,
         title: "Emprendimientos",
-        inmuebles: ["Departamento", "Departamento tipo PH", "Cochera", "Local", "Oficina", "Terreno"]
+        inmuebles: ["Departamento", "Departamento tipo PH", "Cochera", "Local", "Oficina - Consultorio", "Lote - Terreno"]
     },
     {
         id: 4,

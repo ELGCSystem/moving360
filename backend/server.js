@@ -11,6 +11,9 @@ import traditionalRouter from './src/routes/realEstates/traditionalRouter.js';
 import decentralizedRouter from './src/routes/realEstates/decentralizedFranchiseRouter.js';
 import centralizedRouter from './src/routes/realEstates/centralizedFranchiseRouter.js';
 import house from './src/routes/Estates/houseRouter.js';
+import apartment from './src/routes/Estates/apartmentRouter.js';
+import phApartment from './src/routes/Estates/phApartmentRouter.js';
+import garage from './src/routes/Estates/garageRouter.js';
 import './passport.js';
 import authRouter from './src/auth/auth.js';
 
@@ -45,6 +48,9 @@ app.use('/api/traditional', traditionalRouter);
 app.use('/api/decentralized', decentralizedRouter);
 app.use('/api/centralized', centralizedRouter);
 app.use('/api/house', house);
+app.use('/api/apartment', apartment);
+app.use('/api/phApartment', phApartment);
+app.use('/api/garage', garage);
 
 app.use(
   cookieSession({

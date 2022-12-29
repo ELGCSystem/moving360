@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Select, Input } from "../../../components";
 import { Store } from '../../../Store.js';
+import { dataCountry } from "../js/Fields";
 import {
     zones,
     sports,
@@ -13,32 +14,7 @@ const DatosCountry = () => {
     const [zona, setZona] = useState("");
     const [idZona, setIdZona] = useState(-1);
 
-    const [data, setData] = useState({
-        name: false,
-        zone: false,
-        state: false,
-        urbanization: false,
-        basketball: false,
-        horseRiding: false,
-        football: false,
-        golf: false,
-        hockey: false,
-        paddle: false,
-        polo: false,
-        rugby: false,
-        tennis: false,
-        volleyball: false,
-        clubHouse: false,
-        gym: false,
-        games: false,
-        laundry: false,
-        pool: false,
-        multipurposeRoom: false,
-        stable: false,
-        school: false,
-        bank: false,
-        mall: false
-    });
+    const [data, setData] = useState(dataCountry);
 
     const { dispatch: ctxDispatch } = useContext(Store);
 

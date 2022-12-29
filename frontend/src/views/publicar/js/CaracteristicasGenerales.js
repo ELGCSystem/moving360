@@ -1,3 +1,45 @@
+const house = [];
+
+const apartment = [];
+
+const phApartment = [];
+
+const garage = [];
+
+const office = ['flooring'];
+
+const shop = [];
+
+const shed = ['measures', 'roofGateHeating'];
+
+const goodwill = [];
+const field = [];
+const countryHouse = [];
+const terrain = [];
+const hotel = [];
+const plotsNichesVaults = [];
+const nauticalBeds = [];
+
+export const getGeneralFeatures = (estate) => {
+    switch (estate) {
+        case 'casa': return house;
+        case 'departamento': return apartment;
+        case 'departamento-tipo-ph': return phApartment;
+        case 'cochera': return garage;
+        case 'oficina-consultorio': return office;
+        case 'local': return shop;
+        case 'galpon': return shed;
+        case 'fondo-de-comercio': return goodwill;
+        case 'campo': return field;
+        case 'quinta': return countryHouse;
+        case 'lote-terreno': return terrain;
+        case 'hotel': return hotel;
+        case 'parcelas-nichos-bovedas': return plotsNichesVaults;
+        case 'camas-nauticas': return nauticalBeds;
+        default: return [];
+    }
+};
+
 export const insideFlooring = [
     {
         id: 1,
@@ -322,4 +364,138 @@ export const slope = [
         id: 3,
         title: "Descendente"
     }
+];
+
+export const industrialRoofType = [
+    {
+        id: 1,
+        title: "Cabriada"
+    },
+    {
+        id: 2,
+        title: "Fibrocemento"
+    },
+    {
+        id: 3,
+        title: "Parabólico"
+    },
+    {
+        id: 4,
+        title: "Dos aguas"
+    },
+    {
+        id: 5,
+        title: "Bovedilla"
+    },
+    {
+        id: 6,
+        title: "Galvanizado"
+    },
+    {
+        id: 7,
+        title: "Hormigón"
+    },
+    {
+        id: 8,
+        title: "Tinglado"
+    },
+    {
+        id: 9,
+        title: "Zinc"
+    },
+    {
+        id: 10,
+        title: "Chapa"
+    },
+    {
+        id: 11,
+        title: "Losa"
+    },
+    {
+        id: 12,
+        title: "Astori"
+    },
+];
+
+export const gateType = [
+    {
+        id: 1,
+        title: "Levadizo"
+    },
+    {
+        id: 2,
+        title: "Corredizo"
+    },
+];
+
+export const heatingType = [
+    {
+        id: 1,
+        title: "Caldera radiante general"
+    },
+    {
+        id: 2,
+        title: "Caldera radiante individual"
+    },
+    {
+        id: 3,
+        title: "Losa radiante general"
+    },
+    {
+        id: 4,
+        title: "Losa radiante individual"
+    },
+    {
+        id: 5,
+        title: "Estufa"
+    },
+    {
+        id: 6,
+        title: "Aire caliente"
+    },
+    {
+        id: 7,
+        title: "Picos de gas"
+    },
+    {
+        id: 8,
+        title: "Central"
+    },
+    {
+        id: 9,
+        title: "Individual"
+    },
+];
+
+export const measures = [
+	{
+    	id: 1,
+        displayName: "Longitud frente (m)",
+        name: "frontLength"
+    },
+	{
+    	id: 2,
+        displayName: "Longitud frente (m)",
+        name: "backLength"
+    },
+	{
+    	id: 3,
+        displayName: "Altura del techo (m)",
+        name: "ceilingHeight"
+    },
+	{
+    	id: 4,
+        displayName: "Ancho de la entrada (m)",
+        name: "entranceWidth"
+    },
+	{
+    	id: 5,
+        displayName: "Alto de la entrada (m)",
+        name: "entranceHeight"
+    },
+    {
+    	id: 6,
+        displayName: "F.O.T.",
+        name: "fullLoadFactor"
+    },
 ];

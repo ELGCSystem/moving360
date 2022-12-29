@@ -1,28 +1,14 @@
 import { useState, useContext } from 'react';
 import { Select, Input } from '../../../components';
 import { Store } from '../../../Store.js';
-import { estadoPropiedades } from '../js/Basicos.js';
-import { expensas } from '../js/Basicos.js';
+import { propertyState } from '../js/Basicos.js';
+import { expenses } from '../js/Basicos.js';
+import { dataBasic } from '../js/Fields';
 import '../css/Basicos.css';
 
-const Basicos = ({ inmueble, tipoUnidad, operaciones }) => {
+const Basicos = ({ estate, unit, operations, section }) => {
 
-    const [data, setData] = useState({
-        unit: '',
-        operation: '',
-        price: null,
-        dontShowPrice: false,
-        currency: '',
-        state: '',
-        suitableCredit: false,
-        acceptsExchange: false,
-        suitableProfesional: false,
-        propertyOccupied: false,
-        suitablePets: false,
-        title: '',
-        commission: null
-    });
-    
+    const [data, setData] = useState(dataBasic);
     const { dispatch: ctxDispatch } = useContext(Store);
 
     const handleChange = e => {
@@ -43,27 +29,46 @@ const Basicos = ({ inmueble, tipoUnidad, operaciones }) => {
         
     };
 
+    let suitablePets = (data.operation === "Alquiler" ||
+                       data.operation === "Alquiler por temporada" ||
+                       section === "tiempo-compartido")
+                       &&
+                       (estate === "casa" ||
+                       estate === "departamento" ||
+                       estate === "departamento-tipo-ph" ||
+                       estate === "quinta");
+
+    let suitableExpenses = estate === "departamento" ||
+                           estate === "oficina-consultorio" ||
+                           estate === "local";
+
     return (
         <section className='datos-basicos'>
             <h2>Datos básicos</h2>
 
-            <Select displayName="Tipo de Unidad *" name="unit" onChange={handleChange}>
+            <Select 
+                displayName="Tipo de unidad *"
+                name="unit" 
+                onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    tipoUnidad.map((unidad) => (
-                        <option key={unidad.id}>
-                            {unidad.title}
+                    unit.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
                         </option>
                     ))
                 }
             </Select>
 
-            <Select displayName="Tipo de Operación *" name="operation" onChange={handleChange}>
+            <Select
+                displayName="Tipo de operación *" 
+                name="operation" 
+                onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    operaciones.map((operacion) => (
-                        <option key={operacion.id}>
-                            {operacion.title}
+                    operations.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
                         </option>
                     ))
                 }
@@ -92,12 +97,15 @@ const Basicos = ({ inmueble, tipoUnidad, operaciones }) => {
                 onChange={handleChange}
             />
 
-            <Select displayName="Estado *" name="state" onChange={handleChange}>
+            <Select 
+                displayName="Estado *" 
+                name="state" 
+                onChange={handleChange}>
                 <option value="">Seleccione una opción...</option>
                 {
-                    estadoPropiedades.map((estado) => (
-                        <option key={estado.id}>
-                            {estado.title}
+                    propertyState.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
                         </option>
                     ))
                 }
@@ -120,7 +128,8 @@ const Basicos = ({ inmueble, tipoUnidad, operaciones }) => {
             />
 
             {
-                inmueble === "departamento" ? (
+                
+                suitableExpenses ? (
                     <Select
                         displayName="Expensas *" 
                         name="expenses" 
@@ -128,7 +137,7 @@ const Basicos = ({ inmueble, tipoUnidad, operaciones }) => {
                         onChange={handleChange}>
                         <option value="">Seleccione una opción...</option>
                         {
-                            expensas.map((item) => (
+                            expenses.map((item) => (
                                 <option key={item.id}>
                                     {item.title}
                                 </option>
@@ -139,7 +148,7 @@ const Basicos = ({ inmueble, tipoUnidad, operaciones }) => {
             }
 
             {
-                inmueble === "departamento" ? (
+                suitableExpenses ? (
                     <Input
                         displayName="Valor expensas"
                         name="expensesValue"
@@ -174,13 +183,17 @@ const Basicos = ({ inmueble, tipoUnidad, operaciones }) => {
                 onChange={handleChange}
             />
 
-            <Input
-                displayName="Apto mascotas"
-                name="suitablePets"
-                type="checkbox"
-                className="apto-mascotas"
-                onChange={handleChange}
-            /> 
+            {
+                suitablePets ? (
+                    <Input
+                        displayName="Apto mascotas"
+                        name="suitablePets"
+                        type="checkbox"
+                        className="apto-mascotas"
+                        onChange={handleChange}
+                    /> 
+                ) : null
+            }
 
             <Input
                 displayName="Título del aviso *"
@@ -221,6 +234,7 @@ const Basicos = ({ inmueble, tipoUnidad, operaciones }) => {
                 onChange={handleChange}
             />
 
+            <button onClick={() => console.log(data)}>Mostrar</button>
         </section>
     )
 };

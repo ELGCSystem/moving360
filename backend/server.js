@@ -7,6 +7,7 @@ import cookieSession from 'cookie-session';
 import adminRouter from './src/routes/adminRouter.js';
 import buyerRouter from './src/routes/buyerRouter.js';
 import ownerRouter from './src/routes/ownerRouter.js';
+import assistantEstate from './src/routes/assistantEstateRouter.js'
 import traditionalRouter from './src/routes/realEstates/traditionalRouter.js';
 import decentralizedRouter from './src/routes/realEstates/decentralizedFranchiseRouter.js';
 import centralizedRouter from './src/routes/realEstates/centralizedFranchiseRouter.js';
@@ -14,6 +15,10 @@ import house from './src/routes/Estates/houseRouter.js';
 import apartment from './src/routes/Estates/apartmentRouter.js';
 import phApartment from './src/routes/Estates/phApartmentRouter.js';
 import garage from './src/routes/Estates/garageRouter.js';
+import houseRouter from './src/routes/Estates/houseRouter.js';
+import conversationRouter from './src/routes/Chats/conversationRouter.js';
+import messageRouter from './src/routes/Chats/messageRouter.js';
+import dateRouter from './src/routes/dateApplicationRouter.js';
 import './passport.js';
 import authRouter from './src/auth/auth.js';
 
@@ -44,6 +49,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/admin', adminRouter);
 app.use('/api/buyer', buyerRouter);
 app.use('/api/owner', ownerRouter);
+app.use('/api/assistantEstate', assistantEstate)
 app.use('/api/traditional', traditionalRouter);
 app.use('/api/decentralized', decentralizedRouter);
 app.use('/api/centralized', centralizedRouter);
@@ -51,6 +57,10 @@ app.use('/api/house', house);
 app.use('/api/apartment', apartment);
 app.use('/api/phApartment', phApartment);
 app.use('/api/garage', garage);
+app.use('/api/house', houseRouter);
+app.use('/api/conversation', conversationRouter);
+app.use('/api/message', messageRouter);
+app.use('/api/date', dateRouter)
 
 app.use(
   cookieSession({

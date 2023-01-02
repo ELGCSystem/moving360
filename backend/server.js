@@ -18,7 +18,6 @@ import garage from './src/routes/Estates/garageRouter.js';
 import houseRouter from './src/routes/Estates/houseRouter.js';
 import conversationRouter from './src/routes/Chats/conversationRouter.js';
 import dateRouter from './src/routes/dateApplicationRouter.js';
-import './passport.js';
 import authRouter from './src/auth/auth.js';
 
 dotenv.config();

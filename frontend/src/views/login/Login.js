@@ -12,11 +12,11 @@ import './Auth.css';
 
 const Login = () => {
   const google = () => {
-    window.open('http://localhost:4000/auth/google', '_self');
+    window.open('http://localhost:10000/auth/google', '_self');
   };
 
   const facebook = () => {
-    window.open('http://localhost:4000/auth/facebook', '_self');
+    window.open('http://localhost:10000/auth/facebook', '_self');
   };
 
   const [email, setEmail] = useState("");
@@ -29,7 +29,7 @@ const Login = () => {
     e.preventDefault();
     try {
 
-      const { data } = await axios.post("http://localhost:4000/api/admin/signin", {
+      const { data } = await axios.post("http://localhost:10000/api/admin/signin", {
         email,
         password
       });

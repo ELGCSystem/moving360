@@ -28,9 +28,7 @@ import plotsNichesVaultsRouter from './src/routes/Estates/plotsNichesVaultsRoute
 import nauticalBedsRouter from './src/routes/Estates/nauticalBedsRouter.js';
 
 import conversationRouter from './src/routes/Chats/conversationRouter.js';
-import messageRouter from './src/routes/Chats/messageRouter.js';
 import dateRouter from './src/routes/dateApplicationRouter.js';
-import './passport.js';
 import authRouter from './src/auth/auth.js';
 
 dotenv.config();
@@ -79,7 +77,6 @@ app.use('/api/hotel', hotelRouter);
 app.use('/api/plotsNichesVaults', plotsNichesVaultsRouter);
 app.use('/api/nauticalBeds', nauticalBedsRouter);
 app.use('/api/conversation', conversationRouter);
-app.use('/api/message', messageRouter);
 app.use('/api/date', dateRouter)
 
 app.use(

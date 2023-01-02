@@ -40,7 +40,7 @@ const Publicar = () => {
     
     try {
 
-      const { data } = await axios.post(`http://localhost:4000/api/${translateEstates(estate)}/signup`, {
+      const { data } = await axios.post(`http://localhost:10000/api/${translateEstates(estate)}/signup`, {
         dataBasic: estateData.dataBasic,
         dataEntrepreneurship: estateData.dataEntrepreneurship,
         dataCountry: estateData.dataCountry,

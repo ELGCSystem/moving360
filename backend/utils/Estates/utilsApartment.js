@@ -10,7 +10,7 @@ export const generateToken = (apartment) => {
       surface: apartment.surface,
       location: apartment.location,
       mainFeatures: apartment.mainFeatures,
-      general: apartment.general,
+      generalFeatures: apartment.generalFeatures,
       otherEnvironments: apartment.otherEnvironments,
       installations: apartment.installations,
       services: apartment.services,

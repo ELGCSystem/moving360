@@ -139,6 +139,51 @@ const CaracteristicasPrincipales = ({ estate }) => {
             }
 
             {
+                fields.includes("hotelExtras") ? (
+                    <>
+                        <Input
+                            displayName="Cantidad de habitaciones"
+                            name="roomsQuantity"
+                            type="number"
+                            onChange={handleChange}
+                        />
+                        <Contador
+                            displayName="Cantidad de estrellas"
+                            name="starsQuantity"
+                            max="5"
+                            min="1"
+                            onChange={counterChange}
+                        />
+                        <Input
+                            displayName="Cantidad de plazas"
+                            name="placesQuantity"
+                            type="number"
+                            onChange={handleChange}
+                        />
+                        <Contador
+                            displayName="Cantidad de pisos"
+                            name="floorsQuantity"
+                            max="20"
+                            min="1"
+                            onChange={counterChange}
+                        />
+                        <Input
+                            displayName="Habitaciones por piso"
+                            name="roomsPerFloor"
+                            type="number"
+                            onChange={handleChange}
+                        />
+                        <Input
+                            displayName="Cantidad de personal"
+                            name="staffQuantity"
+                            type="number"
+                            onChange={handleChange}
+                        />
+                    </>
+                ) : null
+            }
+
+            {
                 fields.includes("columnsSheds") ? (
                     <>
                         <Contador
@@ -323,7 +368,13 @@ const CaracteristicasPrincipales = ({ estate }) => {
                                 ))
                             }
                         </Select>
+                    </>
+                ) : null
+            }
 
+            {
+                fields.includes("size") ? (
+                    <>
                         <Input
                             displayName="Largo (m)"
                             name="length"

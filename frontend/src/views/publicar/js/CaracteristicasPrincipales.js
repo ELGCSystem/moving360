@@ -1,24 +1,30 @@
-const house = ['bedrooms', 'bathrooms', 'toilettes', 'suiteBathrooms', 'environmentsQuantity', 'kitchen', 'integratedKitchen', 'dinningRoom', 'dailyDinningRoom', 'livingRoom', 'yard', 'hall', 'desktop', 'playroom', 'terrace', 'barbecue', 'pool', 'serviceDependency', 'floors', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
+const house = ['bedrooms', 'bathrooms', 'toilettes', 'suiteBathrooms', 'environmentsQuantity', 'kitchen', 'integratedKitchen', 'dinningRoom', 'dailyDinningRoom', 'livingRoom', 'laundryRoom', 'yard', 'hall', 'desktop', 'playroom', 'terrace', 'barbecue', 'pool', 'serviceDependency', 'floors', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
 
-const apartment = ['bedrooms', 'bathrooms', 'toilettes', 'suiteBathrooms', 'environmentsQuantity', 'setup', 'kitchen', 'integratedKitchen', 'dinningRoom', 'dailyDinningRoom', 'livingRoom', 'yard', 'hall', 'desktop', 'playroom', 'terrace', 'barbecue', 'pool', 'serviceDependency', 'floors', 'balcony','hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
+const apartment = ['bedrooms', 'bathrooms', 'toilettes', 'suiteBathrooms', 'environmentsQuantity', 'setup', 'kitchen', 'integratedKitchen', 'dinningRoom', 'dailyDinningRoom', 'livingRoom', 'laundryRoom', 'yard', 'hall', 'desktop', 'playroom', 'terrace', 'barbecue', 'pool', 'serviceDependency', 'floors', 'balcony','hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
 
-const phApartment = ['bedrooms', 'bathrooms', 'toilettes', 'suiteBathrooms', 'environmentsQuantity', 'kitchen', 'integratedKitchen', 'dinningRoom', 'dailyDinningRoom', 'livingRoom', 'yard', 'hall', 'desktop', 'playroom', 'terrace', 'barbecue', 'pool', 'serviceDependency', 'floors', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
+const phApartment = ['bedrooms', 'bathrooms', 'toilettes', 'suiteBathrooms', 'environmentsQuantity', 'kitchen', 'integratedKitchen', 'dinningRoom', 'dailyDinningRoom', 'livingRoom', 'laundryRoom', 'yard', 'hall', 'desktop', 'playroom', 'terrace', 'barbecue', 'pool', 'serviceDependency', 'floors', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
 
-const garage = ['garagesType', 'garagesCover', 'garagesExtras', 'antiquity'];
+const garage = ['garagesType', 'garagesCover', 'garagesExtras', 'size', 'antiquity'];
 
-const office = ['bathrooms', 'toilettes', 'environmentsQuantity', 'kitchen', 'terrace', 'balcony', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
+const office = ['bathrooms', 'toilettes', 'environmentsQuantity', 'kitchen', 'terrace', 'balcony', 'hall', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
 
-const shop = ['bathrooms', 'toilettes', 'environmentsQuantity', 'floors', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
+const shop = ['bathrooms', 'toilettes', 'environmentsQuantity', 'floors', 'kitchen', 'yard', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity', 'serviceDependency'];
 
-const shed = ['bathrooms', 'toilettes', 'columnsSheds', 'floors'];
+const shed = ['bathrooms', 'toilettes', 'columnsSheds', 'floors', 'antiquity'];
 
-const goodwill = [];
-const field = [];
-const countryHouse = [];
+const goodwill = ['bathrooms', 'environmentsQuantity', 'kitchen', 'dinningRoom', 'floors', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
+
+const field = ['pavementHectares'];
+
+const countryHouse = ['bedrooms', 'bathrooms', 'toilettes', 'kitchen', 'dinningRoom', 'dailyDinningRoom', 'hall', 'livingRoom', 'yard', 'playroom', 'laundryRoom', 'barbecue', 'terrace', 'pool', 'floors', 'hasGarages', 'garagesType', 'garagesCover', 'antiquity'];
+
 const terrain = [];
-const hotel = [];
-const plotsNichesVaults = [];
-const nauticalBeds = [];
+
+const hotel = ['bathrooms', 'toilettes', 'laundryRoom', 'antiquity', 'hotelExtras', 'hasGarages', 'garagesType', 'garagesCover'];
+
+const plotsNichesVaults = ['antiquity', 'size'];
+
+const nauticalBeds = ['size', 'antiquity'];
 
 export const getMainFeatures = (estate) => {
   switch (estate) {

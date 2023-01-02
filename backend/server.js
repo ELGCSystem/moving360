@@ -11,11 +11,22 @@ import assistantEstate from './src/routes/assistantEstateRouter.js'
 import traditionalRouter from './src/routes/realEstates/traditionalRouter.js';
 import decentralizedRouter from './src/routes/realEstates/decentralizedFranchiseRouter.js';
 import centralizedRouter from './src/routes/realEstates/centralizedFranchiseRouter.js';
-import house from './src/routes/Estates/houseRouter.js';
-import apartment from './src/routes/Estates/apartmentRouter.js';
-import phApartment from './src/routes/Estates/phApartmentRouter.js';
-import garage from './src/routes/Estates/garageRouter.js';
+
 import houseRouter from './src/routes/Estates/houseRouter.js';
+import apartmentRouter from './src/routes/Estates/apartmentRouter.js';
+import phApartmentRouter from './src/routes/Estates/phApartmentRouter.js';
+import garageRouter from './src/routes/Estates/garageRouter.js';
+import officeRouter from './src/routes/Estates/officeRouter.js';
+import shopRouter from './src/routes/Estates/shopRouter.js';
+import shedRouter from './src/routes/Estates/shedRouter.js';
+import goodwillRouter from './src/routes/Estates/goodwillRouter.js';
+import fieldRouter from './src/routes/Estates/fieldRouter.js';
+import countryHouseRouter from './src/routes/Estates/countryHouseRouter.js';
+import terrainRouter from './src/routes/Estates/terrainRouter.js';
+import hotelRouter from './src/routes/Estates/hotelRouter.js';
+import plotsNichesVaultsRouter from './src/routes/Estates/plotsNichesVaultsRouter.js';
+import nauticalBedsRouter from './src/routes/Estates/nauticalBedsRouter.js';
+
 import conversationRouter from './src/routes/Chats/conversationRouter.js';
 import messageRouter from './src/routes/Chats/messageRouter.js';
 import dateRouter from './src/routes/dateApplicationRouter.js';
@@ -53,11 +64,20 @@ app.use('/api/assistantEstate', assistantEstate)
 app.use('/api/traditional', traditionalRouter);
 app.use('/api/decentralized', decentralizedRouter);
 app.use('/api/centralized', centralizedRouter);
-app.use('/api/house', house);
-app.use('/api/apartment', apartment);
-app.use('/api/phApartment', phApartment);
-app.use('/api/garage', garage);
 app.use('/api/house', houseRouter);
+app.use('/api/apartment', apartmentRouter);
+app.use('/api/phApartment', phApartmentRouter);
+app.use('/api/garage', garageRouter);
+app.use('/api/office', officeRouter);
+app.use('/api/shop', shopRouter);
+app.use('/api/shed', shedRouter);
+app.use('/api/goodwill', goodwillRouter);
+app.use('/api/field', fieldRouter);
+app.use('/api/countryHouse', countryHouseRouter);
+app.use('/api/terrain', terrainRouter);
+app.use('/api/hotel', hotelRouter);
+app.use('/api/plotsNichesVaults', plotsNichesVaultsRouter);
+app.use('/api/nauticalBeds', nauticalBedsRouter);
 app.use('/api/conversation', conversationRouter);
 app.use('/api/message', messageRouter);
 app.use('/api/date', dateRouter)

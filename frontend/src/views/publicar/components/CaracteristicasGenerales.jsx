@@ -50,14 +50,13 @@ const CaracteristicasGenerales = ({ estate }) => {
                         <h3>Terreno</h3>
 
                         <Input
-                            displayName="Medidas frente (m2)"
+                            displayName="Medidas frente (m)"
                             name="frontSize"
                             type="number"
                             onChange={handleChange}
                         />
-
                         <Input
-                            displayName="Medidas fondo (m2)"
+                            displayName="Medidas fondo (m)"
                             name="backSize"
                             type="number"
                             onChange={handleChange}
@@ -87,6 +86,28 @@ const CaracteristicasGenerales = ({ estate }) => {
             }
 
             {
+                fields.includes("fullLoadFactor") ? (
+                    <Input
+                    displayName="F.O.T."
+                    name="fullLoadFactor"
+                    type="number"
+                    onChange={handleChange}
+                    />
+                    ) : null
+            }
+
+            {
+                fields.includes("landCoverFactor") ? (
+                    <Input
+                    displayName="F.O.S."
+                    name="landCoverFactor"
+                    type="number"
+                    onChange={handleChange}
+                    />
+                    ) : null
+            }
+
+            {
                 fields.includes("linealMeasures") ? (
                     <>
                         <Input
@@ -106,11 +127,11 @@ const CaracteristicasGenerales = ({ estate }) => {
             }
 
             {
-                fields.includes("landCoverFactor") ? (
+                fields.includes("zoning") ? (
                     <Input
-                        displayName="F.O.S."
-                        name="landCoverFactor"
-                        type="number"
+                        displayName="Zonificación"
+                        name="zoning"
+                        type="text"
                         onChange={handleChange}
                     />
                 ) : null
@@ -263,6 +284,17 @@ const CaracteristicasGenerales = ({ estate }) => {
                         displayName="Rentabilidad anual"
                         name="yearlyIncome"
                         type="text"
+                        onChange={handleChange}
+                    />
+                ) : null
+            }
+
+            {
+                fields.includes("cutlery") ? (
+                    <Input
+                        displayName="Cantidad de cubiertos"
+                        name="cutleryQuantity"
+                        type="number"
                         onChange={handleChange}
                     />
                 ) : null

@@ -1,23 +1,29 @@
-const house = [];
+const house = ['terrain', 'flooring', 'wallsCeiling', 'orientation', 'viewCoastSlope'];
 
-const apartment = [];
+const apartment = ['flooring', 'wallsCeiling', 'orientation', 'viewCoastSlope'];
 
-const phApartment = [];
+const phApartment = ['terrain', 'flooring', 'wallsCeiling', 'orientation', 'viewCoastSlope'];
 
 const garage = [];
 
 const office = ['flooring'];
 
-const shop = [];
+const shop = ['cornerDistance'];
 
-const shed = ['measures', 'roofGateHeating'];
+const shed = ['terrain', 'measures', 'roofGateHeating', 'fullLoadFactor'];
 
-const goodwill = [];
+const goodwill = ['monthlyIncome', 'cornerDistance'];
+
 const field = [];
-const countryHouse = [];
-const terrain = [];
-const hotel = [];
+
+const countryHouse = ['terrain', 'flooring', 'wallsCeiling', 'orientation', 'viewCoastSlope'];
+
+const terrain = ['terrain', 'fullLoadFactor', 'landCoverFactor', 'zoning', 'linealMeasures', 'viewCoastSlope'];
+
+const hotel = ['yearlyIncome', 'cutlery', 'viewCoastSlope'];
+
 const plotsNichesVaults = [];
+
 const nauticalBeds = [];
 
 export const getGeneralFeatures = (estate) => {
@@ -470,32 +476,17 @@ export const heatingType = [
 export const measures = [
 	{
     	id: 1,
-        displayName: "Longitud frente (m)",
-        name: "frontLength"
-    },
-	{
-    	id: 2,
-        displayName: "Longitud frente (m)",
-        name: "backLength"
-    },
-	{
-    	id: 3,
         displayName: "Altura del techo (m)",
         name: "ceilingHeight"
     },
 	{
-    	id: 4,
+    	id: 2,
         displayName: "Ancho de la entrada (m)",
         name: "entranceWidth"
     },
 	{
-    	id: 5,
+    	id: 3,
         displayName: "Alto de la entrada (m)",
         name: "entranceHeight"
-    },
-    {
-    	id: 6,
-        displayName: "F.O.T.",
-        name: "fullLoadFactor"
     },
 ];

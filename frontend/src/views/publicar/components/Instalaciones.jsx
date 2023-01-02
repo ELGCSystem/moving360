@@ -1,15 +1,15 @@
 import { useState, useContext } from "react";
 import { Input } from "../../../components";
 import { Store } from '../../../Store.js';
-import { installations } from '../js/Instalaciones';
+import { installations, getInstallations} from '../js/Instalaciones';
 import { installations as installationsData } from "../js/Fields";
 import '../css/Instalaciones.css';
 
-const Instalaciones = () => {
+const Instalaciones = ({ estate }) => {
 
     const [data, setData] = useState(installationsData);
-
     const { dispatch: ctxDispatch } = useContext(Store);
+    const fields = getInstallations(estate);
 
     const handleChange = e => {
         let sendData = data;
@@ -27,18 +27,18 @@ const Instalaciones = () => {
             <h2>Instalaciones</h2>
 
             {
-                installations.map((field) => (
-                    <Input
-                        key={field.id}
-                        displayName={field.displayName}
-                        name={field.name}
-                        type="checkbox"
-                        onChange={handleChange}
-                    />
-                ))
+                installations.map((field) => 
+                    fields.includes(field.name) ? (
+                        <Input
+                            key={field.id}
+                            displayName={field.displayName}
+                            name={field.name}
+                            type="checkbox"
+                            onChange={handleChange}
+                        />
+                    ) : null
+                )
             }
-
-            <button onClick={() => console.log(data)}>Mostrar</button>
         </section>
     )
 };

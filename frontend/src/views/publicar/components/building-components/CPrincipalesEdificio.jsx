@@ -3,6 +3,7 @@ import { Input, Contador, Select } from '../../../../components';
 import { Store } from '../../../../Store.js';
 import { buildingType, elevatorType } from '../../js/CaracteristicasPrincipales';
 import { building } from '../../js/Fields';
+import { outsideWalls, estateState, view, coast } from '../../js/CaracteristicasGenerales.js';
 import '../../css/CaracteristicasPrincipales.css';
 
 const CPrincipalesEdificio = () => {
@@ -82,28 +83,61 @@ const CPrincipalesEdificio = () => {
                 }
             </Select>
 
-            <div className="ascensor">
-                <Input
-                    displayName="Ascensor"
-                    name="hasElevator"
-                    type="checkbox"
-                    onChange={handleChange}
-                />
+            <Select 
+                displayName="Estado de la propiedad"
+                name="estateState"
+                onChange={handleChange}>
+                <option value="">Seleccione una opción...</option>
+                {
+                    estateState.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
+                        </option>
+                    ))
+                }
+            </Select>
 
-                <Select
-                    displayName="Tipo de ascensor"
-                    name="elevatorType"
-                    onChange={handleChange}>
-                    <option value="">Seleccione una opción...</option>
-                    {
-                        elevatorType.map((item) => (
-                            <option key={item.id}>
-                                {item.title}
-                            </option>
-                        )) 
-                    }
-                </Select>
-            </div>
+            <Select 
+                displayName="Paredes (exteriores)" 
+                name="outsideWalls"
+                onChange={handleChange}>
+                <option value="">Seleccione una opción...</option>
+                {
+                    outsideWalls.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
+                        </option>
+                    ))
+                }
+            </Select>
+
+            <Select 
+                displayName="Tipo de vista" 
+                name="view"
+                onChange={handleChange}>
+                <option value="">Seleccione una opción...</option>
+                {
+                    view.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
+                        </option>
+                    ))
+                }
+            </Select>
+
+            <Select 
+                displayName="Tipo de costa" 
+                name="coast"
+                onChange={handleChange}>
+                <option value="">Seleccione una opción...</option>
+                {
+                    coast.map((item) => (
+                        <option key={item.id}>
+                            {item.title}
+                        </option>
+                    ))
+                }
+            </Select>
             
             <h3 className='antiguedad__subtitle'>Antigüedad</h3>
 

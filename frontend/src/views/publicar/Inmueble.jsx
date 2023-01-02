@@ -53,15 +53,26 @@ const Inmueble = ({ section, estate }) => {
             <Superficies estate={estate} />
             <Ubicacion />
             <CaracteristicasPrincipales estate={estate} />
+            <CaracteristicasGenerales estate={estate} />
             {
-                estate !== "cochera" ? (
-                    <>
-                        <CaracteristicasGenerales estate={estate} />
-                        <DemasAmbientes estate={estate} />
-                        <Instalaciones />
-                        <Servicios />
-                    </>
-                ) : null
+                estate !== "cochera" &&
+                estate !== "parcelas-nichos-bovedas" &&
+                estate !== "galpon" &&
+                estate !== "campo" &&
+                estate !== "lote-terreno" &&
+                estate !== "camas-nauticas" ?
+                <DemasAmbientes estate={estate} />
+                : null
+            }
+            {
+                estate !== "cochera" &&
+                estate !== "parcelas-nichos-bovedas" &&
+                estate !== "fondo-de-comercio" ?
+                <>
+                    <Instalaciones estate={estate} />
+                    <Servicios estate={estate} />
+                </>
+                : null
             }
             { 
                 estate === "departamento" ||

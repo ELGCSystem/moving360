@@ -1,7 +1,7 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import PhApartment from '../../models/Estates/phApartmentModel.js';
-import { generateToken } from '../../../utils/Estates/utilsApartment.js';
+import { generateToken } from '../../../utils/Estates/utilsPhApartment.js';
 
 const phApartmentRouter = express.Router();
 

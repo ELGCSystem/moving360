@@ -40,7 +40,9 @@ const Basicos = ({ estate, unit, operations, section }) => {
 
     let suitableExpenses = estate === "departamento" ||
                            estate === "oficina-consultorio" ||
-                           estate === "local";
+                           estate === "local" ||
+                           estate === "fondo-de-comercio" ||
+                           estate === "parcelas-nichos-bovedas";
 
     return (
         <section className='datos-basicos'>

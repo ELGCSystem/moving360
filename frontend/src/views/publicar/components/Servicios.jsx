@@ -1,15 +1,15 @@
 import { useState, useContext } from "react";
 import { Input } from "../../../components";
 import { Store } from '../../../Store.js';
-import { services } from "../js/Servicios";
+import { services, getServices } from "../js/Servicios";
 import { services as servicesData } from "../js/Fields";
 import '../css/Servicios.css';
 
-const Servicios = () => {
+const Servicios = ({ estate }) => {
 
     const [data, setData] = useState(servicesData);
-
     const { dispatch: ctxDispatch } = useContext(Store);
+    const fields = getServices(estate);
 
     const handleChange = e => {
         let sendData = data;
@@ -27,18 +27,18 @@ const Servicios = () => {
             <h2>Servicios</h2>
 
             {
-                services.map((field) => (
-                    <Input
-                        key={field.id}
-                        displayName={field.displayName}
-                        name={field.name}
-                        type="checkbox"
-                        onChange={handleChange}
-                    />
-                ))
+                services.map((field) => 
+                    fields.includes(field.name) ? (
+                        <Input
+                            key={field.id}
+                            displayName={field.displayName}
+                            name={field.name}
+                            type="checkbox"
+                            onChange={handleChange}
+                        />
+                    ) : null
+                )
             }
-
-            <button onClick={() => console.log(data)}>Mostrar</button>
         </section>
     )
 };

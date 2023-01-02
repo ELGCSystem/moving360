@@ -1,22 +1,29 @@
-const house = ['loft', 'beforeKitchen', 'beforeLiving', 'rooftop', 'balcony', 'balconyTerraced', 'bar', 'trunk', 'library', 'cellar', 'toolRoom', 'ironingRoom', 'betweenFloor', 'studio', 'familyRoom', 'gallery', 'shed',"garage", "garden", "freeBackground", "local", "office", "palier", "grill", "livingRoom", "basement", "suiteRoom", "lobby", "dressingRoom", "lockerRoom"];
+const house = ['loft', 'beforeKitchen', 'beforeLiving', 'rooftop', 'balcony', 'balconyTerraced', 'bar', 'trunk', 'library', 'cellar', 'toolRoom', 'ironingRoom', 'betweenFloor', 'studio', 'familyRoom', 'gallery', 'shed',"garage", "garden", "freeBackground", "shop", "office", "palier", "grill", "livingRoom", "basement", "suite", "lobby", "dressingRoom", "lockerRoom"];
 
-const apartment = ['loft', 'beforeKitchen', 'beforeLiving', 'rooftop', 'bar', 'trunk', 'library', 'cellar', 'toolRoom', 'ironingRoom', 'betweenFloor', 'studio', 'familyRoom', 'gallery', 'shed',"garage", "garden", "freeBackground", "local", "office", "palier", "grill", "livingRoom", "basement", "suiteRoom", "lobby", "dressingRoom", "lockerRoom"];
+const apartment = ['loft', 'beforeKitchen', 'beforeLiving', 'rooftop', 'bar', 'trunk', 'library', 'cellar', 'toolRoom', 'ironingRoom', 'betweenFloor', 'studio', 'familyRoom', 'gallery', 'shed',"garage", "garden", "freeBackground", "shop", "office", "palier", "grill", "livingRoom", "basement", "suite", "lobby", "dressingRoom", "lockerRoom"];
 
-const phApartment = ['loft', 'beforeKitchen', 'beforeLiving', 'rooftop', 'balcony', 'balconyTerraced', 'bar', 'trunk', 'library', 'cellar', 'toolRoom', 'ironingRoom', 'betweenFloor', 'studio', 'familyRoom', 'gallery', 'shed',"garage", "garden", "freeBackground", "local", "office", "palier", "grill", "livingRoom", "basement", "suiteRoom", "lobby", "dressingRoom", "lockerRoom"];
+const phApartment = ['loft', 'beforeKitchen', 'beforeLiving', 'rooftop', 'balcony', 'balconyTerraced', 'bar', 'trunk', 'library', 'cellar', 'toolRoom', 'ironingRoom', 'betweenFloor', 'studio', 'familyRoom', 'gallery', 'shed',"garage", "garden", "freeBackground", "shop", "office", "palier", "grill", "livingRoom", "basement", "suite", "lobby", "dressingRoom", "lockerRoom"];
 
 const garage = [];
 
-const office = ['loft', 'beforeKitchen', 'rooftop', 'bar', 'trunk', 'circulation', 'toolRoom', 'warehouse', 'betweenFloor', "garage", 'publicHall'];
+const office = ['loft', 'beforeKitchen', 'file', 'rooftop', 'bar', 'trunk', 'circulation', 'toolRoom', 'warehouse', 'betweenFloor', "garage", 'palier', 'publicHall', 'meetingRoom', 'workRoom'];
 
-const shop = [];
+const shop = ['loft', 'file', 'rooftop', 'balcony', 'balconyTerraced', 'bar', 'trunk',  'warehouse', 'betweenFloor', "garage", 'palier', 'publicHall', 'shed', 'garden', 'livingRoom', 'terrace', 'lockerRoom', 'basement'];
+
 const shed = [];
-const goodwill = [];
+
+const goodwill = ['betweenFloor', 'basement', 'warehouse', 'shed', 'garage', 'office', 'dressingRoom'];
+
 const field = [];
-const countryHouse = [];
+
+const countryHouse = ['palier', 'balcony', 'balconyTerraced', 'garden'];
+
 const terrain = [];
-const hotel = [];
+
+const hotel = ['balcony', 'balconyTerraced', 'bar', 'library', 'warehouse', 'garage', 'garden', 'office', 'livingRoom', 'lounge', 'publicHall', 'basement', 'lockerRoom'];
 
 const plotsNichesVaults = [];
+
 const nauticalBeds = [];
 
 export const getOtherEnvironments = (estate) => {
@@ -47,13 +54,13 @@ export const otherEnvironments = [
     },
     {
         id: 2,
-        displayName: "Archivo",
-        name: "file"
+        displayName: "Ante cocina",
+        name: "beforeKitchen"
     },
     {
         id: 3,
-        displayName: "Ante cocina",
-        name: "beforeKitchen"
+        displayName: "Archivo",
+        name: "file"
     },
     {
         id: 4,
@@ -158,7 +165,7 @@ export const otherEnvironments = [
     {
         id: 24,
         displayName: "Local",
-        name: "local"
+        name: "shop"
     },
     {
         id: 25,
@@ -182,31 +189,46 @@ export const otherEnvironments = [
     },
     {
         id: 29,
-        displayName: "Salón",
-        name: "publicHall"
+        displayName: "Sala de reunión",
+        name: "meetingRoom"
     },
     {
         id: 30,
-        displayName: "Sotano",
-        name: "basement"
+        displayName: "Sala de trabajo",
+        name: "workRoom"
     },
     {
         id: 31,
-        displayName: "Suite",
-        name: "suiteRoom"
+        displayName: "Salón",
+        name: "lounge"
     },
     {
         id: 32,
+        displayName: "Salón público",
+        name: "publicHall"
+    },
+    {
+        id: 33,
+        displayName: "Sótano",
+        name: "basement"
+    },
+    {
+        id: 34,
+        displayName: "Suite",
+        name: "suite"
+    },
+    {
+        id: 35,
         displayName: "Vestíbulo",
         name: "lobby"
     },
     {
-        id: 33,
+        id: 36,
         displayName: "Vestidor",
         name: "dressingRoom"
     },
     {
-        id: 34,
+        id: 37,
         displayName: "Vestuario",
         name: "lockerRoom"
     }

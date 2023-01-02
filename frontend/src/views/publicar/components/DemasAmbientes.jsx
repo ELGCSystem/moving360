@@ -28,7 +28,6 @@ const DemasAmbientes = ({ estate }) => {
 
             {
                 otherEnvironments.map((field) => 
-                
                     fields.includes(field.name) ? (
                         <Input
                             key={field.id}

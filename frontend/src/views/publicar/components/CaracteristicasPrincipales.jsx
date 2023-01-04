@@ -1,6 +1,7 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Input, Contador, Select } from '../../../components';
-import { Store } from '../../../Store.js';
+import { saveDataAction } from '../../../redux/estateDucks';
+import { useDispatch } from 'react-redux';
 import { capitalize } from '../../../utils/utils';
 import { mainFeatures } from '../js/Fields';
 import {
@@ -19,12 +20,11 @@ import '../css/CaracteristicasPrincipales.css';
 const CaracteristicasPrincipales = ({ estate }) => {
 
     const [data, setData] = useState(mainFeatures);
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
     const fields = getMainFeatures(estate);
 
 
     const handleChange = e => {
-
         let sendData = data;
 
         if (e.target.type === "checkbox") {
@@ -36,20 +36,14 @@ const CaracteristicasPrincipales = ({ estate }) => {
             sendData[e.target.name] = e.target.value;
         }
 
-        ctxDispatch({ type: 'SAVE_MAIN_FEATURES', payload: sendData });
-        localStorage.setItem('mainFeatures', JSON.stringify(sendData));
-        
+        dispatch(saveDataAction('SAVE_MAIN_FEATURES', sendData));
     };
 
     const counterChange = (count, name) => {
-
         let sendData = data;
-
         setData({ ...data, [name]: count });
         sendData[name] = count;
-
-        ctxDispatch({ type: 'SAVE_MAIN_FEATURES', payload: sendData });
-        localStorage.setItem('mainFeatures', JSON.stringify(sendData));
+        dispatch(saveDataAction('SAVE_MAIN_FEATURES', sendData));
     }
 
     return (

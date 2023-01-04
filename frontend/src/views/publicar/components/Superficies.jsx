@@ -1,14 +1,14 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Input } from "../../../components";
-import { Store } from '../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { surface } from "../js/Fields";
 import '../css/Superficies.css';
 
 const Superficies = ({ estate }) => {
 
     const [data, setData] = useState(surface);
-
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
 
     const handleChange = e => {
         let sendData = data;
@@ -16,8 +16,7 @@ const Superficies = ({ estate }) => {
         setData({ ...data, [e.target.name]: e.target.value });
         sendData[e.target.name] = e.target.value;
 
-        ctxDispatch({ type: 'SAVE_SURFACE', payload: sendData });
-        localStorage.setItem('surface', JSON.stringify(sendData));
+        dispatch(saveDataAction('SAVE_SURFACE', sendData));
     }
 
     return (

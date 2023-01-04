@@ -1,11 +1,12 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { navBarLinks, navAccountLinks, navLinks } from "./NavLinks.js";
 import { Button, NavLink } from '../../components';
-import { Store } from '../../Store.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { userSignoutAction } from '../../redux/userDucks.js';
 import logo from './logo-moving360.png';
 import './Nav.css';
 
@@ -18,14 +19,11 @@ const NavLogo = () => (
 
 const DesktopNavBar = () => {
 
-    const { state, dispatch: ctxDispatch } = useContext(Store);
-    const { userInfo } = state;
+    const userInfo = useSelector(store => store.user.userInfo);
+    const dispatch = useDispatch();
 
-    const signoutHandler = () => {
-        ctxDispatch({ type: 'USER_SIGNOUT' });
-        localStorage.removeItem('userInfo');
-        window.location.href = "/";
-    }
+    const signoutHandler = () =>
+        dispatch(userSignoutAction());
 
     return (
         <>

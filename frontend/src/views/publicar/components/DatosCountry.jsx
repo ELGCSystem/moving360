@@ -1,6 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Select, Input } from "../../../components";
-import { Store } from '../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { dataCountry } from "../js/Fields";
 import {
     zones,
@@ -13,10 +14,8 @@ const DatosCountry = () => {
 
     const [zona, setZona] = useState("");
     const [idZona, setIdZona] = useState(-1);
-
     const [data, setData] = useState(dataCountry);
-
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
 
     const zonaHandler = (e) => {
         setZona(e.target.value);
@@ -44,9 +43,7 @@ const DatosCountry = () => {
             sendData[e.target.name] = e.target.value;
         }
 
-        ctxDispatch({ type: 'SAVE_DATA_COUNTRY', payload: sendData });
-        localStorage.setItem('dataCountry', JSON.stringify(sendData));
-        
+        dispatch(saveDataAction('SAVE_DATA_COUNTRY', sendData));
     };
 
     return (

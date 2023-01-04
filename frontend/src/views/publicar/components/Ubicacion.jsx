@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
 import { Select, Input } from '../../../components';
-import { Store } from '../../../Store.js';
-import Axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { location } from '../js/Fields';
+import Axios from 'axios';
 import '../css/Ubicacion.css'
 
 const Ubicacion = () => {
@@ -18,7 +19,7 @@ const Ubicacion = () => {
         getProvincias();
     }, []);
 
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
 
     const getProvincias = async () => {
         try {
@@ -112,8 +113,7 @@ const Ubicacion = () => {
         setData({ ...data, [e.target.name]: e.target.value });
         sendData[e.target.name] = e.target.value;
 
-        ctxDispatch({ type: 'SAVE_LOCATION', payload: sendData });
-        localStorage.setItem('location', JSON.stringify(sendData));
+        dispatch(saveDataAction('SAVE_LOCATION', sendData));
     }    
 
     return (

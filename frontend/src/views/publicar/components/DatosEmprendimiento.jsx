@@ -1,6 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Select, Input, Contador } from "../../../components";
-import { Store } from '../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { dataEntrepreneurship } from "../js/Fields";
 import { state, months, years } from "../js/DatosEmprendimiento";
 import "../css/DatosEmprendimientos.css";
@@ -8,10 +9,9 @@ import "../css/DatosEmprendimientos.css";
 const DatosEmprendimiento = ({ estate }) => {
 
     const [data, setData] = useState(dataEntrepreneurship);
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
 
     const handleChange = e => {
-
         let sendData = data;
 
         if (e.target.type === "checkbox") {
@@ -23,20 +23,16 @@ const DatosEmprendimiento = ({ estate }) => {
             sendData[e.target.name] = e.target.value;
         }
 
-        ctxDispatch({ type: 'SAVE_DATA_ENTREPRENEURSHIP', payload: sendData });
-        localStorage.setItem('dataEntrepreneurship', JSON.stringify(sendData));
-        
+        dispatch(saveDataAction('SAVE_DATA_ENTREPRENEURSHIP', sendData));       
     };
 
     const counterChange = (count, name) => {
-
         let sendData = data;
 
         setData({ ...data, [name]: count });
         sendData[name] = count;
 
-        ctxDispatch({ type: 'SAVE_DATA_ENTREPRENEURSHIP', payload: sendData });
-        localStorage.setItem('dataEntrepreneurship', JSON.stringify(sendData));
+        dispatch(saveDataAction('SAVE_DATA_ENTREPRENEURSHIP', sendData));
     };
 
     return (

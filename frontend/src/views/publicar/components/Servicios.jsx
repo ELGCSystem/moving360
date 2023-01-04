@@ -1,6 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Input } from "../../../components";
-import { Store } from '../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { services, getServices } from "../js/Servicios";
 import { services as servicesData } from "../js/Fields";
 import '../css/Servicios.css';
@@ -8,7 +9,7 @@ import '../css/Servicios.css';
 const Servicios = ({ estate }) => {
 
     const [data, setData] = useState(servicesData);
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
     const fields = getServices(estate);
 
     const handleChange = e => {
@@ -18,8 +19,7 @@ const Servicios = ({ estate }) => {
         setData({ ...data, [e.target.name]: !value });
         sendData[e.target.name] = !value;
 
-        ctxDispatch({ type: 'SAVE_SERVICES', payload: sendData });
-        localStorage.setItem('services', JSON.stringify(sendData));
+        dispatch(saveDataAction('SAVE_SERVICES', sendData));
     };
 
     return (

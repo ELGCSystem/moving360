@@ -1,6 +1,7 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Input, Contador, Select } from '../../../../components';
-import { Store } from '../../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../../redux/estateDucks';
 import { buildingType, elevatorType } from '../../js/CaracteristicasPrincipales';
 import { building } from '../../js/Fields';
 import { outsideWalls, estateState, view, coast } from '../../js/CaracteristicasGenerales.js';
@@ -9,10 +10,9 @@ import '../../css/CaracteristicasPrincipales.css';
 const CPrincipalesEdificio = () => {
 
     const [data, setData] = useState(building.mainFeatures);
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
 
     const handleChange = e => {
-
         let sendData = data;
 
         if (e.target.type === "checkbox") {
@@ -24,21 +24,17 @@ const CPrincipalesEdificio = () => {
             sendData[e.target.name] = e.target.value;
         }
 
-        ctxDispatch({ type: 'SAVE_BUILDING_MAIN_FEATURES', payload: sendData });
-        localStorage.setItem('buildingMainFeatures', JSON.stringify(sendData));
-        
+        dispatch(saveDataAction('SAVE_BUILDING_MAIN_FEATURES', sendData));    
     };
 
     const counterChange = (count, name) => {
-
         let sendData = data;
 
         setData({ ...data, [name]: count });
         sendData[name] = count;
 
-        ctxDispatch({ type: 'SAVE_BUILDING_MAIN_FEATURES', payload: sendData });
-        localStorage.setItem('buildingMainFeatures', JSON.stringify(sendData));
-    }
+        dispatch(saveDataAction('SAVE_BUILDING_MAIN_FEATURES', sendData)); 
+    };
 
     return (
         <section className='caracteristicas-principales'>

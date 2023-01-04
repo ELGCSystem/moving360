@@ -1,6 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Input } from "../../../components";
-import { Store } from '../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { installations, getInstallations} from '../js/Instalaciones';
 import { installations as installationsData } from "../js/Fields";
 import '../css/Instalaciones.css';
@@ -8,7 +9,7 @@ import '../css/Instalaciones.css';
 const Instalaciones = ({ estate }) => {
 
     const [data, setData] = useState(installationsData);
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
     const fields = getInstallations(estate);
 
     const handleChange = e => {
@@ -18,8 +19,7 @@ const Instalaciones = ({ estate }) => {
         setData({ ...data, [e.target.name]: !value });
         sendData[e.target.name] = !value;
 
-        ctxDispatch({ type: 'SAVE_INSTALLATIONS', payload: sendData });
-        localStorage.setItem('installations', JSON.stringify(sendData));
+        dispatch(saveDataAction('SAVE_INSTALLATIONS', sendData));
     };
 
     return (

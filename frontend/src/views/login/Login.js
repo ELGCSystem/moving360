@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Button, Input } from '../../components/index.js';
 import { Link, useNavigate } from 'react-router-dom';
-import { Store } from '../../Store.js';
+import { useDispatch } from 'react-redux';
+import { userSigninAction } from '../../redux/userDucks.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Google from '../../assets/google.png';
 import Facebook from '../../assets/facebook.png';
-import axios from 'axios';
 import './Login.css';
 import './Auth.css';
 
@@ -21,29 +21,15 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { dispatch: ctxDispatch } = useContext(Store);
+  
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const submitHandler = async (e) => {
-    
+  const submitHandler = (e) => {
     e.preventDefault();
-    try {
-
-      const { data } = await axios.post("http://localhost:10000/api/admin/signin", {
-        email,
-        password
-      });
-
-      ctxDispatch({ type: 'USER_SIGNIN', payload: data });
-      localStorage.setItem('userInfo', JSON.stringify(data));
-      window.location.href = "/gestion-inmobiliaria";
-
-
-    } catch (error) {
-      console.log(error.response.status);
-    }
+    dispatch(userSigninAction(email, password));
+    navigate("/gestion-inmobiliaria");
   }
-
 
   return (
     <section className="modal-login">

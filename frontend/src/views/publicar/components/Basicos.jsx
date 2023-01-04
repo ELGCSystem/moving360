@@ -1,6 +1,7 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Select, Input } from '../../../components';
-import { Store } from '../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { propertyState } from '../js/Basicos.js';
 import { expenses } from '../js/Basicos.js';
 import { dataBasic } from '../js/Fields';
@@ -9,7 +10,7 @@ import '../css/Basicos.css';
 const Basicos = ({ estate, unit, operations, section }) => {
 
     const [data, setData] = useState(dataBasic);
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
 
     const handleChange = e => {
 
@@ -24,9 +25,7 @@ const Basicos = ({ estate, unit, operations, section }) => {
             sendData[e.target.name] = e.target.value;
         }
 
-        ctxDispatch({ type: 'SAVE_DATA_BASIC', payload: sendData });
-        localStorage.setItem('dataBasic', JSON.stringify(sendData));
-        
+        dispatch(saveDataAction('SAVE_DATA_BASIC', sendData));
     };
 
     let suitablePets = (data.operation === "Alquiler" ||
@@ -235,8 +234,6 @@ const Basicos = ({ estate, unit, operations, section }) => {
                 className="comision"
                 onChange={handleChange}
             />
-
-            <button onClick={() => console.log(data)}>Mostrar</button>
         </section>
     )
 };

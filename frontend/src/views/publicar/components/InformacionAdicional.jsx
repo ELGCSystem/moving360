@@ -1,13 +1,13 @@
-import { useState, useContext } from "react"; 
+import { useState } from "react"; 
 import { Textarea } from "../../../components";
-import { Store } from '../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { addiotinalInformation } from "../js/Fields";
 
 const InformacionAdicional = () => {
 
     const [data, setData] = useState(addiotinalInformation);
-
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
 
     const handleChange = e => {
         let sendData = data;
@@ -15,9 +15,8 @@ const InformacionAdicional = () => {
         setData({ ...data, [e.target.name]: e.target.value });
         sendData[e.target.name] = e.target.value;
 
-        ctxDispatch({ type: 'SAVE_ADDITIONAL_INFORMATION', payload: sendData });
-        localStorage.setItem('additionalInformation', JSON.stringify(sendData));
-    }
+        dispatch(saveDataAction('SAVE_ADDITIONAL_INFORMATION', sendData));
+    };
 
     return (
         <section className="informacion-adicional">

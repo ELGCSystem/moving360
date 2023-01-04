@@ -1,6 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Input } from "../../../components";
-import { Store } from '../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { otherEnvironments, getOtherEnvironments } from "../js/DemasAmbientes";
 import { otherEnvironments as otherEnvironmentsData } from "../js/Fields";
 import '../css/DemasAmbientes.css';
@@ -8,7 +9,7 @@ import '../css/DemasAmbientes.css';
 const DemasAmbientes = ({ estate }) => {
 
     const [data, setData] = useState(otherEnvironmentsData);
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
     const fields = getOtherEnvironments(estate);
 
     const handleChange = e => {
@@ -18,8 +19,7 @@ const DemasAmbientes = ({ estate }) => {
         setData({ ...data, [e.target.name]: !value });
         sendData[e.target.name] = !value;
 
-        ctxDispatch({ type: 'SAVE_OTHER_ENVIRONMENTS', payload: sendData });
-        localStorage.setItem('otherEnvironments', JSON.stringify(sendData));
+        dispatch(saveDataAction('SAVE_OTHER_ENVIRONMENTS', sendData));
     };
 
     return (

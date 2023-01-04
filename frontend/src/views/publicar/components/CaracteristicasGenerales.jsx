@@ -1,6 +1,7 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Select, Input } from '../../../components';
-import { Store } from '../../../Store.js';
+import { saveDataAction } from '../../../redux/estateDucks';
+import { useDispatch } from 'react-redux';
 import { generalFeatures } from '../js/Fields';
 import {
     insideFlooring,
@@ -24,7 +25,7 @@ import '../css/CaracteristicasGenerales.css';
 const CaracteristicasGenerales = ({ estate }) => {
 
     const [data, setData] = useState(generalFeatures);
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
     const fields = getGeneralFeatures(estate);
 
     const handleChange = e => {
@@ -33,9 +34,8 @@ const CaracteristicasGenerales = ({ estate }) => {
         setData({ ...data, [e.target.name]: e.target.value });
         sendData[e.target.name] = e.target.value;
 
-        ctxDispatch({ type: 'SAVE_GENERAL_FEATURES', payload: sendData });
-        localStorage.setItem('generalFeatures', JSON.stringify(sendData));
-    }
+        dispatch(saveDataAction('SAVE_GENERAL_FEATURES', sendData));
+    };
 
     return (
         <section className='caracteristicas-generales'>

@@ -1,14 +1,14 @@
-import { useState, useContext } from 'react';
-import { Button, Input, Select } from '../../../components/index.js';
-import { Store } from '../../../Store.js';
+import { useState } from 'react';
+import { Input } from '../../../components/index.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../redux/estateDucks';
 import { contactOwner } from '../js/Fields.js';
 import '../css/Contacto.css'
 
 const Contacto = () => {
 
     const [data, setData] = useState(contactOwner);
-
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
 
     const handleChange = e => {
         let sendData = data;
@@ -16,9 +16,8 @@ const Contacto = () => {
         setData({ ...data, [e.target.name]: e.target.value });
         sendData[e.target.name] = e.target.value;
 
-        ctxDispatch({ type: 'SAVE_CONTACT_OWNER', payload: sendData });
-        localStorage.setItem('contactOwner', JSON.stringify(sendData));
-    }
+        dispatch(saveDataAction('SAVE_CONTACT_OWNER', sendData));
+    };
 
     return (
         <section className="dueno">
@@ -55,7 +54,7 @@ const Contacto = () => {
                 onChange={handleChange}
             />
         </section>
-    )
+    );
 };
 
 export default Contacto;

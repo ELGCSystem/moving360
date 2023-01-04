@@ -1,6 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Input } from "../../../../components";
-import { Store } from '../../../../Store.js';
+import { useDispatch } from 'react-redux';
+import { saveDataAction } from '../../../../redux/estateDucks';
 import { buildingServices } from "../../js/Servicios";
 import { building } from '../../js/Fields';
 import '../../css/Servicios.css';
@@ -8,7 +9,7 @@ import '../../css/Servicios.css';
 const ServiciosEdificio = () => {
 
     const [data, setData] = useState(building.services);
-    const { dispatch: ctxDispatch } = useContext(Store);
+    const dispatch = useDispatch();
 
     const handleChange = e => {
         let sendData = data;
@@ -17,8 +18,7 @@ const ServiciosEdificio = () => {
         setData({ ...data, [e.target.name]: !value });
         sendData[e.target.name] = !value;
 
-        ctxDispatch({ type: 'SAVE_BUILDING_SERVICES', payload: sendData });
-        localStorage.setItem('buildingServices', JSON.stringify(sendData));
+        dispatch(saveDataAction('SAVE_BUILDING_SERVICES', sendData));
     };
 
     return (

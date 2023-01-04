@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import {
     Basicos,
     DatosCountry,
@@ -18,14 +18,15 @@ import {
     InstalacionesEdificio
 } from './components';
 import { operations, getUnits } from './js/Basicos.js';
-import { Store } from '../../Store.js';
 
 const Inmueble = ({ section, estate }) => {
 
-    const { state } = useContext(Store);
-    const { estateData } = state;
+    const dataEntrepreneurship = useSelector(store => store.estate.dataEntrepreneurship);
 
-    let insideCountry = estateData.dataEntrepreneurship.insideCountry;
+    let insideCountry = dataEntrepreneurship ?
+                        dataEntrepreneurship.insideCountry :
+                        false;
+
     let isCountries = section === "countries";
     let isEmprendimientos = section === "emprendimientos";
     let isTiempoCompartido = section === "tiempo-compartido";

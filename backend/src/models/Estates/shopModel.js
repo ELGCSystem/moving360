@@ -195,5 +195,5 @@ const shopSchema = new mongoose.Schema(
   }
 );
 
-const Shop = mongoose.model('shops', shopSchema);
+const Shop = mongoose.model('estates', shopSchema);
 export default Shop;

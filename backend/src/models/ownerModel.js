@@ -19,5 +19,5 @@ const ownerSchema = new mongoose.Schema(
   }
 );
 
-const Owner = mongoose.model('owners', ownerSchema);
+const Owner = mongoose.model('users', ownerSchema);
 export default Owner;

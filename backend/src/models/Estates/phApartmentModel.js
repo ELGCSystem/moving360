@@ -272,5 +272,5 @@ const phApartmentSchema = new mongoose.Schema(
   }
 );
 
-const PhApartment = mongoose.model('phApartments', phApartmentSchema);
+const PhApartment = mongoose.model('estates', phApartmentSchema);
 export default PhApartment;

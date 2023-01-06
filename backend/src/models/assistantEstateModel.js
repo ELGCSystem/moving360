@@ -23,5 +23,5 @@ const assistantEstateSchema = new mongoose.Schema(
   }
 );
 
-const Assistant = mongoose.model('assistants', assistantEstateSchema);
+const Assistant = mongoose.model('users', assistantEstateSchema);
 export default Assistant;

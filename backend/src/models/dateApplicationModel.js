@@ -10,5 +10,5 @@ const dateSchema = new mongoose.Schema(
   }
 );
 
-const Date = mongoose.model('dates', dateSchema);
+const Date = mongoose.model('shifts', dateSchema);
 export default Date;

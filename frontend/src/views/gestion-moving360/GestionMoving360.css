@@ -1,0 +1,44 @@
+.gestion-inmobiliaria {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid var(--d-gray);
+}
+
+.gestion-inmobiliaria section {
+    width: clamp(30%, 1200px, 90%);
+    min-height: 52rem;
+    margin: 4rem auto 7rem;
+}
+
+.gestion-inmobiliaria .subtitle {
+    font-family: var(--titles);
+    font-size: 1.6rem;
+    color: var(--gray);
+    margin-top: 4rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.sidebar {
+    background-color: var(--black);
+    width: 25rem;
+}
+
+.sidebar__item {
+    font-size: 1.6rem;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar__link {
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--titles);
+    display: block;
+    padding: 2rem;
+    width: 100%;
+}
+
+.sidebar__link:hover {
+    background-color: var(--gray);
+}

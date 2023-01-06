@@ -72,5 +72,5 @@ const decentralizedSchema = new mongoose.Schema(
   }
 );
 
-const Decentralized = mongoose.model('users', decentralizedSchema);
+const Decentralized = mongoose.models.users || mongoose.model('users', decentralizedSchema);
 export default Decentralized;

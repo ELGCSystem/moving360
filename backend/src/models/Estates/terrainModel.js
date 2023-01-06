@@ -159,5 +159,5 @@ const terrainSchema = new mongoose.Schema(
   }
 );
 
-const Terrain = mongoose.model('estates', terrainSchema);
+const Terrain = mongoose.model('terrains', terrainSchema);
 export default Terrain;

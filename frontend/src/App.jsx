@@ -26,7 +26,8 @@ import {
   GestionInmobiliaria,
   Login,
   Verificacion,
-  SuccessRegister
+  SuccessRegister,
+  GestionMoving360
 } from './views/index.js';
 
 //Componente principal, contiene "Header", "Main" y "Footer"
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/registrarse" exact element={<Registrarse />} />
           <Route path="/verificacion" exact element={<Verificacion />} />
           <Route path="/registro-exitoso" exact element={<SuccessRegister />} />
+          <Route path="/gestion-moving360/*" element={<GestionMoving360 />}/>
         </Routes>
       </main>
 

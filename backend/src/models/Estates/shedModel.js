@@ -149,5 +149,5 @@ const shedSchema = new mongoose.Schema(
   }
 );
 
-const Shed = mongoose.model('estates', shedSchema);
+const Shed = mongoose.model('sheds', shedSchema);
 export default Shed;

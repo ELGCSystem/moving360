@@ -328,5 +328,5 @@ const apartmentSchema = new mongoose.Schema(
   }
 );
 
-const Apartment = mongoose.model('estates', apartmentSchema);
+const Apartment = mongoose.model('apartments', apartmentSchema);
 export default Apartment;

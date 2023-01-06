@@ -10,3 +10,4 @@ export { default as GestionInmobiliaria } from './gestion-inmobiliaria/GestionIn
 export { default as Login } from './login/Login.js';
 export { default as Verificacion } from './verificacion/Verificacion.js';
 export { default as SuccessRegister } from './solicitud-exitosa/SuccesRegister.js';
+export { default as GestionMoving360 } from './gestion-moving360/GestionMoving360.js'

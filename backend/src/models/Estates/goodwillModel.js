@@ -145,5 +145,5 @@ const goodwillSchema = new mongoose.Schema(
   }
 );
 
-const Goodwill = mongoose.model('estates', goodwillSchema);
+const Goodwill = mongoose.model('goodwills', goodwillSchema);
 export default Goodwill;

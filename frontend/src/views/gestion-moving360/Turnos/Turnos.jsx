@@ -1,9 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const GestionCuentas = () => (
-    <section>
+const Turnos = () => <section></section>;
 
-    </section>
-);
-
-export default GestionCuentas;
+export default Turnos;

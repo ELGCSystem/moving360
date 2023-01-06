@@ -127,5 +127,5 @@ const nauticalBedsSchema = new mongoose.Schema(
   }
 );
 
-const NauticalBeds = mongoose.model('nauticalBeds', nauticalBedsSchema);
+const NauticalBeds = mongoose.models.estates || mongoose.model('estates', nauticalBedsSchema);
 export default NauticalBeds;

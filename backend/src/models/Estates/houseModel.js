@@ -265,5 +265,5 @@ const houseSchema = new mongoose.Schema(
   }
 );
 
-const House = mongoose.model('houses', houseSchema);
+const House = mongoose.models.estates || mongoose.model('estates', houseSchema);
 export default House;

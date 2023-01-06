@@ -196,5 +196,5 @@ const countryHouseSchema = new mongoose.Schema(
   }
 );
 
-const CountryHouse = mongoose.model('countryHouses', countryHouseSchema);
+const CountryHouse = mongoose.models.estates || mongoose.model('estates', countryHouseSchema);
 export default CountryHouse;

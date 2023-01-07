@@ -12,6 +12,7 @@ import {
 import './css/normalize.css';
 import './css/App.css';
 
+
 // Implementción de páginas para viajar a lo largo de Moving360
 
 import {
@@ -27,7 +28,8 @@ import {
   Login,
   Verificacion,
   SuccessRegister,
-  GestionMoving360
+  GestionMoving360,
+  EditarUsuario
 } from './views/index.js';
 
 //Componente principal, contiene "Header", "Main" y "Footer"

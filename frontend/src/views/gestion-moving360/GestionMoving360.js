@@ -10,6 +10,7 @@ import Turnos from './Turnos/Turnos.jsx';
 import Servicios from './Servicios/Servicios.jsx';
 import { funcionesSideBar } from "./Funciones.js";
 import { NavLink } from '../../components/index.js';
+import EditarUsuario from "./AdministracionInmobiliarias/EditarUsuario.js";
 import './GestionMoving360.css';
 
 const GestionInmobiliaria = () => {
@@ -40,6 +41,7 @@ const GestionInmobiliaria = () => {
                 <Route path="solicitud-clientes" exact element={<SolicitudClientes />} />
                 <Route path="Turnos" exact element={<Turnos />} />
                 <Route path="servicios" exact element={<Servicios />} />
+                <Route path="EditarUsuario/:_id" exact element={<EditarUsuario />} />
             </Routes>
         </div>
     );

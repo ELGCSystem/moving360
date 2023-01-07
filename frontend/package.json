@@ -53,10 +53,12 @@
     "redux-thunk": "^2.4.1",
     "redux-toolkit": "^1.1.2",
     "sass": "^1.56.2",
+    "socket.io-client": "^4.5.4",
     "stream": "^0.0.2",
     "styled-components": "^5.3.5",
     "sweetalert2": "^11.6.15",
     "sweetalert2-react-content": "^5.0.7",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^2.1.4",
     "zlib": "^1.0.5"
   },

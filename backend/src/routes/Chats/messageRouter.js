@@ -1,22 +1,27 @@
 import express, { Router } from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import Message from '../../models/Chats/MessageModel.js';
-import { generateToken } from '../../../utils/Chats/utilsConversation.js';
+import { generateToken } from '../../../utils/Chats/utilsMessage.js';
 
 const messageRouter = express.Router();
 
 //Enviar Mensaje
 messageRouter.post(
-  '/sendMessage',
+  '/new',
   expressAsyncHandler(async (req, res) => {
     const message = new Message({
-      conversationId: req.body.conversationId,
+      chatId: req.body.chatId,
       sender: req.body.sender,
       text: req.body.text,
     });
     try {
-      const createdMessage = await conversation.save();
-      res.status(200).json(createdConversation);
+      const createdMessage = await message.save();
+      res.status(200).send({
+        chatId: createdMessage.chatId,
+        sender: createdMessage.sender,
+        text: createdMessage.text,
+        token: generateToken(createdMessage),
+      });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -26,15 +31,15 @@ messageRouter.post(
 //Obtener un mensaje
 
 messageRouter.get(
-  '/receiveMessage/:conversationId',
+  '/get/:chatId',
   expressAsyncHandler(async (req, res) => {
     try {
       const message = await Message.find({
-        conversationId: req.params,
+        chatId: req.params.chatId,
       });
-      res.status(200).json(message)
+      res.status(200).send(message)
     } catch (err) {
-      res.status(500).json(err);
+      res.status(500).send(err);
     }
   })
 );

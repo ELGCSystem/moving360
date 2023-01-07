@@ -1,9 +1,9 @@
 import jwt from 'jsonwebtoken';
 
-export const generateToken = (conversation) => {
+export const generateToken = (chat) => {
   return jwt.sign(
     {
-      members: [ conversation.senderId, conversation.receiverId ],
+      members: [ chat.senderId, chat.receiverId ],
     },
     process.env.JWT_SECRET,
     {

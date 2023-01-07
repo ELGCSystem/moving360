@@ -17,6 +17,18 @@ adminRouter.get(
   })
 );
 
+adminRouter.get(
+  '/get/:_id',
+  expressAsyncHandler(async (req, res) => {
+    try {
+      const admin = await Admin.findById(req.params._id);
+      res.send(admin);
+    } catch (error) {
+      res.send(error);
+    }
+  })
+);
+
 //Inicio de Sesión de Usuarios Administradores
 adminRouter.post(
   '/signin',

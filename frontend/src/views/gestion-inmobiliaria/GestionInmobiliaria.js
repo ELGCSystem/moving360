@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import PanelControl from './PanelControl/PanelControl.jsx';
 import NuevaPublicacion from './NuevaPublicacion/NuevaPublicacion.jsx';
 import MisPublicaciones from './MisPublicaciones/MisPublicaciones.jsx';
-import Mensajes from './Mensajes/Mensajes.jsx';
+import Mensajes from './Mensajes/components/Mensajes.jsx';
 import Servicios from './Servicios/Servicios.jsx';
 import Estadisticas from "./Estadisticas/Estadisticas.jsx";
 import GestionCuentas from "./GestionCuentas/GestionCuentas.jsx";

@@ -27,7 +27,8 @@ import hotelRouter from './src/routes/Estates/hotelRouter.js';
 import plotsNichesVaultsRouter from './src/routes/Estates/plotsNichesVaultsRouter.js';
 import nauticalBedsRouter from './src/routes/Estates/nauticalBedsRouter.js';
 
-import conversationRouter from './src/routes/Chats/conversationRouter.js';
+import chatRouter from './src/routes/Chats/chatRouter.js';
+import messageRouter from './src/routes/Chats/messageRouter.js';
 import dateRouter from './src/routes/dateApplicationRouter.js';
 import authRouter from './src/auth/auth.js';
 
@@ -76,8 +77,9 @@ app.use('/api/terrain', terrainRouter);
 app.use('/api/hotel', hotelRouter);
 app.use('/api/plotsNichesVaults', plotsNichesVaultsRouter);
 app.use('/api/nauticalBeds', nauticalBedsRouter);
-app.use('/api/conversation', conversationRouter);
-app.use('/api/date', dateRouter);
+app.use('/api/chat', chatRouter);
+app.use('/api/message', messageRouter);
+app.use('/api/date', dateRouter)
 
 app.use(
   cookieSession({

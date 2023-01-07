@@ -1,4 +1,4 @@
-import './ChatOnline.css';
+import '../css/ChatOnline.css';
 import chatImg from '../../../../assets/chatImg.jpg'
 
 export default function ChatOnline() {

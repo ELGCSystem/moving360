@@ -21,6 +21,7 @@
     background-color: var(--main-darker-color-alt);
     color: var(--white);
     max-width: 300px;
+    font-size: 1.6rem;
 }
 
 .messageBottom {

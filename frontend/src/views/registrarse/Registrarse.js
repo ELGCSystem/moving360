@@ -31,7 +31,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = 'http://localhost:10000/api/admin/signup';
+      const url = 'http://localhost:4000/api/admin/signup';
       const { data: res } = await Axios.post(url, data);
       const MySwal = withReactContent(Swal);
 

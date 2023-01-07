@@ -1,18 +1,15 @@
-const mongoose = require('mongoose');
+import jwt from 'jsonwebtoken';
 
-const MessageSchema = new mongoose.Schema(
-  {
-    conversationId: {
-      type: String,
+export const generateToken = (message) => {
+  return jwt.sign(
+    {
+      chatId: message.chatId,
+      sender: message.sender,
+      text: message.text,
     },
-    sender: {
-      type: String,
-    },
-    text: {
-      type: String,
-    },
-  },
-  { timestamps: true }
-);
-
-module.exports = mongoose.model('Message', MessageSchema);
+    process.env.JWT_SECRET,
+    {
+      expiresIn: '30d',
+    }
+  );
+};

@@ -77,7 +77,6 @@ app.use('/api/terrain', terrainRouter);
 app.use('/api/hotel', hotelRouter);
 app.use('/api/plotsNichesVaults', plotsNichesVaultsRouter);
 app.use('/api/nauticalBeds', nauticalBedsRouter);
-app.use('/api/conversation', conversationRouter);
 app.use('/api/chat', chatRouter);
 app.use('/api/message', messageRouter);
 app.use('/api/date', dateRouter)

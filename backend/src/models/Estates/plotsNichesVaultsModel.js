@@ -95,5 +95,5 @@ const plotsNichesVaultsSchema = new mongoose.Schema(
   }
 );
 
-const PlotsNichesVaults = mongoose.model('plotsNichesVaults', plotsNichesVaultsSchema);
+const PlotsNichesVaults = mongoose.models.estates || mongoose.model('estates', plotsNichesVaultsSchema);
 export default PlotsNichesVaults;

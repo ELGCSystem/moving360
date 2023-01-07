@@ -76,5 +76,5 @@ const centralizedSchema = new mongoose.Schema(
   }
 );
 
-const Centralized = mongoose.model('centralizedFranchise', centralizedSchema);
+const Centralized = mongoose.models.users || mongoose.model('users', centralizedSchema);
 export default Centralized;

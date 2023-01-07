@@ -120,5 +120,5 @@ const fieldSchema = new mongoose.Schema(
   }
 );
 
-const Field = mongoose.model('fields', fieldSchema);
+const Field = mongoose.models.estates || mongoose.model('estates', fieldSchema);
 export default Field;

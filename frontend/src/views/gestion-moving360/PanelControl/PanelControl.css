@@ -1,0 +1,43 @@
+.panel-control {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.panel-control__cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 5rem 0;
+    flex-wrap: wrap;
+}
+
+.panel-control a {
+    text-decoration: none;
+    margin: 2.5rem;
+}
+
+.panel-control-card {
+    width: 25rem;
+    height: 25rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: var(--main-color);
+    color: var(--white);
+    border-radius: 10px;
+}
+
+.panel-control-card__icon {
+    font-size: 7rem;
+}
+
+.panel-control-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel-control-card__title {
+    color: var(--white);
+}

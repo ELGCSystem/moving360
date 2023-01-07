@@ -7,7 +7,7 @@ import cookieSession from 'cookie-session';
 import adminRouter from './src/routes/adminRouter.js';
 import buyerRouter from './src/routes/buyerRouter.js';
 import ownerRouter from './src/routes/ownerRouter.js';
-import assistantEstate from './src/routes/assistantEstateRouter.js'
+import assistantEstate from './src/routes/assistantEstateRouter.js';
 import traditionalRouter from './src/routes/realEstates/traditionalRouter.js';
 import decentralizedRouter from './src/routes/realEstates/decentralizedFranchiseRouter.js';
 import centralizedRouter from './src/routes/realEstates/centralizedFranchiseRouter.js';
@@ -59,7 +59,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/admin', adminRouter);
 app.use('/api/buyer', buyerRouter);
 app.use('/api/owner', ownerRouter);
-app.use('/api/assistantEstate', assistantEstate)
+app.use('/api/assistantEstate', assistantEstate);
 app.use('/api/traditional', traditionalRouter);
 app.use('/api/decentralized', decentralizedRouter);
 app.use('/api/centralized', centralizedRouter);
@@ -77,6 +77,7 @@ app.use('/api/terrain', terrainRouter);
 app.use('/api/hotel', hotelRouter);
 app.use('/api/plotsNichesVaults', plotsNichesVaultsRouter);
 app.use('/api/nauticalBeds', nauticalBedsRouter);
+app.use('/api/conversation', conversationRouter);
 app.use('/api/chat', chatRouter);
 app.use('/api/message', messageRouter);
 app.use('/api/date', dateRouter)

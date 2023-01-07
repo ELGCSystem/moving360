@@ -79,7 +79,7 @@ adminRouter.post(
       secure: false,
       auth: {
         user: 'elgcsystem@gmail.com',
-        pass: 'nwzanwgdwlsimmlm',
+        pass: 'krpzhuajrlpqgqmu',
       },
       tls: {
         rejectUnauthorized: false,

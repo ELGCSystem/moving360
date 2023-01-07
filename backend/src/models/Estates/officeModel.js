@@ -265,5 +265,5 @@ const officeSchema = new mongoose.Schema(
   }
 );
 
-const Office = mongoose.model('offices', officeSchema);
+const Office = mongoose.models.estates || mongoose.model('estates', officeSchema);
 export default Office;

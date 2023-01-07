@@ -59,5 +59,5 @@ const traditionalSchema = new mongoose.Schema(
   }
 );
 
-const Traditional = mongoose.model('traditional', traditionalSchema);
+const Traditional = mongoose.models.users || mongoose.model('users', traditionalSchema);
 export default Traditional;

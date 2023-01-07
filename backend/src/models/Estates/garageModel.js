@@ -132,5 +132,5 @@ const garageSchema = new mongoose.Schema(
   }
 );
 
-const Garage = mongoose.model('garages', garageSchema);
+const Garage = mongoose.models.estates || mongoose.model('estates', garageSchema);
 export default Garage;
